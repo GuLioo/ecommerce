@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ecommerce.dao.userDao">
+    <!--为DAO接口方法提供SQL语句配置-->
+    <insert id="insert">
+        insert ignore into user(auid,username,password)
+        values (#{auid},#{username},#{password})
+    </insert>
+    <update id="updateDiscount">
+        update user
+        set discount=#{discount}
+        where auid=#{auid};
+    </update>
+    <delete id="deleteByPrimaryKey"  >
+    delete from user
+    where auid = #{auid,jdbcType=INTEGER}
+  </delete>
+    <update id="updateByPrimaryKey">
+        update user
+        set name =#{name},email=#{email},phone=#{phone}
+        where auid=#{auid};
+    </update>
+    <select id="selectByPrimaryKey" parameterType="Integer" resultType="user">
+      select *
+      from user
+      where auid=#{auid}
+    </select>
+    <select id="selectAll" resultType="user">
+        select * from user limit #{offset},#{limit}
+    </select>
+</mapper>

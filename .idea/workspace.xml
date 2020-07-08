@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="seckill:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Arquillian JUnit Test Class" />
+        <option value="Enum" />
+        <option value="FxmlFile" />
+        <option value="Jsp File" />
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XVxY63zRKOlH4G4DSBqPyIEfaU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ecommerce.service" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.ecommerce.service" />
+      <recent name="org.ecommerce.dao" />
+      <recent name="org.seckill.service" />
+      <recent name="org.seckill.dto" />
+      <recent name="org.seckill.dao" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\java\org\ecommerce" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\java\ecommerce" />
+      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\webapp\resource\script" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ecommerce.dto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\webapp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\text\java\org.seckill.dao" />
+      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\text\java" />
+      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\resources\spring" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.adminServiceImplTest.testInsertAdminUser">
+    <configuration name="adminServiceImplTest.deleteByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.service" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.service.adminServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteByPrimaryKey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="adminServiceImplTest.insertAdminUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.service" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.service.adminServiceImplTest" />
+      <option name="METHOD_NAME" value="insertAdminUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="adminServiceImplTest.testInsertAdminUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.service" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.service.adminServiceImplTest" />
+      <option name="METHOD_NAME" value="testInsertAdminUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="adminuserDaoTest.judgeSale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.adminuserDaoTest" />
+      <option name="METHOD_NAME" value="judgeSale" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="adminuserDaoTest.selectByAuid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.adminuserDaoTest" />
+      <option name="METHOD_NAME" value="selectByAuid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 7.0.99" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.99" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="seckill:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_seckill_5" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58229" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="seckill:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_seckill" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58229" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.adminServiceImplTest.insertAdminUser" />
+      <item itemvalue="JUnit.adminuserDaoTest.selectByAuid" />
+      <item itemvalue="JUnit.adminServiceImplTest.deleteByPrimaryKey" />
+      <item itemvalue="JUnit.adminuserDaoTest.judgeSale" />
+      <item itemvalue="JUnit.adminServiceImplTest.testInsertAdminUser" />
+      <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.adminServiceImplTest.testInsertAdminUser" />
+        <item itemvalue="JUnit.adminuserDaoTest.judgeSale" />
+        <item itemvalue="JUnit.adminServiceImplTest.deleteByPrimaryKey" />
+        <item itemvalue="JUnit.adminuserDaoTest.selectByAuid" />
+        <item itemvalue="JUnit.adminServiceImplTest.insertAdminUser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="" />
+      <created>1579079953778</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579079953778</updated>
+      <workItem from="1579079957546" duration="7124000" />
+      <workItem from="1579156546592" duration="11964000" />
+      <workItem from="1579174531427" duration="238000" />
+      <workItem from="1579174808535" duration="833000" />
+      <workItem from="1579175759354" duration="4972000" />
+      <workItem from="1579594447678" duration="30000" />
+      <workItem from="1581145118530" duration="5944000" />
+      <workItem from="1581215734609" duration="7697000" />
+      <workItem from="1581307682307" duration="4193000" />
+      <workItem from="1581410737478" duration="9307000" />
+      <workItem from="1581475619394" duration="9288000" />
+      <workItem from="1581565288706" duration="3853000" />
+      <workItem from="1581657171372" duration="873000" />
+      <workItem from="1581658080701" duration="2689000" />
+      <workItem from="1581745179560" duration="7401000" />
+      <workItem from="1581829913544" duration="4334000" />
+      <workItem from="1581922118256" duration="5144000" />
+      <workItem from="1582004295978" duration="4570000" />
+      <workItem from="1582033832747" duration="329000" />
+      <workItem from="1582094368359" duration="2013000" />
+      <workItem from="1582183813529" duration="4582000" />
+      <workItem from="1582255713505" duration="132000" />
+      <workItem from="1582966767609" duration="1124000" />
+      <workItem from="1583049816726" duration="981000" />
+      <workItem from="1583051982853" duration="1250000" />
+      <workItem from="1583133759546" duration="1530000" />
+      <workItem from="1583237506343" duration="6643000" />
+      <workItem from="1583392893842" duration="2179000" />
+      <workItem from="1583811355293" duration="1240000" />
+      <workItem from="1583917445803" duration="1628000" />
+      <workItem from="1583995603774" duration="32000" />
+      <workItem from="1584021521513" duration="555000" />
+      <workItem from="1584081031488" duration="45000" />
+      <workItem from="1584101325812" duration="1076000" />
+      <workItem from="1584329703789" duration="1617000" />
+      <workItem from="1585636858832" duration="1653000" />
+      <workItem from="1585826619036" duration="38000" />
+      <workItem from="1586411390550" duration="900000" />
+      <workItem from="1586432653292" duration="32000" />
+      <workItem from="1586585789208" duration="843000" />
+      <workItem from="1587283362235" duration="635000" />
+      <workItem from="1587372866877" duration="11000" />
+      <workItem from="1587394246380" duration="168000" />
+      <workItem from="1587972325910" duration="13000" />
+      <workItem from="1591246801494" duration="62000" />
+      <workItem from="1594087182238" duration="15426000" />
+      <workItem from="1594130149982" duration="249000" />
+      <workItem from="1594169552557" duration="23167000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="500" y="199" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594090247960">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="500" y="199" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594090247960" />
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser" timestamp="1594207901856">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594207901856" />
+    <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594101957482">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1594101957482" />
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594100307377">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594100307377" />
+    <state x="571" y="82" key="FileChooserDialogImpl" timestamp="1587972336267">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="571" y="82" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587972336267" />
+    <state width="1487" height="193" key="GridCell.Tab.0.bottom" timestamp="1594208433660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1487" height="193" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
+    <state width="1487" height="193" key="GridCell.Tab.0.center" timestamp="1594208433660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1487" height="193" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
+    <state width="1487" height="193" key="GridCell.Tab.0.left" timestamp="1594208433660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1487" height="193" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
+    <state width="1487" height="193" key="GridCell.Tab.0.right" timestamp="1594208433660">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1487" height="193" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
+    <state x="394" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1587972325585">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="394" y="196" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587972325585" />
+    <state x="535" y="64" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594206491647">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="535" y="64" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1594206491647" />
+    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1594111101850">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594111101850" />
+  </component>
+</project>

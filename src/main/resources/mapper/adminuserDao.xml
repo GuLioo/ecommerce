@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ecommerce.dao.adminuserDao">
+    <!--为DAO接口方法提供SQL语句配置-->
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from adminuser
+    where auid = #{auid,jdbcType=INTEGER}
+  </delete>
+    <insert id="insertAdminUser">
+        insert ignore into adminuser(username,password,uid)
+        values (#{username},#{password},#{uid})
+    </insert>
+    <select id="selectByName" parameterType="String" resultType="adminUser">
+      select *
+      from adminUser
+      where username=#{username}
+    </select>
+    <select id="selectByAuid" parameterType="Integer" resultType="adminUser">
+      select *
+      from adminUser
+      where auid=#{auid}
+    </select>
+    <select id="queryAll" resultType="adminUser">
+        select auid,username,password ,uid from adminUser limit #{offset},#{limit}
+    </select>
+    <select id="getAdminUserListByUid" parameterType="short" resultType="adminUser">
+      select *
+      from adminUser
+      where uid=#{uid}
+    </select>
+    <update id="setRole">
+        update adminUser
+        set uid =#{uid}
+        where auid=#{auid};
+    </update>
+    <select id="countUserAll" resultType="Integer">
+        select count(*) from adminUser
+    </select>
+    <select id="judgeSale" resultType="Integer">
+        select count(*) from adminUser where uid=1
+    </select>
+</mapper>
