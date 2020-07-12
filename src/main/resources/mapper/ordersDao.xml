@@ -9,12 +9,30 @@
         values (#{userId},#{money},#{state})
     </insert>
     <select id="selectAll" resultType="orders">
-        select * from orders limit #{offset},#{limit}
+        select * from orders
     </select>
     <select id="findOrderByUid" parameterType="Integer" resultType="orders">
       select *
       from orders
       where userId=#{userId}
+    </select>
+    <select id="findOrderByOid_State_Time"  resultType="orders">
+      select *
+      from orders
+      <where>
+          <if test="oid != null">
+              oid = #{oid,jdbcType=VARCHAR}
+          </if>
+          <if test="state != null">
+              and state = #{state,jdbcType=VARCHAR}
+          </if>
+          <if test="fromTime != null" >
+              and #{fromTime}<![CDATA[<=]]> order_time
+          </if>
+          <if test="toTime != null" >
+              and #{toTime}>=order_time
+          </if>
+      </where>
     </select>
     <select id="countProducyAll" resultType="Integer">
         select count(*) from orders

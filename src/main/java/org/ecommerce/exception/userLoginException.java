@@ -1,6 +1,6 @@
 package org.ecommerce.exception;
 
-public class userLoginException extends userException{
+public class userLoginException extends ecommerceException{
     public userLoginException(String message) {
         super(message);
     }

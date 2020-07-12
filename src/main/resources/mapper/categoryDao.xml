@@ -5,6 +5,25 @@
 <mapper namespace="org.ecommerce.dao.categoryDao">
     <!--为DAO接口方法提供SQL语句配置-->
     <select id="selectAll" resultType="category">
-        select * from category limit #{offset},#{limit}
+        select * from category
+    </select>
+    <insert id="insert">
+        insert ignore into category(cname)
+        values (#{cname})
+    </insert>
+    <delete id="deleteBycname"  >
+    delete from category
+    where cname = #{cname,jdbcType=INTEGER}
+  </delete>
+    <update id="updateByPrimaryKey">
+        update category
+        set cname =#{cname}
+        where cid=#{cid};
+    </update>
+    <select id="selectBycname" resultType="category">
+        select * from category  where cname=#{cname}
+    </select>
+    <select id="selectBycid" resultType="category">
+        select * from category  where cid=#{cid}
     </select>
 </mapper>

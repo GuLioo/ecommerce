@@ -9,6 +9,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -22,15 +25,15 @@ public class ordersDaoTest {
 
     @Test
     public void insert() {
-        int userId=new Integer(2);
-        double money=20;
-        int insertCount=orderDao.insert(userId,money, (short) 0);
+        int userId=new Integer(3);
+        double money=50;
+        int insertCount=orderDao.insert(userId,money, (short) 1);
         System.out.println(insertCount);
     }
 
     @Test
     public void selectAll() {
-        List<orders> pros = orderDao.selectAll(0, 100);
+        List<orders> pros = orderDao.selectAll();
         for (orders p : pros) {
             System.out.println(p);
         }
@@ -49,5 +52,18 @@ public class ordersDaoTest {
     public void countProducyAll() {
         int countAll=orderDao.countProducyAll();
         System.out.println(countAll);
+    }
+
+    @Test
+    public void findOrderByOid_State_Time() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStringFrom = "2017-12-20 14:02:08";
+        Date fromTime = sdf.parse(dateStringFrom);
+        String dateStringTo = "2020-07-09 16:51:58";
+        Date toTime = sdf.parse(dateStringTo);
+        List<orders> pros = orderDao.findOrderByOid_State_Time(null,null,fromTime,toTime);
+        for (orders p : pros) {
+            System.out.println(p);
+        }
     }
 }

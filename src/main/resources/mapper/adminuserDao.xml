@@ -23,7 +23,7 @@
       where auid=#{auid}
     </select>
     <select id="queryAll" resultType="adminUser">
-        select auid,username,password ,uid from adminUser limit #{offset},#{limit}
+        select auid,username,password ,uid from adminUser
     </select>
     <select id="getAdminUserListByUid" parameterType="short" resultType="adminUser">
       select *
@@ -41,4 +41,24 @@
     <select id="judgeSale" resultType="Integer">
         select count(*) from adminUser where uid=1
     </select>
+    <update id="updateDiscount">
+        update adminUser
+        set discount=#{discount}
+        where auid=#{auid};
+    </update>
+    <update id="updateByPrimaryKey">
+        update adminUser
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where auid=#{auid};
+    </update>
 </mapper>

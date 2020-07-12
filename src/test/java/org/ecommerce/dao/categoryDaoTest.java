@@ -22,9 +22,38 @@ public class categoryDaoTest {
 
     @Test
     public void selectAll() {
-        List<category> pros = categoryDao.selectAll(0, 100);
+        List<category> pros = categoryDao.selectAll();
         for (category p : pros) {
             System.out.println(p);
         }
+    }
+
+    @Test
+    public void insert() {
+        int count=categoryDao.insert("no");
+        System.out.println(count);
+    }
+
+
+    @Test
+    public void updateByPrimaryKey()
+    {
+        System.out.println(categoryDao.updateByPrimaryKey(9,"test"));
+    }
+
+    @Test
+    public void selectBycname() {
+        String name="aaa";
+        System.out.println(categoryDao.selectBycname(name));
+    }
+
+    @Test
+    public void deleteBycname() {
+        System.out.println(categoryDao.deleteBycname("test"));
+    }
+
+    @Test
+    public void selectBycid() {
+        System.out.println(categoryDao.selectBycid(9));
     }
 }

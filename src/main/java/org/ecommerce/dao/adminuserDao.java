@@ -17,7 +17,7 @@ public interface adminuserDao {
     //根据auid查询用户
     adminUser selectByAuid(Integer auid);
     //根据偏移量查询用户列表
-    List<adminUser> queryAll(@Param("offset") int offset, @Param("limit")int limit);
+    List<adminUser> queryAll();
     //获取指定uid的用户列表
     List<adminUser> getAdminUserListByUid(short uid);
     //更改用户权限
@@ -26,4 +26,9 @@ public interface adminuserDao {
     int countUserAll();
     //判断是否已存在uid=1产品销售商,若小于等于1则s.t.
     int judgeSale();
+    //系统管理员操作设置用户折扣
+    int updateDiscount(@Param("auid") Integer auid,@Param("discount") double discount);
+    //普通用户操作，更新用户信息,没有填null即可
+    int updateByPrimaryKey(@Param("auid")Integer auid,@Param("name") String name,@Param("email") String email,@Param("phone") String phone);
+
 }

@@ -36,7 +36,7 @@ public class adminuserDaoTest {
 
     @Test
     public void queryAll() {
-        List<adminUser> adminUsers = adminuserDao.queryAll(0, 100);
+        List<adminUser> adminUsers = adminuserDao.queryAll();
         for (adminUser adminUser : adminUsers) {
             System.out.println(adminUser);
         }
@@ -44,8 +44,8 @@ public class adminuserDaoTest {
 
     @Test
     public void setRole() {
-        Integer auid=6;
-        short uid=2;
+        Integer auid=12;
+        short uid=1;
         int insertCount=adminuserDao.setRole(auid,uid);
         System.out.println(insertCount);
     }
@@ -82,5 +82,17 @@ public class adminuserDaoTest {
     @Test
     public void judgeSale() {
         System.out.println(adminuserDao.judgeSale());
+    }
+
+    @Test
+    public void updateDiscount() {
+        int count=adminuserDao.updateDiscount(9, 0.8);
+        System.out.println(count);
+    }
+
+    @Test
+    public void updateByPrimaryKey() {
+        int count=adminuserDao.updateByPrimaryKey(12,"小李",null,null);
+        System.out.println(count);
     }
 }

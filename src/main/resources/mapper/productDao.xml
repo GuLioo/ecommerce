@@ -12,9 +12,39 @@
     delete from product
     where pid = #{pid,jdbcType=INTEGER}
   </delete>
+    <delete id="deleteBypname"  >
+    delete from product
+    where pname = #{pname,jdbcType=INTEGER}
+  </delete>
     <update id="updateByPrimaryKey">
         update product
-        set pname =#{pname},market_Price=#{market_Price},image=#{image},pdesc=#{pdesc},pnum=#{pnum}
+        <set>
+            <if test="pname != null">
+                pname = #{pname,jdbcType=VARCHAR},
+            </if>
+            <if test="market_Price != null">
+                market_Price = #{market_Price,jdbcType=DOUBLE},
+            </if>
+            <if test="image != null">
+                image = #{image,jdbcType=VARCHAR},
+            </if>
+            <if test="pdesc != null">
+                pdesc = #{pdesc,jdbcType=VARCHAR},
+            </if>
+            <if test="pnum != null">
+                pnum = #{pnum,jdbcType=INTEGER},
+            </if>
+        </set>
+        where pid=#{pid};
+    </update>
+    <update id="updateNumByPrimaryKey">
+        update product
+        set pnum=#{pnum}
+        where pid=#{pid};
+    </update>
+    <update id="updateNameByPrimaryKey">
+        update product
+        set pname=#{pname}
         where pid=#{pid};
     </update>
     <select id="selectByPrimaryKey" parameterType="Integer" resultType="product">
@@ -23,12 +53,15 @@
       where pid=#{pid}
     </select>
     <select id="selectAll" resultType="product">
-        select * from product limit #{offset},#{limit}
+        select * from product
     </select>
     <select id="countProducyAll" resultType="Integer">
         select count(*) from product
     </select>
     <select id="countProducyByname" parameterType="String" resultType="Integer">
         select count(*) from product where pname=#{pname}
+    </select>
+    <select id="selectBypname" resultType="product">
+        select * from product where pname=#{pname}
     </select>
 </mapper>

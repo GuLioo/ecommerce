@@ -1,5 +1,8 @@
 package org.ecommerce.service;
 
+import org.ecommerce.dto.userLoginExecution;
+import org.ecommerce.entity.adminUser;
+import org.ecommerce.entity.category;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -8,6 +11,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -19,15 +24,58 @@ public class adminServiceImplTest {
     @Resource
     private adminService adminService;
 
-
     @Test
-    public void deleteByPrimaryKey() {
-        int result=adminService.deleteByPrimaryKey(7);
+    public void getAdminUserList() {
+        List<adminUser> result=adminService.getAdminUserList();
         logger.info("result={}",result);
     }
 
     @Test
-    public void testInsertAdminUser() {
-        int result=adminService.insertAdminUser("test","111",(short) 1);
+    public void getAdminUserListByUid() {
+        List<adminUser> result=adminService.getAdminUserListByUid((short)0);
+        logger.info("result={}",result);
     }
+
+    @Test
+    public void insertAdminUser() {
+        int result=adminService.insertAdminUser("d","11",(short)1);
+        logger.info("result={}",result);
+    }
+
+    @Test
+    public void deleteByPrimaryKey() {
+        int result=adminService.deleteByPrimaryKey(8);
+        logger.info("result={}",result);
+    }
+
+    @Test
+    public void setRole() {
+        int result=adminService.setRole(10,(short)2);
+        logger.info("result={}",result);
+    }
+
+    @Test
+    public void countUserAll() {
+        int result=adminService.countUserAll();
+        logger.info("result={}",result);
+    }
+
+    @Test
+    public void selectByName() {
+        adminUser result=adminService.selectByName("a");
+        logger.info("result={}",result);
+    }
+
+    @Test
+    public void executeLogin() {
+        userLoginExecution result=adminService.executeLogin("abc","1");
+        logger.info("result={}",result);
+    }
+
+    @Test
+    public void updateDiscount() {
+    }
+
+
+
 }

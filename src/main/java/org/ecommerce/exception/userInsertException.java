@@ -1,6 +1,6 @@
 package org.ecommerce.exception;
 
-public class userInsertException extends userException{
+public class userInsertException extends ecommerceException{
 
     public userInsertException(String message) {
         super(message);

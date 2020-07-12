@@ -22,9 +22,9 @@ public class productDaoTest {
 
     @Test
     public void insert() {
-        String pname=new String("abb");
-        Integer marketPrice=new Integer(12);
-        String image=new String("112");
+        String pname=new String("test");
+        Integer marketPrice=new Integer(2);
+        String image=new String("11");
         String pdesc=new String("112");
         Integer pnum=12;
         int insertCount=productDao.insert(pname,marketPrice,image,pdesc,pnum);
@@ -33,19 +33,19 @@ public class productDaoTest {
 
     @Test
     public void deleteByPrimaryKey() {
-        Integer pid=10;
+        Integer pid=16;
         int count=productDao.deleteByPrimaryKey(pid);
         System.out.println(count);
     }
 
     @Test
     public void updateByPrimaryKey() {
-        Integer pid=10;
-        String pname=new String("ab");
+        Integer pid=15;
+        String pname=new String("abb");
         Integer marketPrice=new Integer(100000);
-        String image=new String("2");
-        String pdesc=new String("2");
         Integer pnum=2;
+        String image=null;
+        String pdesc=null;
         int count=productDao.updateByPrimaryKey(pid,pname,marketPrice,image,pdesc,pnum);
         System.out.println(count);
     }
@@ -60,7 +60,7 @@ public class productDaoTest {
 
     @Test
     public void selectAll() {
-        List<product> pros = productDao.selectAll(0, 100);
+        List<product> pros = productDao.selectAll();
         for (product p : pros) {
             System.out.println(p);
         }
@@ -78,5 +78,29 @@ public class productDaoTest {
         String pname="厨具锅具";
         int count=productDao.countProducyByname(pname);
         System.out.println(count);
+    }
+
+    @Test
+    public void updateNumByPrimaryKey() {
+        System.out.println(productDao.updateNumByPrimaryKey(11,20));
+    }
+
+    @Test
+    public void selectBypname() {
+        List<product> pros = productDao.selectBypname("小招喵周边");
+        for (product p : pros) {
+            System.out.println(p);
+        }
+    }
+
+    @Test
+    public void deleteBypname() {
+        System.out.println(productDao.deleteBypname("abb"));
+    }
+
+    @Test
+    public void updateNameByPrimaryKey()
+    {
+        System.out.println(productDao.updateNameByPrimaryKey(15,"111"));
     }
 }

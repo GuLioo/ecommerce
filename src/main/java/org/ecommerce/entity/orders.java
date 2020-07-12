@@ -14,17 +14,12 @@ public class orders {
     private Date order_time;
 
 
-    // 关联用户
-    private user user;
-
-
-    public user getUser() {
-        return user;
-    }
-
-    public void setUser(user user) {
+    public void setUser(adminUser user) {
         this.user = user;
     }
+
+    // 关联用户
+    private adminUser user;
 
 
     public Integer getOid() {

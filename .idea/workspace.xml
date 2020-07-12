@@ -2,11 +2,312 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="seckill:war exploded" />
+      <artifact name="ecommerce:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="" />
+    <list default="true" id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ecommerce_war_exploded2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/loginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/Msg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/salerStateEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userStateEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/ecommerceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/salerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userLogin_NoUser_Exception.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userLogin_passwordError_Exception.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login3.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products-search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/bootstrap-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/css-assets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/price-range.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/myorder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/orderconfirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/payment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_business_register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_num.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/shop_register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/webshop_goods-detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/shop/webshop_ranking-list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/style-en.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/css/v4-shims.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/tajawal-font/DinNextBlack.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/tajawal-font/DinNextBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/tajawal-font/DinNextLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/tajawal-font/DinNextMedium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/tajawal-font/DinNextRegular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/tajawal-font/DinNextSemiBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/fonts/tajawal-font/DinNextUltraLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-banner/img-9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-info-1/icon-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-info-1/icon-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-info-1/icon-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/box-info-1/icon-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/dashboard-user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/list-links-categories/icon-9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/logo-header-alt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/logo-header-en-alt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/logo-header-en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/logo-header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/newletter-popup-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/payment-methods.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/product-single-tabs/mockup-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product-2/img-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product-2/img-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product-2/img-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product-2/img-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product-2/img-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product/img-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product/img-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product/img-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product/img-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/box-product/img-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/product-single/img-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/product-single/img-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/slider-featured-1/img-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/slider-featured-1/img-15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/slider-featured-1/img-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/files/sliders/slider-featured-1/img-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/general-elements/favicon/apple-touch-icon-114x114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/general-elements/favicon/apple-touch-icon-72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/general-elements/favicon/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/general-elements/favicon/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/login_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/include.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/jRespond.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/jquery-3.3.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/jquery.fitvids.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/price-range.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/superfish.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/categories.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/checkout-page-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/checkout-page-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/checkout-page-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/checkout-page-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/checkout-page-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/checkout-page-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/dashboard-page-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/newsletter-popup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/product-single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/products-comparison.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/products-fullwidth.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/products-search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/shop-cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/wishlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/controller/loginControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/controller/pageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/salerServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/adminuserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/adminuserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/categoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/categoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/ordersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/ordersDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/productDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/productDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/userDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/ecommerceExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userLoginExecution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/entity/adminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/entity/adminUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/entity/orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/entity/orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/entity/user.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userInsertException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userInsertException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userLoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/adminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/adminuserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/categoryDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/categoryDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ordersDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/productDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/script/seckill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/adminuserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/adminuserDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/categoryDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/categoryDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/ordersDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/ordersDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/productDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/productDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/userDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/adminServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/adminServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/adminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/adminuserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/categoryDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/categoryDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ordersDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/productDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/userDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/adminuserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/adminuserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/categoryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/categoryDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/ordersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/ordersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/productDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/productDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/userDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/entity/adminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/entity/adminUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/entity/orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/entity/orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/entity/user.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/userException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/userInsertException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/userInsertException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/META-INF/seckill.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/mapper/SeckillDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/mapper/SuccessKilledDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/SeckillStateEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/controller/SeckillController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dao/RedisDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dao/SeckillDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dao/SuccessKilledDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dto/Exposer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dto/SeckillExecution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/dto/SeckillResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/entity/Seckill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/entity/SuccesKilled.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/exception/RepeatKillException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/exception/SeckillCloseException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/exception/SeckillException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/service/SeckillService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/org/seckill/service/SeckillServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/spring/spring-dao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/spring/spring-service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/classes/spring/spring-web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/common/head.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/common/tag.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/jsp/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/aopalliance-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/apiguardian-api-1.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/c3p0-0.9.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/commons-collections-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/commons-pool2-2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/jackson-annotations-2.5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/jackson-core-2.5.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/jackson-databind-2.5.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/javax.annotation-api-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/jedis-2.7.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/jquery-3.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/jquery.countdown-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/junit-jupiter-5.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/junit-jupiter-api-5.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/junit-jupiter-engine-5.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/junit-jupiter-params-5.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/junit-platform-commons-1.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/junit-platform-engine-1.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/logback-classic-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/logback-core-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/mybatis-3.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/mybatis-spring-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/mysql-connector-java-5.1.47.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/opentest4j-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/protostuff-api-1.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/protostuff-collectionschema-1.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/protostuff-core-1.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/protostuff-runtime-1.0.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/slf4j-api-1.7.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-aop-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-beans-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-context-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-core-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-expression-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-jdbc-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-test-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-tx-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-web-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/spring-webmvc-4.1.7.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/lib/standard-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/seckill/resource/script/seckill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/adminuserDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/adminuserDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/categoryDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/categoryDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/ordersDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/ordersDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/productDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/productDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/userDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/adminServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/adminServiceImplTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,13 +337,16 @@
         <option value="Arquillian JUnit Test Class" />
         <option value="Enum" />
         <option value="FxmlFile" />
-        <option value="Jsp File" />
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -59,34 +363,40 @@
     </option>
   </component>
   <component name="ProjectId" id="1XVxY63zRKOlH4G4DSBqPyIEfaU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.ecommerce.service" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="org.ecommerce.service" />
       <recent name="org.ecommerce.dao" />
+      <recent name="org.ecommerce.service" />
+      <recent name="org.ecommerce.controller" />
       <recent name="org.seckill.service" />
       <recent name="org.seckill.dto" />
-      <recent name="org.seckill.dao" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -94,23 +404,30 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\java\org\ecommerce" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\java\ecommerce" />
-      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\webapp\resource\script" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource\images" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\css" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource\js" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ecommerce.exception" />
       <recent name="org.ecommerce.dto" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\webapp" />
-      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\text\java\org.seckill.dao" />
-      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\text\java" />
-      <recent name="C:\Users\谷粒\Desktop\coding\seckill\src\main\resources\spring" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ecommerce.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.adminServiceImplTest.testInsertAdminUser">
-    <configuration name="adminServiceImplTest.deleteByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.99">
+    <configuration name="adminServiceImplTest.getAdminUserList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -120,45 +437,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.ecommerce.service" />
       <option name="MAIN_CLASS_NAME" value="org.ecommerce.service.adminServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteByPrimaryKey" />
+      <option name="METHOD_NAME" value="getAdminUserList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="adminServiceImplTest.insertAdminUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.ecommerce.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.ecommerce.service" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.service.adminServiceImplTest" />
-      <option name="METHOD_NAME" value="insertAdminUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="adminServiceImplTest.testInsertAdminUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.ecommerce.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.ecommerce.service" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.service.adminServiceImplTest" />
-      <option name="METHOD_NAME" value="testInsertAdminUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="adminuserDaoTest.judgeSale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="adminuserDaoTest.queryAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -168,13 +453,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
       <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.adminuserDaoTest" />
-      <option name="METHOD_NAME" value="judgeSale" />
+      <option name="METHOD_NAME" value="queryAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="adminuserDaoTest.selectByAuid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="categoryDaoTest.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -183,20 +468,51 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.adminuserDaoTest" />
-      <option name="METHOD_NAME" value="selectByAuid" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.categoryDaoTest" />
+      <option name="METHOD_NAME" value="selectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ordersDaoTest.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.ordersDaoTest" />
+      <option name="METHOD_NAME" value="selectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="productDaoTest.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.productDaoTest" />
+      <option name="METHOD_NAME" value="selectAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Tomcat 7.0.99" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.99" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="seckill:war exploded">
+        <artifact name="ecommerce:war">
           <settings>
-            <option name="CONTEXT_PATH" value="" />
+            <option name="CONTEXT_PATH" value="/ecommerce_war" />
           </settings>
         </artifact>
       </deployment>
@@ -259,7 +575,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="seckill:war exploded" />
+          <artifact name="ecommerce:war" />
         </option>
       </method>
     </configuration>
@@ -326,20 +642,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.adminServiceImplTest.insertAdminUser" />
-      <item itemvalue="JUnit.adminuserDaoTest.selectByAuid" />
-      <item itemvalue="JUnit.adminServiceImplTest.deleteByPrimaryKey" />
-      <item itemvalue="JUnit.adminuserDaoTest.judgeSale" />
-      <item itemvalue="JUnit.adminServiceImplTest.testInsertAdminUser" />
+      <item itemvalue="JUnit.adminServiceImplTest.getAdminUserList" />
+      <item itemvalue="JUnit.adminuserDaoTest.queryAll" />
+      <item itemvalue="JUnit.categoryDaoTest.selectAll" />
+      <item itemvalue="JUnit.productDaoTest.selectAll" />
+      <item itemvalue="JUnit.ordersDaoTest.selectAll" />
       <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.adminServiceImplTest.testInsertAdminUser" />
-        <item itemvalue="JUnit.adminuserDaoTest.judgeSale" />
-        <item itemvalue="JUnit.adminServiceImplTest.deleteByPrimaryKey" />
-        <item itemvalue="JUnit.adminuserDaoTest.selectByAuid" />
-        <item itemvalue="JUnit.adminServiceImplTest.insertAdminUser" />
+        <item itemvalue="JUnit.ordersDaoTest.selectAll" />
+        <item itemvalue="JUnit.productDaoTest.selectAll" />
+        <item itemvalue="JUnit.categoryDaoTest.selectAll" />
+        <item itemvalue="JUnit.adminuserDaoTest.queryAll" />
+        <item itemvalue="JUnit.adminServiceImplTest.getAdminUserList" />
       </list>
     </recent_temporary>
   </component>
@@ -347,11 +663,17 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.20413794" />
           <treeState>
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -418,60 +740,157 @@
       <workItem from="1594087182238" duration="15426000" />
       <workItem from="1594130149982" duration="249000" />
       <workItem from="1594169552557" duration="23167000" />
+      <workItem from="1594215414594" duration="600000" />
+      <workItem from="1594255265667" duration="22097000" />
+      <workItem from="1594343007287" duration="25300000" />
+      <workItem from="1594385221185" duration="1244000" />
+      <workItem from="1594386677605" duration="9211000" />
+      <workItem from="1594427431013" duration="4260000" />
+      <workItem from="1594432272282" duration="32751000" />
+      <workItem from="1594470596287" duration="5486000" />
+      <workItem from="1594518748172" duration="11080000" />
+      <workItem from="1594532978740" duration="17829000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="498" y="173" key="#BuildArtifactsBeforeRunChooser" timestamp="1594376990204">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="173" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1594376990204" />
+    <state x="260" y="0" key="#Web_Browsers" timestamp="1594455382165">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="260" y="0" key="#Web_Browsers/0.0.1536.824@0.0.1536.824" timestamp="1594455382165" />
+    <state x="223" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594455387070">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594455387070" />
     <state x="500" y="199" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594090247960">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="500" y="199" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594090247960" />
-    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser" timestamp="1594207901856">
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser" timestamp="1594564216612">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594207901856" />
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594564216612" />
     <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594101957482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1594101957482" />
-    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594100307377">
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594535068198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594100307377" />
-    <state x="571" y="82" key="FileChooserDialogImpl" timestamp="1587972336267">
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594535068198" />
+    <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1594518759322">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="571" y="82" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587972336267" />
-    <state width="1487" height="193" key="GridCell.Tab.0.bottom" timestamp="1594208433660">
+    <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594518759322" />
+    <state width="1487" height="175" key="GridCell.Tab.0.bottom" timestamp="1594565224991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1487" height="193" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
-    <state width="1487" height="193" key="GridCell.Tab.0.center" timestamp="1594208433660">
+    <state width="1487" height="175" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594565224991" />
+    <state width="1487" height="175" key="GridCell.Tab.0.center" timestamp="1594565224991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1487" height="193" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
-    <state width="1487" height="193" key="GridCell.Tab.0.left" timestamp="1594208433660">
+    <state width="1487" height="175" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594565224991" />
+    <state width="1487" height="175" key="GridCell.Tab.0.left" timestamp="1594565224991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1487" height="193" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
-    <state width="1487" height="193" key="GridCell.Tab.0.right" timestamp="1594208433660">
+    <state width="1487" height="175" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594565224991" />
+    <state width="1487" height="175" key="GridCell.Tab.0.right" timestamp="1594565224991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1487" height="193" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594208433660" />
-    <state x="394" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1587972325585">
+    <state width="1487" height="175" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594565224991" />
+    <state width="1153" height="133" key="GridCell.Tab.1.bottom" timestamp="1594565224988">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="394" y="196" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587972325585" />
-    <state x="535" y="64" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594206491647">
+    <state width="1153" height="133" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594565224988" />
+    <state width="1153" height="133" key="GridCell.Tab.1.center" timestamp="1594565224987">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="535" y="64" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1594206491647" />
-    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1594111101850">
+    <state width="1153" height="133" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594565224987" />
+    <state width="1153" height="133" key="GridCell.Tab.1.left" timestamp="1594565224987">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594111101850" />
+    <state width="1153" height="133" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594565224987" />
+    <state width="1153" height="133" key="GridCell.Tab.1.right" timestamp="1594565224987">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="133" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594565224987" />
+    <state width="1153" height="133" key="GridCell.Tab.2.bottom" timestamp="1594565224988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="133" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594565224988" />
+    <state width="1153" height="133" key="GridCell.Tab.2.center" timestamp="1594565224988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="133" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594565224988" />
+    <state width="1153" height="133" key="GridCell.Tab.2.left" timestamp="1594565224988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="133" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594565224988" />
+    <state width="1153" height="133" key="GridCell.Tab.2.right" timestamp="1594565224988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="133" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594565224988" />
+    <state width="1153" height="286" key="GridCell.Tab.3.bottom" timestamp="1594532944504">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="286" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594532944504" />
+    <state width="1153" height="286" key="GridCell.Tab.3.center" timestamp="1594532944504">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="286" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1594532944504" />
+    <state width="1153" height="286" key="GridCell.Tab.3.left" timestamp="1594532944504">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="286" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1594532944504" />
+    <state width="1153" height="286" key="GridCell.Tab.3.right" timestamp="1594532944504">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1153" height="286" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1594532944504" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1594455945019">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594455945019" />
+    <state x="551" y="178" key="chooseDestDirectoryDialog" timestamp="1594368193457">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="551" y="178" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1594368193457" />
+    <state x="394" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1594518750095">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="394" y="196" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1594518750095" />
+    <state x="229" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594534183396">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="229" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1594534183396" />
+    <state x="535" y="64" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594534193791">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="535" y="64" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1594534193791" />
+    <state x="294" y="62" width="903" height="751" key="dock-window-1" timestamp="1594444803007">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="294" y="62" width="903" height="751" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1594444803007" />
+    <state x="0" y="0" width="796" height="824" key="find.popup" timestamp="1594393976476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" width="796" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594393976476" />
+    <state x="341" y="183" key="run.anything.popup" timestamp="1594557745688">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594557745688" />
+    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1594557738564">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594557738564" />
   </component>
 </project>
