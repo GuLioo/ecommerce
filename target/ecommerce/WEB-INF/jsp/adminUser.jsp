@@ -37,7 +37,7 @@
 		//查询分页的数据（抽取ajax查询方法）
 		function to_page(pn){
 			$.ajax({
-				url:"/ecommerce_war/entrance/adminUserGet",
+				url:"/ecommerce_war/admin/adminUserGet",
 				data:{"pn": pn},
 				type:"GET",
 				success:function(result){
@@ -247,7 +247,7 @@
 					}
 					$.ajax({
 						type: "post",
-						url: "/ecommerce_war/entrance/adminAdd",
+						url: "/ecommerce_war/admin/adminAdd",
 						data: {"userName": userName,"password": password,"uid": uid},
 						dataType: "text",
 						success: function (result) {
@@ -269,7 +269,7 @@
 				if (rowData != null) {
 					$.ajax({
 						type: "post",
-						url: "/ecommerce_war/entrance/adminDelete",
+						url: "/ecommerce_war/admin/adminDelete",
 						data: {"auid": rowData.auid},
 						dataType: "text",
 						success: function (result) {
@@ -311,7 +311,7 @@
 						else {
 							$.ajax({
 								type: "post",
-								url: "/ecommerce_war/entrance/adminUserChange",
+								url: "/ecommerce_war/admin/adminUserChange",
 								data: {"auid": rowData.auid, "uid": selectId},
 								dataType: "text",
 								success: function (result) {
@@ -337,7 +337,7 @@
 
 		$(function (){
 			$.ajax({
-				url : "/ecommerce_war/entrance/adminUserRefresh",
+				url : "/ecommerce_war/admin/adminUserRefresh",
 				type : "get",
 				success : function (result){
 					/*getDataJson(result);*/

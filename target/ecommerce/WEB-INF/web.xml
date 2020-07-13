@@ -54,18 +54,14 @@
     <servlet-name>default</servlet-name>
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
-  <filter>
-    <filter-name>encodingFilter</filter-name>
-    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+<!--  <servlet>
+    <servlet-name>Encodeing</servlet-name>
+    <servlet-class>cn.hncu.com.encode.Encodeing</servlet-class>
     <init-param>
-      <param-name>encoding</param-name>
-      <param-value>UTF-8</param-value>
+      <param-name>charset</param-name>
+      <param-value>utf-8</param-value>//这里面的内容可供用户自己填写（必须是编码格式）
     </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>encodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+  </servlet>-->
 
 </web-app>
 

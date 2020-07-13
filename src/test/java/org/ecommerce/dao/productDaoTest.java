@@ -40,12 +40,12 @@ public class productDaoTest {
 
     @Test
     public void updateByPrimaryKey() {
-        Integer pid=15;
-        String pname=new String("abb");
-        Integer marketPrice=new Integer(100000);
-        Integer pnum=2;
+        Integer pid=19;
+        String pname=new String("text");
+        Double marketPrice=null;
+        Integer pnum=null;
         String image=null;
-        String pdesc=null;
+        String pdesc="test";
         int count=productDao.updateByPrimaryKey(pid,pname,marketPrice,image,pdesc,pnum);
         System.out.println(count);
     }
@@ -90,12 +90,13 @@ public class productDaoTest {
         List<product> pros = productDao.selectBypname("小招喵周边");
         for (product p : pros) {
             System.out.println(p);
+            System.out.println("价格="+p.getMarketPrice());
         }
     }
 
     @Test
     public void deleteBypname() {
-        System.out.println(productDao.deleteBypname("abb"));
+        System.out.println(productDao.deleteBypname("test"));
     }
 
     @Test
