@@ -461,22 +461,6 @@
 			}
 		}
 
-/*		function logOut() {
-			$.ajax({
-				url : "/ecommerce_war/entrance/logOut",
-				type : "GET",
-				success : function (result){
-					console.log("目录查询成功");
-					createCate(result);
-					to_page(result[0].cname,1);
-
-				},
-				error: function (msg) {
-					console.log("返回失败");
-					alert("发生错误" + msg);
-				}
-			});
-		}*/
 
 		function refresh(){
 			$.ajax({
@@ -693,7 +677,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title text-center" id="cateNameAddPro">
-
+						商品信息填写^0^
 					</h4>
 				</div>
 				<div class="input-group">

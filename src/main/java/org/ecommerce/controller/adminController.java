@@ -23,14 +23,14 @@ public class adminController {
 
     @RequestMapping(value = "/adminUserGet",method = RequestMethod.GET)
     @ResponseBody
-    public Msg adminUserGet(@RequestParam(value="pn",defaultValue="1") Integer pn, Model model){
+    public Msg adminUserGet(short uid,@RequestParam(value="pn",defaultValue="1") Integer pn, Model model){
         System.out.println("进入adminUserGet");
         //使用PageHelper分页插件
         //在查询之前只需要调用，传入页码，以及每页的大小
         PageHelper.startPage(pn, 1);
         System.out.println("走到这里");
         //startPage后面紧跟的这个查询就是一个分页查询
-        List<adminUser> adminUser=adminService.getAdminUserList();
+        List<adminUser> adminUser=adminService.getAdminUserListByUid(uid);
         //输出用户
         for (adminUser a : adminUser) {
             System.out.println(a);

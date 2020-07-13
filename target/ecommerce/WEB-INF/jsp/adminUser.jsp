@@ -35,10 +35,10 @@
 	<%--<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>--%>
 	<script type="text/javascript">
 		//查询分页的数据（抽取ajax查询方法）
-		function to_page(pn){
+		function to_page(uid,pn){
 			$.ajax({
 				url:"/ecommerce_war/admin/adminUserGet",
-				data:{"pn": pn},
+				data:{"pn": pn,"uid":uid},
 				type:"GET",
 				success:function(result){
 					console.log("分页查询成功了");
@@ -140,6 +140,18 @@
 				tbody.appendChild(trow);
 				btnApply(datas[i]);
 				btnDel(datas[i]);
+				var title=document.getElementById("proTitle");
+				if(datas[i].uid==0){
+					title.textContent="普通用户";
+				}
+				else if(datas[i].uid==1){
+					title.textContent="产品销售商";
+				}
+				else {
+					title.textContent="用户管理员";
+				}
+
+				btnAdd(datas[i]);
 			}
 		}
 
@@ -207,7 +219,7 @@
 		}
 
 		function btnAdd(){
-			$("#addBtn").click(function() {
+			$("#butAdd").click(function() {
 				var killPhoneModal=$('#killPhoneModal');
 				//显示弹出层
 				killPhoneModal.modal({
@@ -334,17 +346,23 @@
 		}
 
 
-
-		$(function (){
+		function refresh(){
 			$.ajax({
-				url : "/ecommerce_war/admin/adminUserRefresh",
-				type : "get",
-				success : function (result){
-					/*getDataJson(result);*/
-					to_page(1);
-					btnAdd();
+				url : "/ecommerce_war/admin/adminUser",
+				type : "GET",
+				success : function (){
+					console.log("目录查询成功");
+					to_page(0,1);
+				},
+				error: function (msg) {
+					console.log("返回失败");
+					alert("发生错误" + msg);
 				}
 			});
+		}
+
+		$(function (){
+			refresh();
 		});
 
 	</script>
@@ -360,59 +378,60 @@ table的定义的宽度-td(定义了宽度)*/
 
 <body>
 
+<!-- Header
+============================================= -->
+<header id="header">
+
+	<div id="header-bar-1" class="header-bar">
+
+		<div class="header-bar-wrap">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="hb-content">
+							<div class="position-right">
+								<ul class="list-info list-meta">
+									<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
+								</ul><!-- .list-meta end -->
+								<ul class="list-info list-contact-info">
+									<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
+								</ul><!-- .list-contact-info end -->
+							</div><!-- .position-right end -->
+							<div class="position-left">
+								<ul class="list-info list-meta">
+									<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
+								</ul><!-- .list-meta end -->
+								<ul class="list-info list-language">
+									<li class="dropdown-languages">
+										<i class="fa fa-globe-americas"></i>English
+										<ul class="select-language">
+
+											<li><a href="index.html">English</a></li>
+										</ul><!-- .select-language end -->
+									</li>
+								</ul><!-- .list-language end -->
+							</div><!-- .position-left end -->
+						</div><!-- .hb-content end -->
+
+					</div><!-- .col-md-12 end -->
+				</div><!-- .row end -->
+			</div><!-- .container end -->
+
+		</div><!-- .header-bar-wrap -->
+
+	</div><!-- #header-bar-1 end -->
+
+
+</header><!-- #header end -->
+
+
 	<!-- Document Full Container
 	============================================= -->
 	<div id="full-container">
 
-		<!-- Header
-		============================================= -->
-		<header id="header">
-		
-			<div id="header-bar-1" class="header-bar">
-		
-				<div class="header-bar-wrap">
-		
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-		
-								<div class="hb-content">
-									<div class="position-right">
-										<ul class="list-info list-meta">
-											<li><a href="register.html"><i class="fa fa-sign-in-alt"></i> Register</a></li>
-											<li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
-										</ul><!-- .list-meta end -->
-										<ul class="list-info list-contact-info">
-											<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
-										</ul><!-- .list-contact-info end -->
-									</div><!-- .position-right end -->
-									<div class="position-left">
-										<ul class="list-info list-meta">
-											<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
-										</ul><!-- .list-meta end -->
-										<ul class="list-info list-language">
-											<li class="dropdown-languages">
-												<i class="fa fa-globe-americas"></i>English
-												<ul class="select-language">
-													
-													<li><a href="index.html">English</a></li>
-												</ul><!-- .select-language end -->
-											</li>
-										</ul><!-- .list-language end -->
-									</div><!-- .position-left end -->
-								</div><!-- .hb-content end -->
-		
-							</div><!-- .col-md-12 end -->
-						</div><!-- .row end -->
-					</div><!-- .container end -->
-		
-				</div><!-- .header-bar-wrap -->
-		
-			</div><!-- #header-bar-1 end -->
 
-
-		</header><!-- #header end -->
-	
 		<!-- Content
 		============================================= -->
 		<section id="content">
@@ -432,22 +451,22 @@ table的定义的宽度-td(定义了宽度)*/
 									<div class="page-single-content">
 
 										<div class="row">
-											<div class="col-md-12">
+											<div class="col-md-9 col-md-push-3">
 
 												<div class="content">
 													<div class="block-content">
-														<h5 class="block-title">用户管理   <button  class="btn btn-primary btn-lg" id="addBtn" width="10px">增加用户</button></h5>
+														<div id="addButton">
+														<h5 class="block-title" id="proTitle"> <button  class="btn btn-primary btn-lg" id="addBtn" width="10px">增加用户</button></h5>
+														</div>
 														<div class="row">
 															<div class="col-md-12">
 																<div id="table-shop-cart">
 																	<table id="table">
 																		<thead>
 																			<tr>
-																				<th>用户编号</th>
-																				<th>用户名称</th>
-																				<th>用户类型</th>
-																				<th>应用</th>
-																				<th>删除</th>
+																				<th>ID</th>
+																				<th>NAME</th>
+																				<th>TYPE</th>
 																			</tr>
 																		</thead>
 																		<tbody id="tbody">
@@ -455,43 +474,12 @@ table的定义的宽度-td(定义了宽度)*/
 																	</table>																	
 																</div>
 																<div class="table-btns">
-																	<a class="btn medium colorful hover-grey" href="/ecommerce_war/entrance/adminUser.jsp">Update Page</a>
+																	<a class="btn medium colorful hover-grey" id="butAdd">ADD</a>
 																</div><!-- .table-btns end -->
 																<div id = "page_nav_area">
-														<%--			<li><a href="javascript:;"><i class="fa fa-angle-double-right"></i></a></li>
-																	<li><a href="javascript:;">1</a></li>
-																	<li class="active"><a href="javascript:;">2</a></li>
-																	<li><a href="javascript:;">5</a></li>
-																	<li><a href="javascript:;">6</a></li>
-																	<li><a href="javascript:;">7</a></li>
-																	<li><a href="javascript:;">...</a></li>
-																	<li><a href="javascript:;"><i class="fa fa-angle-double-left"></i></a></li>--%>
+
 																</div><!-- .pagination end -->
 
-																<%--<div id="table-checkout">
-																	<table>
-																		<tbody>
-																			<tr>
-																				<td>Sub-total shopping cart : <span>$520</span></td>
-																				<td>Tax : $0.00</td>
-																				<td>Delivery Cost : <span>Free</span></td>
-																			</tr>
-																			<tr>
-																				<td>Total cost of shopping cart : <span>$1140</span></td>
-																				<td>
-																					<form class="form-coupon">
-																						<div class="form-group">
-																							<input type="text" placeholder="Enter Coupon Code">
-																							<button type="submit" class="form-control" value=""><i class="fa fa-arrow-up"></i></button>
-																						</div><!-- .form-group end -->
-																					</form><!-- .form-coupon end -->
-																				</td>
-																				<td><a class="btn medium colorful hover-dark" href="javascript:;"><i class="fa fa-cart-arrow-down"></i>Continue Shopping</a></td>
-																			</tr>
-																		</tbody>
-																	</table>
-																</div><!-- #table-checkout end -->--%>
-																
 															</div><!-- .col-md-12 end -->
 														</div><!-- .row end -->
 													</div>
@@ -499,6 +487,21 @@ table的定义的宽度-td(定义了宽度)*/
 												</div><!-- .content end -->
 
 											</div><!-- .col-md-12 end -->
+											<div class="col-md-3 col-md-pull-9" >
+											<div class="sidebar">
+												<div class="box-widget">
+													<h5 class="box-title">user</h5>
+													<div class="box-content" >
+														<ul class="sidebar-list-links list-brands" id="category">
+															<li><a id="cate0" onclick="to_page(0,1)">普通用户</a></li>
+                                                            <li><a id="cate1" onclick="to_page(1,1)">产品销售商</a></li>
+                                                            <li><a id="cate2" onclick="to_page(2,1)">用户管理员</a></li>
+														</ul><!-- .sidebar-list-links -->
+													</div><!-- .box-content end -->
+												</div><!-- .box-widget end -->
+
+											</div><!-- .sidebar end -->
+											</div><!-- .col-md-3 end -->
 										</div><!-- .row end -->
 
 									</div><!-- .page-single-content end -->
