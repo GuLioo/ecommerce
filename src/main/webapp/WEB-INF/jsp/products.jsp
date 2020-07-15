@@ -314,22 +314,12 @@
 
 												<div class="content">
 													<div class="products-top-bar">
-														<ul class="layout-style lp-layout-tabs">
-															<li class="active"><a href="javascript:;"><i class="fa fa-th"></i></a></li>
-															<li><a href="javascript:;"><i class="fa fa-list"></i></a></li>
-														</ul><!-- .layout-style end -->
-														<div class="sort-by">
-															<span>Sort by</span>
-															<select name="list-sort-by" class="list-sort-by">
-																<option selected>All</option>
-																<option>Option 1</option>
-																<option>Option 2</option>
-																<option>Option 3</option>
-																<option>Option 4</option>
-																<option>Option 5</option>
-															</select>
-															<i class="fa fa-sort"></i>
-														</div><!-- .sort-by end -->
+														<div class="form-group">
+															<input type="text" name="productName" class="form-control" placeholder="Search for Products" data-alt-placeholder="Search for ...">
+														</div><!-- .form-group end -->
+														<div class="form-group">
+															<button type="submit" class="form-control"><i class="fa fa-search"></i></button>
+														</div><!-- .form-group end -->
 													</div><!-- .products-top-bar end -->
 													<div class="block-content">
 														<h5 class="block-title">Products you searched for</h5>

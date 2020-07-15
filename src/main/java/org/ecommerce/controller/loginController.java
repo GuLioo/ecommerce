@@ -3,6 +3,7 @@ package org.ecommerce.controller;
 import org.ecommerce.dto.ecommerceResult;
 import org.ecommerce.dto.userLoginExecution;
 import org.ecommerce.dto.userStateEnum;
+import org.ecommerce.entity.adminUser;
 import org.ecommerce.exception.userLogin_NoUser_Exception;
 import org.ecommerce.exception.userLogin_passwordError_Exception;
 import org.ecommerce.service.adminService;
@@ -44,6 +45,11 @@ public class loginController {
         try {
             userLoginExecution execution = adminService.executeLogin(userName, password);
             System.out.println("验证成功");
+            adminUser user=adminService.selectByName(userName);
+            Integer auid=user.getAuid();
+            // 将用户id保存到session内
+            session.setAttribute("auid", auid);
+
             return new ecommerceResult<userLoginExecution>(true, execution);
         } catch (userLogin_passwordError_Exception e1) {
             System.out.println("密码错误");

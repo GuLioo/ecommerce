@@ -57,9 +57,9 @@
 								console.log("返回成功========================");
 								var killResult=result['data'];
 								var state=killResult['state'];
-								var adminUser=killResult['adminUser'];
+							/*	var adminUser=killResult['adminUser'];
 								var uid=adminUser.uid;
-								console.log("uid="+uid);
+								console.log("uid="+uid);*/
 								if(state==1){
 									console.log("用户管理员");
 									location.href="/ecommerce_war/admin/adminUser";
@@ -69,7 +69,7 @@
 									location.href="/ecommerce_war/saler/salerRefresh";
 								}
 								else if(state==3){
-									alert("还没写");
+									location.href="/ecommerce_war/user/products";
 								}
 								else if(state==-2){
 									alert("密码错误");

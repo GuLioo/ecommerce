@@ -32,6 +32,7 @@
 	<title>SoqLina | Products</title>
 	<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
 	<script>
+		var id;
 		//具体创建内容
 		function refreshImage() {
 			$.ajax({
@@ -39,12 +40,14 @@
 				type : "GET",
 				data: {"pid": ${productDetail.pid}},
 				success : function (result){
+					id=result.pid;
 					console.log("返回商品详情成功");
 					$("#image").empty();
 					var imageArea=document.getElementById('image');
 					var imageURL="${pageContext.request.contextPath}/resource/images/pic/"+result.image;
 					imageArea.src=imageURL;
 					console.log("imageURL="+imageURL);
+
 				},
 				error: function (msg) {
 					console.log("返回失败");
@@ -52,6 +55,12 @@
 				}
 			});
 
+		}
+
+		function requestJson() {
+			var url="/ecommerce_war/user/"+id+"/orderDetail";
+			console.log("url="+url);
+			location.href=url;
 		}
 
 
@@ -217,7 +226,7 @@
 																	</li>
 																	<li>
 																		<div class="ps-btns">
-																			<a class="btn large colorful hover-grey" href="javascript:;">Buy Now</a>
+																			<input type="button" class="btn large colorful hover-grey" value="Buy Now"  id="toOrder" onclick="requestJson()">
 																		</div><!-- .ps-btns end -->
 																	</li>
 																</ul><!-- .list-product-single-details end -->

@@ -1,32 +1,45 @@
 package org.ecommerce.entity;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class orders {
 
-    private Integer oid;
+    private String oid;
 
     private Integer userId;
 
-    private Double money;
+    private Double orderPrice;
+    private Double userDiscount;
+    private Integer productId;
+    private Double productPrice;
+    private String productName;
+    private String productImage;
+    private String productDesc;
+    private String productCate;
+    private short orderState;
+    private Timestamp orderTime;
 
-    private short state;
-
-    private Date order_time;
-
-
-    public void setUser(adminUser user) {
-        this.user = user;
+    public orders(String oid, Integer userId, Double orderPrice, Double userDiscount, Integer productId, Double productPrice, String productName, String productImage, String productDesc, String productCate, short orderState, Timestamp orderTime) {
+        this.oid = oid;
+        this.userId = userId;
+        this.orderPrice = orderPrice;
+        this.userDiscount = userDiscount;
+        this.productId = productId;
+        this.productPrice = productPrice;
+        this.productName = productName;
+        this.productImage = productImage;
+        this.productDesc = productDesc;
+        this.productCate = productCate;
+        this.orderState = orderState;
+        this.orderTime = orderTime;
     }
 
-    // 关联用户
-    private adminUser user;
 
-
-    public Integer getOid() {
+    public String getOid() {
         return oid;
     }
 
-    public void setOid(Integer oid) {
+    public void setOid(String oid) {
         this.oid = oid;
     }
 
@@ -38,39 +51,101 @@ public class orders {
         this.userId = userId;
     }
 
-    public Double getMoney() {
-        return money;
+    public Double getOrderPrice() {
+        return orderPrice;
     }
 
-    public void setMoney(Double money) {
-        this.money = money;
+    public void setOrderPrice(Double orderPrice) {
+        this.orderPrice = orderPrice;
     }
 
-    public short getState() {
-        return state;
+    public Double getUserDiscount() {
+        return userDiscount;
     }
 
-    public void setState(short state) {
-        this.state = state;
+    public void setUserDiscount(Double userDiscount) {
+        this.userDiscount = userDiscount;
     }
 
-    public Date getOrderTime() {
-        return order_time;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setOrderTime(Date orderTime) {
-        this.order_time = orderTime;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
+
+    public Double getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(Double productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
+    }
+
+    public String getProductDesc() {
+        return productDesc;
+    }
+
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
+    }
+
+    public String getProductCate() {
+        return productCate;
+    }
+
+    public void setProductCate(String productCate) {
+        this.productCate = productCate;
+    }
+
+    public short getOrderState() {
+        return orderState;
+    }
+
+    public void setOrderState(short orderState) {
+        this.orderState = orderState;
+    }
+
+    public Timestamp getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(Timestamp orderTime) {
+        this.orderTime = orderTime;
     }
 
     @Override
     public String toString() {
-        return "Orders{" +
-                "oid=" + oid +
+        return "orders{" +
+                "oid='" + oid + '\'' +
                 ", userId=" + userId +
-                ", money=" + money +
-                ", state=" + state +
-                ", orderTime=" + order_time +
-                ", user=" + user +
+                ", orderPrice=" + orderPrice +
+                ", userDiscount=" + userDiscount +
+                ", productId=" + productId +
+                ", productPrice=" + productPrice +
+                ", productName='" + productName + '\'' +
+                ", productImage='" + productImage + '\'' +
+                ", productDesc='" + productDesc + '\'' +
+                ", productCate='" + productCate + '\'' +
+                ", orderState=" + orderState +
+                ", orderTime=" + orderTime +
                 '}';
     }
 }

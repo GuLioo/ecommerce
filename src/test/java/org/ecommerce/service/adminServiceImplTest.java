@@ -38,13 +38,13 @@ public class adminServiceImplTest {
 
     @Test
     public void insertAdminUser() {
-        int result=adminService.insertAdminUser("d","11",(short)1);
+        int result=adminService.insertAdminUser("c","11",(short)2);
         logger.info("result={}",result);
     }
 
     @Test
     public void deleteByPrimaryKey() {
-        int result=adminService.deleteByPrimaryKey(8);
+        int result=adminService.deleteByPrimaryKey(4);
         logger.info("result={}",result);
     }
 
@@ -68,7 +68,7 @@ public class adminServiceImplTest {
 
     @Test
     public void executeLogin() {
-        userLoginExecution result=adminService.executeLogin("abc","1");
+        userLoginExecution result=adminService.executeLogin("c","11");
         logger.info("result={}",result);
     }
 

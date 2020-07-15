@@ -5,8 +5,8 @@
 <mapper namespace="org.ecommerce.dao.ordersDao">
     <!--为DAO接口方法提供SQL语句配置-->
     <insert id="insert">
-        insert ignore into orders(userId,money,state)
-        values (#{userId},#{money},#{state})
+        insert ignore into orders(oid,userId,orderPrice,userDiscount,productId,productPrice,productName,productImage,productDesc,productCate,orderState,orderTime)
+        values (#{oid},#{userId},#{orderPrice},#{userDiscount},#{productId},#{productPrice},#{productName},#{productImage},#{productDesc},#{productCate},#{orderState},#{orderTime})
     </insert>
     <select id="selectAll" resultType="orders">
         select * from orders
@@ -34,7 +34,7 @@
           </if>
       </where>
     </select>
-    <select id="countProducyAll" resultType="Integer">
+    <select id="countProductAll" resultType="Integer">
         select count(*) from orders
     </select>
 

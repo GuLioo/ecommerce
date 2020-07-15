@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,10 +26,11 @@ public class ordersDaoTest {
 
     @Test
     public void insert() {
-        int userId=new Integer(3);
-        double money=50;
-        int insertCount=orderDao.insert(userId,money, (short) 1);
-        System.out.println(insertCount);
+/*        Integer userId=0;
+        Double money=123.4;
+        short state=0;
+        Timestamp t = new Timestamp(System.currentTimeMillis());
+        */
     }
 
     @Test
@@ -50,7 +52,7 @@ public class ordersDaoTest {
 
     @Test
     public void countProducyAll() {
-        int countAll=orderDao.countProducyAll();
+        int countAll=orderDao.countProductAll();
         System.out.println(countAll);
     }
 

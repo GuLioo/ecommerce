@@ -113,6 +113,7 @@ public class adminServiceImpl implements adminService{
     @Override
     public userLoginExecution executeLogin(String getUserName,String getPassword) throws ecommerceException,userLoginException{
         try{
+            System.out.println("进入service层执行");
             adminUser adminUser1=adminuserDao.selectByName(getUserName);
             if(adminUser1==null){
                 throw new userLogin_NoUser_Exception("不存在用户");
