@@ -6,18 +6,20 @@ import org.ecommerce.dto.Msg;
 import org.ecommerce.entity.adminUser;
 import org.ecommerce.entity.category;
 import org.ecommerce.entity.product;
-import org.ecommerce.service.adminService;
 import org.ecommerce.service.salerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
@@ -31,7 +33,7 @@ public class productSalerController {
 
     @RequestMapping(value = "/salerRefresh",method = RequestMethod.GET)
     public String products(){
-        return "products";
+        return "productSaler";
     }
 
     @RequestMapping(value = "/salerDelete",method = RequestMethod.POST)
@@ -50,7 +52,7 @@ public class productSalerController {
         }
     }
 
-    @RequestMapping(value = "/salerAdd",method = RequestMethod.POST)
+/*    @RequestMapping(value = "/salerAdd",method = RequestMethod.POST)
     @ResponseBody
     public String salerAdd(String pname, Double marketPrice, String image ,String pdesc,Integer  pnum) {
         System.out.println("salerAdd");
@@ -64,12 +66,12 @@ public class productSalerController {
             System.out.println("result=添加失败");
             return "添加失败";
         }
-    }
+    }*/
 
 
-    @RequestMapping(value = "/productChange",method = RequestMethod.POST)
+    @RequestMapping(value = "/salerChange",method = RequestMethod.POST)
     @ResponseBody
-    public String productChange(Integer pid, String pname, String marketPrice, String image ,String pdesc,String  pnum) {
+    public String salerChange(Integer pid, String pname, String marketPrice, String image ,String pdesc,String  pnum) {
         System.out.println("进入productChange");
         Double price=null;
         Integer num=null;
@@ -97,8 +99,11 @@ public class productSalerController {
     @RequestMapping(value = "/categoryInfo",method = RequestMethod.GET)
     @ResponseBody
     public List<category> categoryInfo(){
+        System.out.println("查询目录成功=============================");
         List<category> category=salerService.selectAllCate();
-        System.out.println("查询目录成功");
+        for (org.ecommerce.entity.category cate : category) {
+            System.out.println(cate);
+        }
         return category;
     }
 
@@ -127,6 +132,40 @@ public class productSalerController {
         PageInfo page = new PageInfo(product,5);
         System.out.println("pageNum="+page.getPageNum()+" pageSize="+page.getPageSize());
         return Msg.success().add("pageInfo", page);
+    }
+
+    @RequestMapping("/addProduct.do")
+    public String save(MultipartFile file,HttpServletRequest request) throws IOException {
+        System.out.println("进入图片存储======================================");
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        String price = multipartRequest.getParameter("price");
+        double pPrice=Double.parseDouble(price);
+        String description = multipartRequest.getParameter("description");
+        String num = multipartRequest.getParameter("num");
+        Integer pNum=Integer.parseInt(num);
+        System.out.println("price======"+price+"  description====="+description+"   num==="+num);
+        /**
+         * 上传图片
+         */
+        //图片上传成功后，将图片的地址写到数据库
+        String filePath = "C:\\Users\\谷粒\\Desktop\\coding\\ecommerce\\src\\main\\webapp\\resource\\images\\pic";//保存图片的路径,tomcat中有配置
+        //获取原始图片的拓展名
+        String originalFilename = file.getOriginalFilename();
+        System.out.println("originalFilename="+originalFilename);
+        //新的文件名字，使用uuid随机生成数+原始图片名字，这样不会重复
+        String newFileName =originalFilename;
+        //全路径：硬盘路径+文件名
+        File targetFile = new File(filePath,newFileName);
+        System.out.println("targetFile="+targetFile);
+        //本地文件传到封装好的全路径
+        file.transferTo(targetFile);
+
+
+
+        //增加产品信息
+        int result=salerService.insertPro("厨具锅具",pPrice,newFileName,description,pNum);
+
+        return "productSaler"; //重定向到查询
     }
 
 }

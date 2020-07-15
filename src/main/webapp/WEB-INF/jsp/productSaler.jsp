@@ -1,5 +1,4 @@
-﻿
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false"%>
 <html lang="en-US">
 
@@ -30,22 +29,25 @@
 
 	<!-- Title
 	============================================= -->
-	<title>SoqLina | Shop Cart</title>
+	<title>SoqLina | Products</title>
 	<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
-	<%--<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>--%>
-	<script type="text/javascript">
+	<script>
 		//查询分页的数据（抽取ajax查询方法）
-		function to_page(pn){
+		function to_page(name,pn){
+/*			alert("到达to_page");*/
+			console.log("To_Page"+"  name==="+name);
+			var sendName=encodeURI(encodeURI(name));
+			console.log("sendName==="+sendName);
 			$.ajax({
-				url:"/ecommerce_war/entrance/adminUserGet",
-				data:{"pn": pn},
-				type:"GET",
+				url:"/ecommerce_war/saler/productInfo",
+				data:{"name":name ,"pn": pn},
+				type:"POST",
 				success:function(result){
-					console.log("分页查询成功了");
-					//1.解析并显示员工数据
+					console.log("获取商品信息成功");
+					//1.解析并显示商品数据
 					build_table(result);
 					//2.解析显示（构建）分页条
-					build_page_nav(result);
+					build_page_nav(name,result);
 
 				},
 				error: function (msg) {
@@ -55,7 +57,7 @@
 			});
 		}
 
-		//解析显示(构建)员工表格
+		//根据得到的product信息解析显示(构建)员工表格
 		function build_table(result){
 			/***************
 			 查询数据之前，必须清空table表
@@ -67,7 +69,7 @@
 		}
 
 		//解析显示（构建）分页条，点击分页条要能去下一页。。。
-		function build_page_nav(result){
+		function build_page_nav(name,result){
 			/***************
 			 查询数据之前，必须清空分页条信息
 			 */
@@ -85,10 +87,10 @@
 			}else{
 				//为元素添加点击翻页事件
 				firstPageLi.click(function(){
-					to_page(1);
+					to_page(name,1);
 				});
 				prePageLi.click(function(){
-					to_page(result.extend.pageInfo.pageNum-1);
+					to_page(name,result.extend.pageInfo.pageNum-1);
 				});
 			}
 
@@ -100,10 +102,10 @@
 			}else{
 				//为元素添加点击翻页事件
 				nextPageLi.click(function(){
-					to_page(result.extend.pageInfo.pageNum + 1);
+					to_page(name,result.extend.pageInfo.pageNum + 1);
 				});
 				lastPageLi.click(function(){
-					to_page(result.extend.pageInfo.pages);
+					to_page(name,result.extend.pageInfo.pages);
 				});
 			}
 
@@ -120,7 +122,7 @@
 				}
 				//添加点击事件，通过ajax查询选择的页面
 				numLi.click(function(){
-					to_page(item);
+					to_page(name,item);
 				});
 				ul.append(numLi);
 
@@ -133,61 +135,74 @@
 			navEle.appendTo("#page_nav_area");
 		}
 
-		//根据数据创建内容
+		//根据products数据创建内容
 		function getDataJson(datas) {
 			for (var i = 0; i < datas.length; i++) {
 				var trow = getDataRow(datas[i], i);
 				tbody.appendChild(trow);
 				btnApply(datas[i]);
 				btnDel(datas[i]);
+				var title=document.getElementById("proTitle");
+				title.textContent=datas[i].pname;
+				btnAdd();
 			}
 		}
 
 		//具体创建内容
 		function getDataRow(rowData, number) {
+/*			var butArea=document.getElementById("addButton");
+			var createAddButton=document.createElement('input');
+			createAddButton.style.width="150px";
+			createAddButton.setAttribute('type','button');
+			createAddButton.setAttribute("id","buttonAdd"+rowData.pid);
+			createAddButton.setAttribute("value", "增加用户");
+			createAddButton.setAttribute("name", "add");
+			createAddButton.setAttribute("class", "btn btn-primary btn-lg");
+			butArea.append(createAddButton);*/
+
 			var row = document.createElement('tr'); //创建行
-			//auid
+			//pid
 			var id = document.createElement('td');
-			id.style.width="20%";
-			id.innerHTML = rowData.auid;
+			id.style.width="5%";
+			id.innerHTML = rowData.pid;
 			row.appendChild(id);
-			//username
+			//pname
 			var name = document.createElement('td');
 			name.style.width="20%";
-			name.innerHTML = rowData.username;
+			name.innerHTML = rowData.pname;
 			row.appendChild(name);
-			//uid
-			var select = document.createElement('td');//创建列
-			row.appendChild(select);
-			var  mySelect = document.createElement( "select" );
-			name.style.width="20%";
-			mySelect.id = "select"+rowData.auid ;
-			mySelect.add( new  Option( "普通用户" , "0" ));
-			mySelect.add( new  Option( "产品销售商" , "1" ));
-			mySelect.add( new  Option( "网站管理员" , "2" ));
-			mySelect.setAttribute("class", "select");
-			select.appendChild(mySelect);
-			if(rowData.uid!=null){
-				if(rowData.uid==0){
-					mySelect[0].selected=true;
-				}
-				else if(rowData.uid==1){
-					mySelect[1].selected=true;
-				}
-				else {
-					mySelect[2].selected=true;
-				}
-			}
-			//document.getElementById( rowData.auid)[initSelectedValue(mySelect,rowData.uid)].selected=true;
-
-			//button应用
+			//market_Price
+			var market_Price = document.createElement('td');
+			market_Price.style.width="20%";
+			market_Price.innerHTML = rowData.marketPrice;
+			row.appendChild(market_Price);
+			//image
+			var image = document.createElement('td');
+			image.style.width="20%";
+			var pImage = document.createElement('img');
+			var url="${pageContext.request.contextPath}/resource/images/pic/"+rowData.image;
+			console.log("图片的url="+url);
+			pImage.src=url;
+			row.appendChild(image);
+			image.append(pImage);
+			//pdesc
+			var pdesc = document.createElement('td');
+			pdesc.style.width="20%";
+			pdesc.innerHTML = rowData.pdesc;
+			row.appendChild(pdesc);
+			//pnum
+			var pnum = document.createElement('td');
+			pnum.style.width="20%";
+			pnum.innerHTML = rowData.pnum;
+			row.appendChild(pnum);
+			//button修改
 			var but = document.createElement('td');//创建列
 			row.appendChild(but);
 			var button = document.createElement('input');
 			button.style.width="50px";
 			button.setAttribute('type','button');
-			button.setAttribute("id", "buttonApply"+rowData.auid);
-			button.setAttribute("value", "use");
+			button.setAttribute("id", "buttonApply"+rowData.pid);
+			button.setAttribute("value", "改");
 			button.setAttribute("name", "apply");
 			button.setAttribute("class", "apply");
 			but.appendChild(button);
@@ -198,16 +213,59 @@
 			var buttonDel = document.createElement('input');
 			buttonDel.style.width="20%";
 			buttonDel.setAttribute('type','button');
-			buttonDel.setAttribute("id","buttonDel"+rowData.auid);
-			buttonDel.setAttribute("value", "del");
+			buttonDel.setAttribute("id","buttonDel"+rowData.pid);
+			buttonDel.setAttribute("value", "删");
 			buttonDel.setAttribute("name", "del");
 			buttonDel.setAttribute("class", "del");
 			butDele.appendChild(buttonDel);
 			return row;
 		}
 
+		//增加按钮
 		function btnAdd(){
-			$("#addBtn").click(function() {
+			$("#butAdd").click(function() {
+				console.log("进入点击按钮");
+				var killPhoneModal=$('#addProduct');
+				//显示弹出层
+				killPhoneModal.modal({
+					//显示弹出层
+					show:true,
+					/*//禁止位置关闭
+					backdrop:'static',
+					//关闭键盘事件
+					keyboard:false*/
+				});
+		});
+		}
+
+		//删除按钮
+		function btnDel(rowData){
+			$("#buttonDel"+rowData.pid).click(function() {
+						console.log("点了" + "buttonDel")
+						if (rowData != null) {
+							$.ajax({
+								type: "post",
+								url: "/ecommerce_war/saler/salerDelete",
+								data: {"pid": rowData.pid},
+								dataType: "text",
+								success: function (result) {
+									console.log(result);
+									alert("更改成功");
+									refresh();
+								},
+								error: function (msg) {
+									console.log("返回失败");
+									alert("发生错误" + msg);
+								}
+							});
+						}
+					}
+			)}
+
+		//更改按钮
+		function btnApply(rowData){
+			$("#buttonApply"+rowData.pid).click(function(){
+				console.log("点了btnApply");
 				var killPhoneModal=$('#killPhoneModal');
 				//显示弹出层
 				killPhoneModal.modal({
@@ -218,41 +276,39 @@
 					/*					//关闭键盘事件
                                         keyboard:false*/
 				});
+				var cateName =document.getElementById("cateName");
+				cateName.textContent=rowData.pname;
 				//绑定点击事件
 				$('#submit').click(function () {
-					var userName =document.getElementById("name").value;
-					var password =document.getElementById("password").value;
-					var uidName =document.getElementById("uid").value;
-					var uid;
-					if(userName==""){
-						alert("用户名不能为空！");
+					var marketPrice =document.getElementById("price").value;
+					var pdesc =document.getElementById("description").value;
+					var pnum =document.getElementById("num").value;
+					var pid=rowData.pid;
+					var pname=rowData.pname;
+					var image=rowData.image;
+					if(marketPrice==""){
+						marketPrice=null;
+					}
+					if(pdesc==""){
+						pdesc=null;
+					}
+					if(pnum==""){
+						pnum=null;
+					}
+					if(pnum>100){
+						alert("添加数目不可超过100");
 						return false;
 					}
-					if(password==""){
-						alert("密码不能为空！");
-						return false;
-					}
-					if((uidName!="普通用户")&&(uidName!="产品销售商")&&(uidName!="网站管理员")){
-						alert("只可填写提供选项");
-						return false;
-					}
-					else if(uidName=="普通用户"){
-						uid=0;
-					}
-					else  if(uidName=="产品销售商"){
-						uid=1;
-					}
-					else {
-						uid=2;
-					}
+					console.log("marketprice="+marketPrice+" pdesc="+pdesc+" pnum="+pnum);
 					$.ajax({
 						type: "post",
-						url: "/ecommerce_war/entrance/adminAdd",
-						data: {"userName": userName,"password": password,"uid": uid},
+						url: "/ecommerce_war/saler/salerChange",
+						data: {"pid": pid,"pname": pname,"marketPrice": marketPrice,"image": image,"pdesc": pdesc,"pnum": pnum},
 						dataType: "text",
 						success: function (result) {
 							console.log(result);
 							alert("添加成功");
+							refresh();
 						},
 						error: function (msg) {
 							console.log("返回失败");
@@ -260,158 +316,106 @@
 						}
 					});
 				});
-			});
-		}
 
-		function btnDel(rowData){
-			$("#buttonDel"+rowData.auid).click(function() {
-				console.log("点了" + "buttonDel" + rowData.auid)
-				if (rowData != null) {
-					$.ajax({
-						type: "post",
-						url: "/ecommerce_war/entrance/adminDelete",
-						data: {"auid": rowData.auid},
-						dataType: "text",
-						success: function (result) {
-							console.log(result);
-							alert("更改成功");
-						},
-						error: function (msg) {
-							console.log("返回失败");
-							alert("发生错误" + msg);
-						}
-					});
-				}
-			}
-			)}
-
-
-		function btnApply(rowData){
-			$("#buttonApply"+rowData.auid).click(function(){
-				if(rowData!=null){
-					var select=document.getElementById("select"+rowData.auid) ;
-					if(select!=null){
-						var selectId;
-						var uid=rowData.uid;
-						var  index=select.selectedIndex;  //序号，取当前选中选项的序号
-						var  val = select.options[index].value;
-						console.log("select="+"  index="+index+" val="+val);
-						if(select[0].selected==true){
-							selectId=0;
-						}
-						else if(select[1].selected==true){
-							selectId=1;
-						}
-						else {
-							selectId=2;
-						}
-						if(uid==selectId){
-							alert("权限未修改，无需应用");
-						}
-						else {
-							$.ajax({
-								type: "post",
-								url: "/ecommerce_war/entrance/adminUserChange",
-								data: {"auid": rowData.auid, "uid": selectId},
-								dataType: "text",
-								success: function (result) {
-									console.log(result);
-									alert("更改成功");
-/*									if(result=="更改成功")
-										alert("更改成功");
-									else
-										alert("更改失败");*/
-								},
-								error: function (msg) {
-									console.log("返回失败");
-									alert("发生错误" + msg);
-								}
-							});
-						}
-					}
-				}
 			})
 		}
 
 
+		//根据数据创建目录内容
+		function createCate(datas) {
+			/***************
+			 查询数据之前，必须清空分页条信息
+			 */
+			$("#category").empty();
+			//目录area
+			var ul=document.getElementById("category");
+			//构建元素
+			for (var i = 0; i < datas.length; i++) {
+				var name=datas[i].cname;
+				console.log("categeryName==="+name);
+				var li=document.createElement("li");
+				li.innerHTML='<li>\n'+'<a onclick="to_page(\''+name+'\',\''+1+'\')">'+name+'</a>\n'+'</li>';
+				ul.append(li);
+			}
+		}
 
-		$(function (){
+
+		function refresh(){
 			$.ajax({
-				url : "/ecommerce_war/entrance/adminUserRefresh",
-				type : "get",
+				url : "/ecommerce_war/saler/categoryInfo",
+				type : "GET",
 				success : function (result){
-					/*getDataJson(result);*/
-					to_page(1);
-					btnAdd();
+					console.log("目录查询成功");
+					createCate(result);
+					to_page(result[0].cname,1);
+
+				},
+				error: function (msg) {
+					console.log("返回失败");
+					alert("发生错误" + msg);
 				}
 			});
-		});
+		}
 
+		//页面请求
+		$(function (){
+			refresh();
+		});
 	</script>
 </head>
-<style>
-	.host_style{
-		width: 250px;/*给td定一个宽度,在这里有3个td，
-其他3个td都没有设置宽度，所以这3个td的宽度之和是
-table的定义的宽度-td(定义了宽度)*/
-	}
-</style>
-
 
 <body>
-
-	<!-- Document Full Container
-	============================================= -->
-	<div id="full-container">
-
-		<!-- Header
+<!-- Header
 		============================================= -->
-		<header id="header">
-		
-			<div id="header-bar-1" class="header-bar">
-		
-				<div class="header-bar-wrap">
-		
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-		
-								<div class="hb-content">
-									<div class="position-right">
-										<ul class="list-info list-meta">
-											<li><a href="register.html"><i class="fa fa-sign-in-alt"></i> Register</a></li>
-											<li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
-										</ul><!-- .list-meta end -->
-										<ul class="list-info list-contact-info">
-											<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
-										</ul><!-- .list-contact-info end -->
-									</div><!-- .position-right end -->
-									<div class="position-left">
-										<ul class="list-info list-meta">
-											<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
-										</ul><!-- .list-meta end -->
-										<ul class="list-info list-language">
-											<li class="dropdown-languages">
-												<i class="fa fa-globe-americas"></i>English
-												<ul class="select-language">
-													
-													<li><a href="index.html">English</a></li>
-												</ul><!-- .select-language end -->
-											</li>
-										</ul><!-- .list-language end -->
-									</div><!-- .position-left end -->
-								</div><!-- .hb-content end -->
-		
-							</div><!-- .col-md-12 end -->
-						</div><!-- .row end -->
-					</div><!-- .container end -->
-		
-				</div><!-- .header-bar-wrap -->
-		
-			</div><!-- #header-bar-1 end -->
+<header id="header">
+
+	<div id="header-bar-1" class="header-bar">
+
+		<div class="header-bar-wrap">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="hb-content">
+							<div class="position-right">
+								<ul class="list-info list-meta" >
+									<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
+								</ul><!-- .list-meta end -->
+								<ul class="list-info list-contact-info">
+									<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
+								</ul><!-- .list-contact-info end -->
+							</div><!-- .position-right end -->
+							<div class="position-left">
+								<ul class="list-info list-meta">
+									<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
+								</ul><!-- .list-meta end -->
+								<ul class="list-info list-language">
+									<li class="dropdown-languages">
+										<i class="fa fa-globe-americas"></i>English
+										<ul class="select-language">
+
+											<li><a href="index.html">English</a></li>
+										</ul><!-- .select-language end -->
+									</li>
+								</ul><!-- .list-language end -->
+							</div><!-- .position-left end -->
+						</div><!-- .hb-content end -->
+
+					</div><!-- .col-md-12 end -->
+				</div><!-- .row end -->
+			</div><!-- .container end -->
+
+		</div><!-- .header-bar-wrap -->
+
+	</div><!-- #header-bar-1 end -->
 
 
-		</header><!-- #header end -->
+</header><!-- #header end -->
+
+<!-- Document Full Container
+============================================= -->
+	<div id="full-container">
 	
 		<!-- Content
 		============================================= -->
@@ -421,7 +425,7 @@ table的定义的宽度-td(定义了宽度)*/
 
 
 				<!-- === Content Main =========== -->
-				<div id="content-main" class="section-flat page-single page-shop-cart">
+				<div id="content-main" class="section-flat page-single page-products with-sidebar">
 
 					<div class="section-content">
 
@@ -432,42 +436,64 @@ table的定义的宽度-td(定义了宽度)*/
 									<div class="page-single-content">
 
 										<div class="row">
-											<div class="col-md-12">
+											<div class="col-md-9 col-md-push-3">
 
-												<div class="content" id="addContent">
+												<div class="content" id="addTable">
 													<div class="block-content">
-														<h5 class="block-title">用户管理   <button  class="btn btn-primary btn-lg" id="addBtn" width="10px">增加用户</button></h5>
+														<div id="addButton">
+														<h5 class="block-title" id="proTitle">   <button  class="btn btn-primary btn-lg" id="addBtn" width="10px">增加用户</button></h5>
+														</div>
 														<div class="row">
 															<div class="col-md-12">
 																<div id="table-shop-cart">
 																	<table id="table">
 																		<thead>
-																			<tr>
-																				<th>用户编号</th>
-																				<th>用户名称</th>
-																				<th>用户类型</th>
-																				<th>应用</th>
-																				<th>删除</th>
-																			</tr>
+																		<tr>
+																			<th>ID</th>
+																			<th>NAME</th>
+																			<th>PRICE</th>
+																			<th>IMAGE</th>
+																			<th>DESCRIPTION</th>
+																			<th>NUM</th>
+																		</tr>
 																		</thead>
 																		<tbody id="tbody">
 																		</tbody>
-																	</table>																	
+																	</table>
 																</div>
 																<div class="table-btns">
-																	<a class="btn medium colorful hover-grey" href="/ecommerce_war/entrance/adminUser.jsp">Update Page</a>
+																	<a class="btn medium colorful hover-grey" id="butAdd">ADD</a>
 																</div><!-- .table-btns end -->
 																<div id = "page_nav_area">
 
 																</div><!-- .pagination end -->
-																
+
 															</div><!-- .col-md-12 end -->
 														</div><!-- .row end -->
 													</div>
 													<!--.block-content end -->
 												</div><!-- .content end -->
 
-											</div><!-- .col-md-12 end -->
+											</div><!-- .col-md-9 end -->
+											<div class="col-md-3 col-md-pull-9" >
+
+												<div class="sidebar">
+													<div class="box-widget">
+														<h5 class="box-title">category</h5>
+														<div class="box-content" >
+															<ul class="sidebar-list-links list-brands" id="category">
+																<%--<li><a href="javascript:;">Optics</a></li>
+																<li><a href="javascript:;">Shoes</a></li>
+																<li><a href="javascript:;">Watches and Accessories</a></li>
+																<li><a href="javascript:;">Child</a></li>
+																<li><a href="javascript:;">Household Appliance</a></li>--%>
+															</ul><!-- .sidebar-list-links -->
+														</div><!-- .box-content end -->
+													</div><!-- .box-widget end -->
+
+												</div><!-- .sidebar end -->
+												
+											</div><!-- .col-md-3 end -->
 										</div><!-- .row end -->
 
 									</div><!-- .page-single-content end -->
@@ -483,50 +509,97 @@ table的定义的宽度-td(定义了宽度)*/
 			</div><!-- #content-wrap -->
 			
 		</section><!-- #content end -->
-		<!--弹出层-->
-		<div id="killPhoneModal" class="modal fade">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title text-center">
-							用户信息填写^0^：
-						</h4>
-					</div>
-					<div class="input-group">
-						<span class="input-group-addon">userName</span>
-						<input type="text" name="name" id="name"
-							   placeholder="填姓名" class="form-control"/>
-					</div>
-					<div class="input-group">
-						<span class="input-group-addon">password</span>
-						<input type="password" name="password" id="password"
-							   placeholder="填密码" class="form-control"/>
-					</div>
-					<div class="input-group">
-						<span class="input-group-addon">userState</span>
-						<input type="text" name="uid" id="uid"
-							   placeholder="普通用户/产品销售商/用户管理员" class="form-control"/>
-					</div>
 
-					<div class="modal-footer">
-						<!-- 验证信息-->
-						<span id="killPhoneMessage" class="glyphicon"></span>
-						<button type="button" id="submit" class="btn btn-success">
-							<span class="glyphicon glyphicon-phone"></span>
-							Submit
-						</button>
-					</div>
+		
+	</div><!-- #full-container end -->
+	<!--弹出层-->
+	<div id="killPhoneModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title text-center" id="cateName">
+
+					</h4>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">price</span>
+					<input type="text" name="price" id="price"
+						   placeholder="填价格" class="form-control"/>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">description</span>
+					<input type="text" name="description" id="description"
+						   placeholder="填描述" class="form-control"/>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">num</span>
+					<input type="text" name="num" id="num"
+						   placeholder="填数量" class="form-control"/>
+				</div>
+
+				<div class="modal-footer">
+					<!-- 验证信息-->
+					<span id="killPhoneMessage" class="glyphicon"></span>
+					<button type="button" id="submit" class="btn btn-success">
+						<span class="glyphicon glyphicon-phone"></span>
+						Submit
+					</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
-		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--弹出层-->
+	<div id="addProduct" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title text-center" id="cateNameAddPro">
+						商品信息填写^0^
+					</h4>
+				</div>
+				<form action="addProduct.do"   method="post" enctype="multipart/form-data" target="ifm">
+				<div class="input-group">
+					<span class="input-group-addon">price</span>
+					<input type="text" name="price" id="priceAddPro"
+						   placeholder="填价格" class="form-control"/>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">description</span>
+					<input type="text" name="description" id="descriptionAddPro"
+						   placeholder="填描述" class="form-control"/>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">num</span>
+					<input type="text" name="num" id="numAddPro"
+						   placeholder="填数量" class="form-control"/>
+				</div>
+				<div class="input-group">
 
-	<%--<script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>--%>
+				图片：<input type="file" name="file">
+				<input type="submit" value="提交" id="imageSub">
+
+				</div>
+				</form>
+<%--				<div class="modal-footer">
+					<!-- 验证信息-->
+					<span id="AddPro" class="glyphicon"></span>
+					<button type="button" id="submitAddPro" class="btn btn-success">
+						<span class="glyphicon glyphicon-phone"></span>
+						Submit
+					</button>
+				</div>--%>
+			</div>
+		</div>
+	</div>
+
+	<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- External JavaScripts
+	============================================= -->
 	<script src="${pageContext.request.contextPath}/resource/js/jRespond.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resource/js/jquery.fitvids.js"></script>
 	<script src="${pageContext.request.contextPath}/resource/js/superfish.js"></script>

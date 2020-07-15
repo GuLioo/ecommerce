@@ -265,6 +265,7 @@
 						success: function (result) {
 							console.log(result);
 							alert("添加成功");
+							refresh();
 						},
 						error: function (msg) {
 							console.log("返回失败");
@@ -286,6 +287,7 @@
 						dataType: "text",
 						success: function (result) {
 							console.log(result);
+							refresh();
 							alert("更改成功");
 						},
 						error: function (msg) {
@@ -295,7 +297,8 @@
 					});
 				}
 			}
-			)}
+			)
+		}
 
 
 		function btnApply(rowData){
@@ -333,6 +336,7 @@
 										alert("更改成功");
 									else
 										alert("更改失败");*/
+									refresh();
 								},
 								error: function (msg) {
 									console.log("返回失败");
@@ -523,7 +527,7 @@ table的定义的宽度-td(定义了宽度)*/
 				<div class="modal-content">
 					<div class="modal-header">
 						<h4 class="modal-title text-center">
-							用户信息填写^0^：
+							用户信息填写^0^
 						</h4>
 					</div>
 					<div class="input-group">

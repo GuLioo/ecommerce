@@ -1,26 +1,18 @@
 package org.ecommerce.controller;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import org.ecommerce.dto.Msg;
 import org.ecommerce.dto.ecommerceResult;
 import org.ecommerce.dto.userLoginExecution;
 import org.ecommerce.dto.userStateEnum;
-import org.ecommerce.entity.adminUser;
 import org.ecommerce.exception.userLogin_NoUser_Exception;
 import org.ecommerce.exception.userLogin_passwordError_Exception;
 import org.ecommerce.service.adminService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @Component
 @RequestMapping("/entrance")
@@ -33,6 +25,7 @@ public class loginController {
     public String login(){
         return "login";
     }
+
 
     //退出登录
     @RequestMapping(value = "/logOut")

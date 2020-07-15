@@ -33,20 +33,17 @@ public class productDaoTest {
 
     @Test
     public void deleteByPrimaryKey() {
-        Integer pid=16;
+        Integer pid=29;
         int count=productDao.deleteByPrimaryKey(pid);
         System.out.println(count);
     }
 
     @Test
     public void updateByPrimaryKey() {
-        Integer pid=19;
-        String pname=new String("text");
-        Double marketPrice=null;
-        Integer pnum=null;
-        String image=null;
-        String pdesc="test";
-        int count=productDao.updateByPrimaryKey(pid,pname,marketPrice,image,pdesc,pnum);
+        Integer pid=1;
+        String image="爱仕达陶瓷养生壶.jpg";
+        double price=399;
+        int count=productDao.updateByPrimaryKey(pid,null,price,image,null,null);
         System.out.println(count);
     }
 

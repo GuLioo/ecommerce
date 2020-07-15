@@ -34,12 +34,12 @@
 	<script>
 		//查询分页的数据（抽取ajax查询方法）
 		function to_page(name,pn){
-/*			alert("到达to_page");*/
+			/*			alert("到达to_page");*/
 			console.log("To_Page"+"  name==="+name);
 			var sendName=encodeURI(encodeURI(name));
 			console.log("sendName==="+sendName);
 			$.ajax({
-				url:"/ecommerce_war/saler/productInfo",
+				url:"/ecommerce_war/user/productInfo",
 				data:{"name":name ,"pn": pn},
 				type:"POST",
 				success:function(result){
@@ -57,15 +57,45 @@
 			});
 		}
 
-		//根据得到的product信息解析显示(构建)员工表格
+		//根据得到的product信息解析显示(构建)商品图片
 		function build_table(result){
 			/***************
 			 查询数据之前，必须清空table表
 			 */
-			$("#table tbody").empty();
+			$("#table").empty();
 			var data= result.extend.pageInfo.list;
 			console.log("显示adminUser信息="+data);
 			getDataJson(data);
+		}
+
+		//根据products数据创建内容
+		function getDataJson(datas) {
+			for (var i = 0; i < datas.length; i++) {
+				var trow = getDataRow(datas[i], i);
+				var productArea=document.getElementById("table");
+				productArea.appendChild(trow);
+				btnApply(datas[i]);
+			}
+		}
+
+		//具体创建内容
+		function getDataRow(rowData, number) {
+			var li=document.createElement('li');
+			var pdesc=rowData.pdesc;
+			var price=rowData.marketPrice;
+			var url="${pageContext.request.contextPath}/resource/images/pic/"+rowData.image;
+			li.innerHTML='<li>\n'+'<div class="box-preview box-product box-product-3">\n'+'<div class="box-img">\n'+'<a href="javascript:;">\n'+'<img src='+url+' alt="">'+'<\a>\n'+
+			'</div><!-- .box-img end -->\n'+'<div class="box-content">\n'+'<h5><a href="javascript:;">'+pdesc+'</a></h5>\n'+
+			'<h4 class="product-price">\n'+'<span class="new">'+price+'</span>\n'+'</h4><!-- .product-price end -->\n'+'<a class="btn btn-add-to-cart medium rounded with-icon colorful hover-dark mt-30" href="javascript:;"'+' id='+rowData.pid+'>\n'+
+			'<i class="fa fa-shopping-cart"></i>\n'+"BUY"+'</a>\n'+'</div><!-- .box-content end -->\n'+'</div><!-- .box-preview end -->\n'+'</li>\n';
+			return li;
+		}
+
+		//更改按钮
+		function btnApply(rowData){
+			$("#"+rowData.pid).click(function() {
+				location.href="/ecommerce_war/user/"+rowData.pid+"/productDetail";
+			});
 		}
 
 		//解析显示（构建）分页条，点击分页条要能去下一页。。。
@@ -135,314 +165,6 @@
 			navEle.appendTo("#page_nav_area");
 		}
 
-		//根据products数据创建内容
-		function getDataJson(datas) {
-			for (var i = 0; i < datas.length; i++) {
-				var trow = getDataRow(datas[i], i);
-				tbody.appendChild(trow);
-				btnApply(datas[i]);
-				btnDel(datas[i]);
-				var title=document.getElementById("proTitle");
-				title.textContent=datas[i].pname;
-				btnAdd(datas[i]);
-			}
-		}
-
-		//具体创建内容
-		function getDataRow(rowData, number) {
-/*			var butArea=document.getElementById("addButton");
-			var createAddButton=document.createElement('input');
-			createAddButton.style.width="150px";
-			createAddButton.setAttribute('type','button');
-			createAddButton.setAttribute("id","buttonAdd"+rowData.pid);
-			createAddButton.setAttribute("value", "增加用户");
-			createAddButton.setAttribute("name", "add");
-			createAddButton.setAttribute("class", "btn btn-primary btn-lg");
-			butArea.append(createAddButton);*/
-
-			var row = document.createElement('tr'); //创建行
-			//pid
-			var id = document.createElement('td');
-			id.style.width="20%";
-			id.innerHTML = rowData.pid;
-			row.appendChild(id);
-			//pname
-			var name = document.createElement('td');
-			name.style.width="20%";
-			name.innerHTML = rowData.pname;
-			row.appendChild(name);
-			//market_Price
-			var market_Price = document.createElement('td');
-			market_Price.style.width="20%";
-			market_Price.innerHTML = rowData.marketPrice;
-			row.appendChild(market_Price);
-			//image
-			var image = document.createElement('td');
-			image.style.width="20%";
-			image.innerHTML = rowData.image;
-			row.appendChild(image);
-			//pdesc
-			var pdesc = document.createElement('td');
-			pdesc.style.width="20%";
-			pdesc.innerHTML = rowData.pdesc;
-			row.appendChild(pdesc);
-			//pnum
-			var pnum = document.createElement('td');
-			pnum.style.width="20%";
-			pnum.innerHTML = rowData.pnum;
-			row.appendChild(pnum);
-			//button修改
-			var but = document.createElement('td');//创建列
-			row.appendChild(but);
-			var button = document.createElement('input');
-			button.style.width="50px";
-			button.setAttribute('type','button');
-			button.setAttribute("id", "buttonApply"+rowData.pid);
-			button.setAttribute("value", "改");
-			button.setAttribute("name", "apply");
-			button.setAttribute("class", "apply");
-			but.appendChild(button);
-
-			//button删除
-			var butDele = document.createElement('td');//创建列
-			row.appendChild(butDele);
-			var buttonDel = document.createElement('input');
-			buttonDel.style.width="20%";
-			buttonDel.setAttribute('type','button');
-			buttonDel.setAttribute("id","buttonDel"+rowData.pid);
-			buttonDel.setAttribute("value", "删");
-			buttonDel.setAttribute("name", "del");
-			buttonDel.setAttribute("class", "del");
-			butDele.appendChild(buttonDel);
-			return row;
-		}
-
-		//增加按钮
-		function btnAdd(rowData){
-			$("#butAdd").click(function() {
-				console.log("进入点击按钮");
-				var killPhoneModal=$('#addProduct');
-				//显示弹出层
-				killPhoneModal.modal({
-					//显示弹出层
-					show:true,
-					/*					//禁止位置关闭
-                                        backdrop:'static',*/
-					/*					//关闭键盘事件
-                                        keyboard:false*/
-				});
-				$(function() {
-					$('#upLoad').on('change', function () {
-						var filePath = $(this).val(),         //获取到input的value，里面是文件的路径
-								fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
-								imgBase64 = '',      //存储图片的imgBase64
-								fileObj = document.getElementById('upLoad').files[0]; //上传文件的对象,要这样写才行，用jquery写法获取不到对象
-
-						// 检查是否是图片
-						if (!fileFormat.match(/.png|.jpg|.jpeg/)) {
-							alert('上传错误,文件格式必须为：png/jpg/jpeg');
-							return;
-						}
-
-						// 调用函数，对图片进行压缩
-						compress(fileObj, function (imgBase64) {
-							imgBase64 = imgBase64;    //存储转换的base64编码
-							$('#viewImg').attr('src', imgBase64); //显示预览图片
-						});
-						// 对图片进行压缩
-						function compress(fileObj, callback) {
-							if ( typeof (FileReader) === 'undefined') {
-								console.log("当前浏览器内核不支持base64图标压缩");
-								//调用上传方式不压缩
-								directTurnIntoBase64(fileObj,callback);
-							} else {
-								try {
-									var reader = new FileReader();
-									reader.onload = function (e) {
-										var image = $('<img/>');
-										image.load(function(){
-											square = 700,   //定义画布的大小，也就是图片压缩之后的像素
-													canvas = document.createElement('canvas'),
-													context = canvas.getContext('2d'),
-													imageWidth = 0,    //压缩图片的大小
-													imageHeight = 0,
-													offsetX = 0,
-													offsetY = 0,
-													data = '';
-
-											canvas.width = square;
-											canvas.height = square;
-											context.clearRect(0, 0, square, square);
-
-											if (this.width > this.height) {
-												imageWidth = Math.round(square * this.width / this.height);
-												imageHeight = square;
-												offsetX = - Math.round((imageWidth - square) / 2);
-											} else {
-												imageHeight = Math.round(square * this.height / this.width);
-												imageWidth = square;
-												offsetY = - Math.round((imageHeight - square) / 2);
-											}
-											context.drawImage(this, offsetX, offsetY, imageWidth, imageHeight);
-											var data = canvas.toDataURL('image/jpeg');
-											//压缩完成执行回调
-											callback(data);
-										});
-										image.attr('src', e.target.result);
-									};
-									reader.readAsDataURL(fileObj);
-								}catch(e){
-									console.log("压缩失败!");
-									//调用直接上传方式  不压缩
-									directTurnIntoBase64(fileObj,callback);
-								}
-							}
-						}
-						// 不对图片进行压缩，直接转成base64
-						function directTurnIntoBase64(fileObj,callback){
-							var r = new FileReader();
-							// 转成base64
-							r.onload = function(){
-								//变成字符串
-								imgBase64 = r.result;
-								console.log(imgBase64);
-								callback(imgBase64);
-							}
-							r.readAsDataURL(fileObj);    //转成Base64格式
-						}
-
-					});
-				});
-				//绑定点击事件
-				$('#submitAddPro').click(function () {
-					var marketPrice =document.getElementById("priceAddPro").value;
-					var pdesc =document.getElementById("descriptionAddPro").value;
-					var pnum =document.getElementById("numAddPro").value;
-					var pname=rowData.pname;
-					var image=document.getElementById("viewImg").src;
-					if(marketPrice==""){
-						alert("输入价格");
-						return  false;
-					}
-					if(pdesc==""){
-						alert("输入描述");
-						return  false;
-					}
-					if(pnum==""){
-						alert("输入数量");
-						return  false;
-					}
-					if(image==null){
-						alert("上传图片");
-						return  false;
-					}
-					if(pnum>100){
-						alert("添加数目不可超过100");
-						return false;
-					}
-					console.log("marketprice="+marketPrice+" pdesc="+pdesc+" pnum="+pnum);
-					$.ajax({
-						type: "post",
-						url: "/ecommerce_war/saler/salerAdd",
-						data: {"pname": pname,"marketPrice": marketPrice,"image": image,"pdesc": pdesc,"pnum": pnum},
-						dataType: "text",
-						success: function (result) {
-							console.log(result);
-							alert("添加成功");
-							refresh();
-						},
-						error: function (msg) {
-							console.log("返回失败");
-							alert("发生错误" + msg);
-						}
-					});
-				});
-			});
-		}
-
-		//删除按钮
-		function btnDel(rowData){
-			$("#buttonDel"+rowData.pid).click(function() {
-						console.log("点了" + "buttonDel")
-						if (rowData != null) {
-							$.ajax({
-								type: "post",
-								url: "/ecommerce_war/saler/salerDelete",
-								data: {"pid": rowData.pid},
-								dataType: "text",
-								success: function (result) {
-									console.log(result);
-									alert("更改成功");
-									refresh();
-								},
-								error: function (msg) {
-									console.log("返回失败");
-									alert("发生错误" + msg);
-								}
-							});
-						}
-					}
-			)}
-
-		//更改按钮
-		function btnApply(rowData){
-			$("#buttonApply"+rowData.pid).click(function(){
-				console.log("点了btnApply");
-				var killPhoneModal=$('#killPhoneModal');
-				//显示弹出层
-				killPhoneModal.modal({
-					//显示弹出层
-					show:true,
-					/*					//禁止位置关闭
-                                        backdrop:'static',*/
-					/*					//关闭键盘事件
-                                        keyboard:false*/
-				});
-				var cateName =document.getElementById("cateName");
-				cateName.textContent=rowData.pname;
-				//绑定点击事件
-				$('#submit').click(function () {
-					var marketPrice =document.getElementById("price").value;
-					var pdesc =document.getElementById("description").value;
-					var pnum =document.getElementById("num").value;
-					var pid=rowData.pid;
-					var pname=rowData.pname;
-					var image=rowData.image;
-					if(marketPrice==""){
-						marketPrice=null;
-					}
-					if(pdesc==""){
-						pdesc=null;
-					}
-					if(pnum==""){
-						pnum=null;
-					}
-					if(pnum>100){
-						alert("添加数目不可超过100");
-						return false;
-					}
-					console.log("marketprice="+marketPrice+" pdesc="+pdesc+" pnum="+pnum);
-					$.ajax({
-						type: "post",
-						url: "/ecommerce_war/saler/productChange",
-						data: {"pid": pid,"pname": pname,"marketPrice": marketPrice,"image": image,"pdesc": pdesc,"pnum": pnum},
-						dataType: "text",
-						success: function (result) {
-							console.log(result);
-							alert("添加成功");
-							refresh();
-						},
-						error: function (msg) {
-							console.log("返回失败");
-							alert("发生错误" + msg);
-						}
-					});
-				});
-
-			})
-		}
-
-
 		//根据数据创建目录内容
 		function createCate(datas) {
 			/***************
@@ -461,15 +183,14 @@
 			}
 		}
 
-
 		function refresh(){
 			$.ajax({
-				url : "/ecommerce_war/saler/categoryInfo",
+				url : "/ecommerce_war/user/categoryInfo",
 				type : "GET",
 				success : function (result){
 					console.log("目录查询成功");
 					createCate(result);
-					to_page(result[0].cname,1);
+					to_page(result[0].cname,2);
 
 				},
 				error: function (msg) {
@@ -483,61 +204,92 @@
 		$(function (){
 			refresh();
 		});
+
 	</script>
 </head>
 
 <body>
-<!-- Header
-		============================================= -->
-<header id="header">
 
-	<div id="header-bar-1" class="header-bar">
-
-		<div class="header-bar-wrap">
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-
-						<div class="hb-content">
-							<div class="position-right">
-								<ul class="list-info list-meta" >
-									<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
-								</ul><!-- .list-meta end -->
-								<ul class="list-info list-contact-info">
-									<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
-								</ul><!-- .list-contact-info end -->
-							</div><!-- .position-right end -->
-							<div class="position-left">
-								<ul class="list-info list-meta">
-									<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
-								</ul><!-- .list-meta end -->
-								<ul class="list-info list-language">
-									<li class="dropdown-languages">
-										<i class="fa fa-globe-americas"></i>English
-										<ul class="select-language">
-
-											<li><a href="index.html">English</a></li>
-										</ul><!-- .select-language end -->
-									</li>
-								</ul><!-- .list-language end -->
-							</div><!-- .position-left end -->
-						</div><!-- .hb-content end -->
-
-					</div><!-- .col-md-12 end -->
-				</div><!-- .row end -->
-			</div><!-- .container end -->
-
-		</div><!-- .header-bar-wrap -->
-
-	</div><!-- #header-bar-1 end -->
-
-
-</header><!-- #header end -->
-
-<!-- Document Full Container
-============================================= -->
+	<!-- Document Full Container
+	============================================= -->
 	<div id="full-container">
+
+		<!-- Header
+		============================================= -->
+		<header id="header">
+		
+			<div id="header-bar-1" class="header-bar">
+		
+				<div class="header-bar-wrap">
+		
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+		
+								<div class="hb-content">
+									<div class="position-right">
+										<ul class="list-info list-meta">
+											<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
+										</ul><!-- .list-meta end -->
+										<ul class="list-info list-contact-info">
+											<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
+										</ul><!-- .list-contact-info end -->
+									</div><!-- .position-right end -->
+									<div class="position-left">
+										<ul class="list-info list-meta">
+											<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
+										</ul><!-- .list-meta end -->
+										<ul class="list-info list-language">
+											<li class="dropdown-languages">
+												<i class="fa fa-globe-americas"></i>English
+												<ul class="select-language">
+													
+													<li><a href="index.html">English</a></li>
+												</ul><!-- .select-language end -->
+											</li>
+										</ul><!-- .list-language end -->
+									</div><!-- .position-left end -->
+								</div><!-- .hb-content end -->
+		
+							</div><!-- .col-md-12 end -->
+						</div><!-- .row end -->
+					</div><!-- .container end -->
+		
+				</div><!-- .header-bar-wrap -->
+		
+			</div><!-- #header-bar-1 end -->
+			<div id="header-bar-2" class="header-bar">
+
+				<div class="header-bar-wrap">
+
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+
+								<div class="hb-content">
+									<a class="logo logo-header" >
+										<a href="/ecommerce_war/user/products"><i class="fa fa-home"></i>Home</a>
+										<%--<img src="${pageContext.request.contextPath}/resource/images/pic/小招喵欢迎你.jpg" data-logo-alt="images/files/logo-header-en-alt.png" alt="">
+										<h3><span class="colored">E-Commerce Store</span></h3>
+										<span>HTML Template</span>--%>
+									</a><!-- .logo end -->
+									<ul id="menu-main" class="menu-main">
+										<li><a href="javascript:;" href="/ecommerce_war/user/products"><span data-content="Products" >Products</span></a></li>
+										<li><a href="javascript:;"><span data-content="Orders">Orders</span></a></li>
+										<li><a href="javascript:;"><span data-content="UserInfo">UserInfo</span></a></li>
+									</ul><!-- #menu-main end -->
+
+								</div><!-- .hb-content end -->
+
+							</div><!-- .col-md-12 end -->
+						</div><!-- .row end -->
+					</div><!-- .container end -->
+
+				</div><!-- .header-bar-wrap -->
+
+			</div><!-- #header-bar-2 end -->
+
+		</header><!-- #header end -->
 	
 		<!-- Content
 		============================================= -->
@@ -560,55 +312,82 @@
 										<div class="row">
 											<div class="col-md-9 col-md-push-3">
 
-												<div class="content" id="addTable">
+												<div class="content">
+													<div class="products-top-bar">
+														<ul class="layout-style lp-layout-tabs">
+															<li class="active"><a href="javascript:;"><i class="fa fa-th"></i></a></li>
+															<li><a href="javascript:;"><i class="fa fa-list"></i></a></li>
+														</ul><!-- .layout-style end -->
+														<div class="sort-by">
+															<span>Sort by</span>
+															<select name="list-sort-by" class="list-sort-by">
+																<option selected>All</option>
+																<option>Option 1</option>
+																<option>Option 2</option>
+																<option>Option 3</option>
+																<option>Option 4</option>
+																<option>Option 5</option>
+															</select>
+															<i class="fa fa-sort"></i>
+														</div><!-- .sort-by end -->
+													</div><!-- .products-top-bar end -->
 													<div class="block-content">
-														<div id="addButton">
-														<h5 class="block-title" id="proTitle">   <button  class="btn btn-primary btn-lg" id="addBtn" width="10px">增加用户</button></h5>
-														</div>
+														<h5 class="block-title">Products you searched for</h5>
 														<div class="row">
 															<div class="col-md-12">
-																<div id="table-shop-cart">
-																	<table id="table">
-																		<thead>
-																		<tr>
-																			<th>ID</th>
-																			<th>NAME</th>
-																			<th>PRICE</th>
-																			<th>IMAGE</th>
-																			<th>DESCRIPTION</th>
-																			<th>NUM</th>
-																		</tr>
-																		</thead>
-																		<tbody id="tbody">
-																		</tbody>
-																	</table>
-																</div>
-																<div class="table-btns">
-																	<a class="btn medium colorful hover-grey" id="butAdd">ADD</a>
-																</div><!-- .table-btns end -->
+												
+																<ul class="lp-layout-tabs-content">
+																	<%--<li class="active">--%>
+																		<ul class="list-products row-items-3" id="table">
+										<%--									<li>
+																				<div class="box-preview box-product box-product-3">
+																					<div class="box-img">
+																						<a href="javascript:;"><img src="images/files/sliders/box-product/img-4.jpg" alt=""></a>
+																						<div class="overlay">
+																							<div class="overlay-inner">
+																								<ul class="product-icons-meta">
+																									<li><a href="javascript:;"><i class="fa fa-exchange-alt"></i></a></li>
+																									<li><a href="javascript:;"><i class="fa fa-heart"></i></a></li>
+																								</ul><!-- .product-icons-meta end -->
+																							</div><!-- .overlay-inner end -->
+																						</div><!-- .overlay end -->
+																					</div><!-- .box-img end -->
+																					<div class="box-content">
+																						<h5><a href="javascript:;">Waterproof 4k Camera</a></h5>
+																						<h4 class="product-price">
+																							<span class="new">499 KWD</span>
+																							<span class="old">999 KWD</span>
+																						</h4><!-- .product-price end -->
+																						<a class="btn btn-add-to-cart medium rounded with-icon colorful hover-dark mt-30" href="javascript:;">
+																							<i class="fa fa-shopping-cart"></i>
+																							BUY
+																						</a>
+																					</div><!-- .box-content end -->
+																				</div><!-- .box-preview end -->
+																			</li>--%>
+
+																		</ul><!-- .list-products end -->
+																	<%--</li>--%>
+																</ul><!-- .lp-layout-tabs-content end -->
+
 																<div id = "page_nav_area">
 
 																</div><!-- .pagination end -->
 
 															</div><!-- .col-md-12 end -->
 														</div><!-- .row end -->
-													</div>
-													<!--.block-content end -->
+													</div><!-- .block-content end -->
 												</div><!-- .content end -->
 
 											</div><!-- .col-md-9 end -->
-											<div class="col-md-3 col-md-pull-9" >
+											<div class="col-md-3 col-md-pull-9">
 
 												<div class="sidebar">
 													<div class="box-widget">
-														<h5 class="box-title">category</h5>
-														<div class="box-content" >
+														<h5 class="box-title">Category</h5>
+														<div class="box-content">
 															<ul class="sidebar-list-links list-brands" id="category">
-																<%--<li><a href="javascript:;">Optics</a></li>
-																<li><a href="javascript:;">Shoes</a></li>
-																<li><a href="javascript:;">Watches and Accessories</a></li>
-																<li><a href="javascript:;">Child</a></li>
-																<li><a href="javascript:;">Household Appliance</a></li>--%>
+
 															</ul><!-- .sidebar-list-links -->
 														</div><!-- .box-content end -->
 													</div><!-- .box-widget end -->
@@ -632,93 +411,11 @@
 			
 		</section><!-- #content end -->
 
-		
+
 	</div><!-- #full-container end -->
-	<!--弹出层-->
-	<div id="killPhoneModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title text-center" id="cateName">
 
-					</h4>
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon">price</span>
-					<input type="text" name="price" id="price"
-						   placeholder="填价格" class="form-control"/>
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon">description</span>
-					<input type="text" name="description" id="description"
-						   placeholder="填描述" class="form-control"/>
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon">num</span>
-					<input type="text" name="num" id="num"
-						   placeholder="填数量" class="form-control"/>
-				</div>
+	<a class="scroll-top-icon scroll-top" href="javascript:;"><i class="fa fa-angle-up"></i></a>
 
-				<div class="modal-footer">
-					<!-- 验证信息-->
-					<span id="killPhoneMessage" class="glyphicon"></span>
-					<button type="button" id="submit" class="btn btn-success">
-						<span class="glyphicon glyphicon-phone"></span>
-						Submit
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!--弹出层-->
-	<div id="addProduct" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title text-center" id="cateNameAddPro">
-						商品信息填写^0^
-					</h4>
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon">price</span>
-					<input type="text" name="price" id="priceAddPro"
-						   placeholder="填价格" class="form-control"/>
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon">description</span>
-					<input type="text" name="description" id="descriptionAddPro"
-						   placeholder="填描述" class="form-control"/>
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon">num</span>
-					<input type="text" name="num" id="numAddPro"
-						   placeholder="填数量" class="form-control"/>
-				</div>
-				<div class="input-group">
-				<input type="file" id="upLoad" name="image" >
-				<!-- 显示上传之后的图片 -->
-				<div id='previewImg'>
-					<img src="" id='viewImg'/>
-				</div>
-				</div>
-				<div class="modal-footer">
-					<!-- 验证信息-->
-					<span id="AddPro" class="glyphicon"></span>
-					<button type="button" id="submitAddPro" class="btn btn-success">
-						<span class="glyphicon glyphicon-phone"></span>
-						Submit
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
-	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- External JavaScripts
 	============================================= -->
 	<script src="${pageContext.request.contextPath}/resource/js/jRespond.min.js"></script>

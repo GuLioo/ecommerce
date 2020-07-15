@@ -1,7 +1,9 @@
 package org.ecommerce.dto;
 
 public enum userStateEnum {
-    LOGIN_SUCCESS(1,"登陆成功"),
+    USER_LOGIN_SUCCESS(3,"普通用户登陆成功"),
+    SALER_LOGIN_SUCCESS(2,"产品销售商登陆成功"),
+    ADMIN_LOGIN_SUCCESS(1,"用户管理员登陆成功"),
     ADD_SUCCESS(0,"增加用户成功"),
     Change_SUCCESS(2,"更改用户状态成功"),
     ADD_SALER_ERROR(-1,"销售商数目超限"),

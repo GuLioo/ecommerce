@@ -7,13 +7,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser1.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/userController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dashboard-page-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/product-single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productDetail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSaler1.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/ELLE铆钉双肩背包.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/JIJIWA可爱仙女小红帽单肩包.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/伊莱克斯煎烤机.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/厨具锅具/伊莱克斯煎烤机.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/厨具锅具/爱仕达陶瓷养生壶.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/厨具锅具/膳魔师电炖盅.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵出行套装.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵创意U盘.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵周边/小招喵出行套装.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵周边/小招喵创意U盘.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵周边/小招喵杯挂吸管.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵杯挂吸管.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵欢迎你.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/招商银行fintech证书.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/爱仕达陶瓷养生壶.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/爱可乐折叠包.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/箱包手袋/ELLE铆钉双肩背包.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/箱包手袋/JIJIWA可爱仙女小红帽单肩包.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/箱包手袋/爱可乐折叠包.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/膳魔师电炖盅.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/adminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/adminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/productSalerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/productSalerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userStateEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/厨具锅具/伊莱克斯煎烤机.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/厨具锅具/爱仕达陶瓷养生壶.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/厨具锅具/膳魔师电炖盅.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/小招喵周边/小招喵出行套装.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/小招喵周边/小招喵创意U盘.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/小招喵周边/小招喵杯挂吸管.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/箱包手袋/ELLE铆钉双肩背包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/箱包手袋/JIJIWA可爱仙女小红帽单肩包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pic/箱包手袋/爱可乐折叠包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSaler.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSaler.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/productDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/productDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/controller/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dto/userStateEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dto/userStateEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/厨具锅具/伊莱克斯煎烤机.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/厨具锅具/爱仕达陶瓷养生壶.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/厨具锅具/膳魔师电炖盅.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/小招喵周边/小招喵出行套装.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/小招喵周边/小招喵创意U盘.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/小招喵周边/小招喵杯挂吸管.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/箱包手袋/ELLE铆钉双肩背包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/箱包手袋/JIJIWA可爱仙女小红帽单肩包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pic/箱包手袋/爱可乐折叠包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ecommerce.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/controller/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dto/userStateEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dto/userStateEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/adminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/厨具锅具/伊莱克斯煎烤机.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/厨具锅具/爱仕达陶瓷养生壶.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/厨具锅具/膳魔师电炖盅.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/小招喵周边/小招喵出行套装.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/小招喵周边/小招喵创意U盘.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/小招喵周边/小招喵杯挂吸管.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/箱包手袋/ELLE铆钉双肩背包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/箱包手袋/JIJIWA可爱仙女小红帽单肩包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/pic/箱包手袋/爱可乐折叠包.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/spring/spring-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/productDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/productDaoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +160,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../seckill" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -98,6 +169,9 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ecommerce.service" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.ecommerce.dao" />
       <recent name="org.ecommerce.service" />
@@ -111,26 +185,23 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\common" />
       <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource\images" />
       <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\css" />
       <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource\js" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.ecommerce.exception" />
       <recent name="org.ecommerce.dto" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.ecommerce.service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\static" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.99">
@@ -150,6 +221,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="productDaoTest.deleteByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.productDaoTest" />
+      <option name="METHOD_NAME" value="deleteByPrimaryKey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="productDaoTest.deleteBypname" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
@@ -161,22 +248,6 @@
       <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
       <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.productDaoTest" />
       <option name="METHOD_NAME" value="deleteBypname" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="productDaoTest.selectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.ecommerce.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.productDaoTest" />
-      <option name="METHOD_NAME" value="selectAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -222,6 +293,11 @@
             <option name="CONTEXT_PATH" value="/ecommerce_war" />
           </settings>
         </artifact>
+        <file path="$PROJECT_DIR$/src/main/webapp/resource/images/pic">
+          <settings>
+            <option name="CONTEXT_PATH" value="/upload" />
+          </settings>
+        </file>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_seckill_5" />
@@ -349,20 +425,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.productDaoTest.selectAll" />
       <item itemvalue="JUnit.ordersDaoTest.selectAll" />
       <item itemvalue="JUnit.productDaoTest.selectBypname" />
       <item itemvalue="JUnit.productDaoTest.updateByPrimaryKey" />
       <item itemvalue="JUnit.productDaoTest.deleteBypname" />
       <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
+      <item itemvalue="JUnit.productDaoTest.deleteByPrimaryKey" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.productDaoTest.deleteBypname" />
+        <item itemvalue="JUnit.productDaoTest.deleteByPrimaryKey" />
         <item itemvalue="JUnit.productDaoTest.updateByPrimaryKey" />
+        <item itemvalue="JUnit.productDaoTest.deleteBypname" />
         <item itemvalue="JUnit.productDaoTest.selectBypname" />
         <item itemvalue="JUnit.ordersDaoTest.selectAll" />
-        <item itemvalue="JUnit.productDaoTest.selectAll" />
       </list>
     </recent_temporary>
   </component>
@@ -460,7 +536,11 @@
       <workItem from="1594532978740" duration="17829000" />
       <workItem from="1594565564033" duration="460000" />
       <workItem from="1594601977664" duration="27452000" />
-      <workItem from="1594640639923" duration="2828000" />
+      <workItem from="1594640639923" duration="6308000" />
+      <workItem from="1594650616452" duration="2961000" />
+      <workItem from="1594688135088" duration="28017000" />
+      <workItem from="1594729123770" duration="10642000" />
+      <workItem from="1594775722208" duration="3800000" />
     </task>
     <task id="LOCAL-00001" summary="7.12">
       <created>1594565794125</created>
@@ -476,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594640699815</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="7.12">
+      <created>1594643605388</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594643605388</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,14 +579,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="173" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1594376990204" />
+    <state x="261" y="0" key="#Template_Data_Languages" timestamp="1594713809035">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="261" y="0" key="#Template_Data_Languages/0.0.1536.824@0.0.1536.824" timestamp="1594713809035" />
     <state x="260" y="0" key="#Web_Browsers" timestamp="1594455382165">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="260" y="0" key="#Web_Browsers/0.0.1536.824@0.0.1536.824" timestamp="1594455382165" />
-    <state x="223" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594455387070">
+    <state x="223" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594732461080">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594455387070" />
+    <state x="223" y="61" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594732461080" />
     <state x="500" y="199" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594090247960">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -508,70 +599,74 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594564216612" />
+    <state x="260" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1594696438575">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="260" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824@0.0.1536.824" timestamp="1594696438575" />
     <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594101957482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1594101957482" />
-    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594535068198">
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594689076060">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594535068198" />
-    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1594640695409">
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594689076060" />
+    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1594643601651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594640695409" />
-    <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1594601994281">
+    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594643601651" />
+    <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1594778527616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594601994281" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.bottom" timestamp="1594643567800">
+    <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594778527616" />
+    <state width="1450" height="230" key="GridCell.Tab.0.bottom" timestamp="1594779352465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.center" timestamp="1594643567800">
+    <state width="1450" height="230" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594779352465" />
+    <state width="1450" height="230" key="GridCell.Tab.0.center" timestamp="1594779352465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.left" timestamp="1594643567799">
+    <state width="1450" height="230" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594779352465" />
+    <state width="1450" height="230" key="GridCell.Tab.0.left" timestamp="1594779352465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594643567799" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.right" timestamp="1594643567800">
+    <state width="1450" height="230" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594779352465" />
+    <state width="1450" height="230" key="GridCell.Tab.0.right" timestamp="1594779352465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.bottom" timestamp="1594643567800">
+    <state width="1450" height="230" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594779352465" />
+    <state width="1450" height="230" key="GridCell.Tab.1.bottom" timestamp="1594779352466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.center" timestamp="1594643567800">
+    <state width="1450" height="230" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594779352466" />
+    <state width="1450" height="230" key="GridCell.Tab.1.center" timestamp="1594779352466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.left" timestamp="1594643567800">
+    <state width="1450" height="230" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594779352466" />
+    <state width="1450" height="230" key="GridCell.Tab.1.left" timestamp="1594779352465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.right" timestamp="1594643567800">
+    <state width="1450" height="230" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594779352465" />
+    <state width="1450" height="230" key="GridCell.Tab.1.right" timestamp="1594779352466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.bottom" timestamp="1594643567801">
+    <state width="1450" height="230" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594779352466" />
+    <state width="1450" height="230" key="GridCell.Tab.2.bottom" timestamp="1594779352466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594643567801" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.center" timestamp="1594643567801">
+    <state width="1450" height="230" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594779352466" />
+    <state width="1450" height="230" key="GridCell.Tab.2.center" timestamp="1594779352466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594643567801" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.left" timestamp="1594643567800">
+    <state width="1450" height="230" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594779352466" />
+    <state width="1450" height="230" key="GridCell.Tab.2.left" timestamp="1594779352466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594643567800" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.right" timestamp="1594643567801">
+    <state width="1450" height="230" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594779352466" />
+    <state width="1450" height="230" key="GridCell.Tab.2.right" timestamp="1594779352466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594643567801" />
+    <state width="1450" height="230" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594779352466" />
     <state width="1450" height="217" key="GridCell.Tab.3.bottom" timestamp="1594627072684">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -592,10 +687,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594455945019" />
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1594640705576">
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1594643608133">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594640705576" />
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594643608133" />
     <state x="551" y="178" key="chooseDestDirectoryDialog" timestamp="1594368193457">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -624,9 +719,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594557745688" />
-    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1594557738564">
+    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1594776604435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594557738564" />
+    <state x="341" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594776604435" />
   </component>
 </project>

@@ -121,7 +121,15 @@ public class adminServiceImpl implements adminService{
                 throw new userLogin_passwordError_Exception("密码错误");
             }
             else {
-                return new userLoginExecution(getUserName, userStateEnum.LOGIN_SUCCESS,adminUser1);
+                if(adminUser1.getUid()==0){
+                    return new userLoginExecution(getUserName, userStateEnum.USER_LOGIN_SUCCESS,adminUser1);
+                }
+                else if(adminUser1.getUid()==1){
+                    return new userLoginExecution(getUserName, userStateEnum.SALER_LOGIN_SUCCESS,adminUser1);
+                }
+                else {
+                    return new userLoginExecution(getUserName, userStateEnum.ADMIN_LOGIN_SUCCESS,adminUser1);
+                }
             }
         }
         catch (userLogin_NoUser_Exception e1){
