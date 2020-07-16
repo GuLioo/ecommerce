@@ -21,13 +21,13 @@ public class adminController {
     @Autowired
     private org.ecommerce.service.adminService adminService;
 
-    @RequestMapping(value = "/adminUserGet",method = RequestMethod.GET)
+    @RequestMapping(value = "/adminUserGet",method = RequestMethod.POST)
     @ResponseBody
     public Msg adminUserGet(short uid,@RequestParam(value="pn",defaultValue="1") Integer pn, Model model){
         System.out.println("进入adminUserGet");
         //使用PageHelper分页插件
         //在查询之前只需要调用，传入页码，以及每页的大小
-        PageHelper.startPage(pn, 1);
+        PageHelper.startPage(pn, 3);
         System.out.println("走到这里");
         //startPage后面紧跟的这个查询就是一个分页查询
         List<adminUser> adminUser=adminService.getAdminUserListByUid(uid);
@@ -38,7 +38,7 @@ public class adminController {
         System.out.println("===================================");
         //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
-        PageInfo page = new PageInfo(adminUser,3);
+        PageInfo page = new PageInfo(adminUser,5);
         System.out.println("pageNum="+page.getPageNum()+" pageSize="+page.getPageSize());
         return Msg.success().add("pageInfo", page);
     }

@@ -63,7 +63,7 @@ public class userServiceImpl implements userService {
             finalPrice=product.getMarketPrice()*user.getDiscount();
         }
         Timestamp time = new Timestamp(System.currentTimeMillis());
-        orders createOrder=new orders(orderId,user.getAuid(),finalPrice,user.getDiscount(),product.getPid(),product.getMarketPrice(),product.getPname(),product.getImage(),product.getPdesc(),product.getPdesc(),(short)0,time);
+        orders createOrder=new orders(orderId,user.getAuid(),finalPrice,user.getDiscount(),product.getPid(),product.getMarketPrice(),product.getPdesc(),product.getImage(),product.getPdesc(),product.getPname(),(short)0,time);
         return createOrder;
     }
 

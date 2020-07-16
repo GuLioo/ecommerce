@@ -39,13 +39,13 @@
 			$.ajax({
 				url:"/ecommerce_war/admin/adminUserGet",
 				data:{"pn": pn,"uid":uid},
-				type:"GET",
+				type:"POST",
 				success:function(result){
 					console.log("分页查询成功了");
 					//1.解析并显示员工数据
 					build_table(result);
 					//2.解析显示（构建）分页条
-					build_page_nav(result);
+					build_page_nav(uid,result);
 
 				},
 				error: function (msg) {
@@ -67,7 +67,7 @@
 		}
 
 		//解析显示（构建）分页条，点击分页条要能去下一页。。。
-		function build_page_nav(result){
+		function build_page_nav(uid,result){
 			/***************
 			 查询数据之前，必须清空分页条信息
 			 */
@@ -85,10 +85,10 @@
 			}else{
 				//为元素添加点击翻页事件
 				firstPageLi.click(function(){
-					to_page(1);
+					to_page(uid,1);
 				});
 				prePageLi.click(function(){
-					to_page(result.extend.pageInfo.pageNum-1);
+					to_page(uid,result.extend.pageInfo.pageNum-1);
 				});
 			}
 
@@ -100,10 +100,10 @@
 			}else{
 				//为元素添加点击翻页事件
 				nextPageLi.click(function(){
-					to_page(result.extend.pageInfo.pageNum + 1);
+					to_page(uid,result.extend.pageInfo.pageNum + 1);
 				});
 				lastPageLi.click(function(){
-					to_page(result.extend.pageInfo.pages);
+					to_page(uid,result.extend.pageInfo.pages);
 				});
 			}
 
@@ -120,7 +120,7 @@
 				}
 				//添加点击事件，通过ajax查询选择的页面
 				numLi.click(function(){
-					to_page(item);
+					to_page(uid,item);
 				});
 				ul.append(numLi);
 
@@ -150,9 +150,8 @@
 				else {
 					title.textContent="用户管理员";
 				}
-
-				btnAdd(datas[i]);
 			}
+			btnAdd();
 		}
 
 		//具体创建内容
@@ -176,7 +175,7 @@
 			mySelect.id = "select"+rowData.auid ;
 			mySelect.add( new  Option( "普通用户" , "0" ));
 			mySelect.add( new  Option( "产品销售商" , "1" ));
-			mySelect.add( new  Option( "网站管理员" , "2" ));
+			mySelect.add( new  Option( "用户管理员" , "2" ));
 			mySelect.setAttribute("class", "select");
 			select.appendChild(mySelect);
 			if(rowData.uid!=null){
@@ -231,7 +230,8 @@
                                         keyboard:false*/
 				});
 				//绑定点击事件
-				$('#submit').click(function () {
+				$('#buttonSub').one('click',function () {
+				/*$('#buttonSub').click(function () {*/
 					var userName =document.getElementById("name").value;
 					var password =document.getElementById("password").value;
 					var uidName =document.getElementById("uid").value;
@@ -244,7 +244,7 @@
 						alert("密码不能为空！");
 						return false;
 					}
-					if((uidName!="普通用户")&&(uidName!="产品销售商")&&(uidName!="网站管理员")){
+					if((uidName!="普通用户")&&(uidName!="产品销售商")&&(uidName!="用户管理员")){
 						alert("只可填写提供选项");
 						return false;
 					}
@@ -265,7 +265,7 @@
 						success: function (result) {
 							console.log(result);
 							alert("添加成功");
-							refresh();
+							location.href="/ecommerce_war/admin/adminUser";
 						},
 						error: function (msg) {
 							console.log("返回失败");
@@ -287,8 +287,8 @@
 						dataType: "text",
 						success: function (result) {
 							console.log(result);
-							refresh();
 							alert("更改成功");
+							location.href="/ecommerce_war/admin/adminUser";
 						},
 						error: function (msg) {
 							console.log("返回失败");
@@ -332,11 +332,7 @@
 								success: function (result) {
 									console.log(result);
 									alert("更改成功");
-/*									if(result=="更改成功")
-										alert("更改成功");
-									else
-										alert("更改失败");*/
-									refresh();
+									location.href="/ecommerce_war/admin/adminUser";
 								},
 								error: function (msg) {
 									console.log("返回失败");
@@ -349,24 +345,8 @@
 			})
 		}
 
-
-		function refresh(){
-			$.ajax({
-				url : "/ecommerce_war/admin/adminUser",
-				type : "GET",
-				success : function (){
-					console.log("目录查询成功");
-					to_page(0,1);
-				},
-				error: function (msg) {
-					console.log("返回失败");
-					alert("发生错误" + msg);
-				}
-			});
-		}
-
 		$(function (){
-			refresh();
+			to_page(0,1);
 		});
 
 	</script>
@@ -478,7 +458,7 @@ table的定义的宽度-td(定义了宽度)*/
 																	</table>																	
 																</div>
 																<div class="table-btns">
-																	<a class="btn medium colorful hover-grey" id="butAdd">ADD</a>
+																	<button class="btn medium colorful hover-grey" id="butAdd">ADD</button>
 																</div><!-- .table-btns end -->
 																<div id = "page_nav_area">
 
@@ -549,7 +529,7 @@ table的定义的宽度-td(定义了宽度)*/
 					<div class="modal-footer">
 						<!-- 验证信息-->
 						<span id="killPhoneMessage" class="glyphicon"></span>
-						<button type="button" id="submit" class="btn btn-success">
+						<button type="button" id="buttonSub" class="btn btn-success">
 							<span class="glyphicon glyphicon-phone"></span>
 							Submit
 						</button>

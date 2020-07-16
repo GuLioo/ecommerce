@@ -51,7 +51,14 @@
 					alert("发生错误" + msg);
 				}
 			});
+		}
 
+
+
+		function requestJson() {
+			var url="/ecommerce_war/user/userOrders";
+			console.log("url="+url);
+			location.href=url;
 		}
 
 
@@ -233,7 +240,7 @@
 																<li><span class="strong">Postal Code:</span> 7633</li>
 															</ul><!-- .checkout-list-details end -->--%>
 															<div class="ps-btns">
-																<a class="btn large colorful hover-grey" href="javascript:;">Pay Now</a>
+																<input type="button" class="btn large colorful hover-grey" value="Pay Now"  id="toOrder" onclick="requestJson()">
 															</div><!-- .ps-btns end -->
 														</div><!-- .box-checkout end -->
 

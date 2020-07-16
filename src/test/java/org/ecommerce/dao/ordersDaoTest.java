@@ -43,7 +43,7 @@ public class ordersDaoTest {
 
     @Test
     public void findOrderByUid() {
-        Integer uid=12;
+        Integer uid=2;
         List<orders> pros = orderDao.findOrderByUid(uid);
         for (orders p : pros) {
             System.out.println(p);

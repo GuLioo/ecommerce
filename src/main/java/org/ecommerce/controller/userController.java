@@ -28,6 +28,8 @@ public class userController {
 
     @RequestMapping(value = "/userOrders",method = RequestMethod.GET)
     public String orderDetail(){
+        int result=userService.insert(createOrder);
+        System.out.println("插入订单result="+result);
         return "userOrders";
     }
 
@@ -55,6 +57,7 @@ public class userController {
         return Msg.success().add("pageInfo", page);
     }
 
+    orders createOrder;
     @RequestMapping(value = "/{pid}/orderDetail",method = RequestMethod.GET)
     public String orderDetail(HttpSession session,Model model, @PathVariable("pid")Integer pid){
         System.out.println("进入orderDetail");
@@ -63,6 +66,7 @@ public class userController {
         System.out.println("session="+uid);
         adminUser user=userService.userInfo(uid);
         orders orderDetail=userService.createOrder(product,user);
+        createOrder=orderDetail;
         System.out.println("orderDetail="+orderDetail);
         System.out.println("这上面的都完成了");
         model.addAttribute("orderDetail",orderDetail);

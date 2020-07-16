@@ -64,37 +64,6 @@
 			getDataJson(data);
 		}
 
-		//根据orders数据创建内容
-		function getDataJson(datas) {
-			for (var i = 0; i < datas.length; i++) {
-				var trow = getDataRow(datas[i], i);
-				var productArea=document.getElementById("table");
-				productArea.appendChild(trow);
-
-			}
-		}
-
-		//具体创建内容
-		function getDataRow(rowData) {
-			var row = document.createElement('tr'); //创建行
-			//oid
-			var id = document.createElement('td');
-			id.style.width="20%";
-			id.innerHTML = rowData.oid;
-			row.appendChild(id);
-			//price
-			var price = document.createElement('td');
-			price.style.width="20%";
-			price.innerHTML = rowData.orderPrice;
-			row.appendChild(price);
-			//Date
-			var Date = document.createElement('td');
-			Date.style.width="20%";
-			Date.innerHTML = rowData.orderTime;
-			row.appendChild(Date);
-		}
-
-
 		//解析显示（构建）分页条，点击分页条要能去下一页。。。
 		function build_page_nav(result){
 			/***************
@@ -162,10 +131,58 @@
 			navEle.appendTo("#page_nav_area");
 		}
 
+		//根据orders数据创建内容
+		function getDataJson(datas) {
+			var table=document.getElementById("table");
+			table.appendChild(getDataTh());
+			for (var i = 0; i < datas.length; i++) {
+				var trow = getDataRow(datas[i], i);
+				table.appendChild(trow);
+			}
+		}
 
+		//创建表头
+		function getDataTh() {
+			var tThread=document.createElement('thead');
+			var row = document.createElement('tr'); //创建行
+			//oid
+			var id = document.createElement('th');
+			id.innerHTML = "OrderId";
+			row.appendChild(id);
+			//price
+			var price = document.createElement('th');
+			price.innerHTML = "OrderPrice";
+			row.appendChild(price);
+			//Date
+			var Date = document.createElement('th');
+			Date.innerHTML = "OrderTime";
+			row.appendChild(Date);
+			tThread.appendChild(row);
+			return tThread;
+		}
+
+		//具体创建内容
+		function getDataRow(rowData, number) {
+			var bo=document.createElement('tbody')
+			var row = document.createElement('tr'); //创建行
+			//oid
+			var id = document.createElement('td');
+			id.innerHTML = rowData.oid;
+			row.appendChild(id);
+			//price
+			var price = document.createElement('td');
+			price.innerHTML = rowData.orderPrice;
+			row.appendChild(price);
+			//Date
+			var Date = document.createElement('td');
+			Date.innerHTML = rowData.orderTime;
+			row.appendChild(Date);
+			bo.append(row)
+			return bo;
+		}
 
 		function refresh(){
-			to_page(1);
+			to_page(5);
 		}
 
 		//页面请求
@@ -178,174 +195,130 @@
 
 <body>
 
-	<!-- Document Full Container
-	============================================= -->
-	<div id="full-container">
-
-		<!-- Header
+<!-- Header
 		============================================= -->
-		<header id="header">
-		
-			<div id="header-bar-1" class="header-bar">
-		
-				<div class="header-bar-wrap">
-		
+<header id="header">
+
+	<div id="header-bar-1" class="header-bar">
+
+		<div class="header-bar-wrap">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="hb-content">
+							<div class="position-right">
+								<ul class="list-info list-meta" >
+									<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
+								</ul><!-- .list-meta end -->
+								<ul class="list-info list-contact-info">
+									<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
+								</ul><!-- .list-contact-info end -->
+							</div><!-- .position-right end -->
+							<div class="position-left">
+								<ul class="list-info list-meta">
+									<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
+								</ul><!-- .list-meta end -->
+								<ul class="list-info list-language">
+									<li class="dropdown-languages">
+										<i class="fa fa-globe-americas"></i>English
+										<ul class="select-language">
+
+											<li><a href="index.html">English</a></li>
+										</ul><!-- .select-language end -->
+									</li>
+								</ul><!-- .list-language end -->
+							</div><!-- .position-left end -->
+						</div><!-- .hb-content end -->
+
+					</div><!-- .col-md-12 end -->
+				</div><!-- .row end -->
+			</div><!-- .container end -->
+
+		</div><!-- .header-bar-wrap -->
+
+	</div><!-- #header-bar-1 end -->
+
+
+</header><!-- #header end -->
+
+<!-- Document Full Container
+============================================= -->
+<div id="full-container">
+
+	<!-- Content
+    ============================================= -->
+	<section id="content">
+
+		<div id="content-wrap">
+
+
+			<!-- === Content Main =========== -->
+			<div id="content-main" class="section-flat page-single page-checkout">
+
+				<div class="section-content">
+
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-		
-								<div class="hb-content">
-									<div class="position-right">
-										<ul class="list-info list-meta">
-											<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
-										</ul><!-- .list-meta end -->
-										<ul class="list-info list-contact-info">
-											<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
-										</ul><!-- .list-contact-info end -->
-									</div><!-- .position-right end -->
-									<div class="position-left">
-										<ul class="list-info list-meta">
-											<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
-										</ul><!-- .list-meta end -->
-										<ul class="list-info list-language">
-											<li class="dropdown-languages">
-												<i class="fa fa-globe-americas"></i>English
-												<ul class="select-language">
-													
-													<li><a href="index.html">English</a></li>
-												</ul><!-- .select-language end -->
-											</li>
-										</ul><!-- .list-language end -->
-									</div><!-- .position-left end -->
-								</div><!-- .hb-content end -->
-		
-							</div><!-- .col-md-12 end -->
-						</div><!-- .row end -->
-					</div><!-- .container end -->
-		
-				</div><!-- .header-bar-wrap -->
-		
-			</div><!-- #header-bar-1 end -->
-			<div id="header-bar-2" class="header-bar">
 
-				<div class="header-bar-wrap">
+								<div class="page-single-content">
 
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
+									<div class="row">
+										<div class="col-md-12">
 
-								<div class="hb-content">
-									<a class="logo logo-header" >
-										<a href="/ecommerce_war/user/products"><i class="fa fa-home"></i>Home</a>
-										<%--<img src="${pageContext.request.contextPath}/resource/images/pic/小招喵欢迎你.jpg" data-logo-alt="images/files/logo-header-en-alt.png" alt="">
-										<h3><span class="colored">E-Commerce Store</span></h3>
-										<span>HTML Template</span>--%>
-									</a><!-- .logo end -->
-									<ul id="menu-main" class="menu-main">
-										<li><a href="javascript:;" href="/ecommerce_war/user/products"><span data-content="Products" >Products</span></a></li>
-										<li><a href="javascript:;"><span data-content="Orders">Orders</span></a></li>
-										<li><a href="javascript:;"><span data-content="UserInfo">UserInfo</span></a></li>
-									</ul><!-- #menu-main end -->
+											<div class="content" id="addTable">
+												<div class="block-content">
+													<div id="addButton">
+														<h5 class="block-title" id="proTitle"> 订单详情  </h5>
+													</div>
+													<div class="row">
+														<div class="col-md-12">
+															<div id="table-checkout-details1" class="table-1">
+																<table id="table">
+																	<thead>
+																	<tr>
+																		<th>OrderId</th>
+																		<th>OrderPrice</th>
+																		<th>OrderTime</th>
+																	</tr>
+																	</thead>
+																	<tbody id="tbody">
+																	</tbody>
+																</table>
+															</div>
 
-								</div><!-- .hb-content end -->
+															<div id = "page_nav_area">
+
+															</div><!-- .pagination end -->
+
+														</div><!-- .col-md-12 end -->
+													</div><!-- .row end -->
+												</div>
+												<!--.block-content end -->
+											</div><!-- .content end -->
+
+										</div><!-- .col-md-9 end -->
+
+									</div><!-- .row end -->
+
+								</div><!-- .page-single-content end -->
 
 							</div><!-- .col-md-12 end -->
 						</div><!-- .row end -->
 					</div><!-- .container end -->
 
-				</div><!-- .header-bar-wrap -->
+				</div><!-- .section-content end -->
 
-			</div><!-- #header-bar-2 end -->
+			</div><!-- .section-flat end -->
 
-		</header><!-- #header end -->
-	
-		<!-- Content
-		============================================= -->
-		<section id="content">
+		</div><!-- #content-wrap -->
 
-			<div id="content-wrap">
+	</section><!-- #content end -->
 
 
-				<!-- === Content Main =========== -->
-				<div id="content-main" class="section-flat page-single page-checkout">
-
-					<div class="section-content">
-
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-
-									<div class="page-single-content">
-
-										<div class="row">
-											<div class="col-md-12">
-
-												<div class="content">
-													<div class="products-top-bar">
-														<div class="form-group">
-															<input type="text" name="productName" class="form-control" placeholder="Search for Products" data-alt-placeholder="Search for ...">
-														</div><!-- .form-group end -->
-														<div class="form-group">
-															<button type="submit" class="form-control"><i class="fa fa-search"></i></button>
-														</div><!-- .form-group end -->
-													</div><!-- .products-top-bar end -->
-													<div class="block-content">
-														<div class="row">
-															<div class="col-md-12">
-
-
-																<h5 class="block-title color-theme">Order Details</h5>
-
-																<div id="table-shop-cart" class="mb-70">
-																	<table id="table">
-																		<thead>
-																		<tr>
-																			<th>OrderId</th>
-																			<th>Price</th>
-																			<th>Date</th>
-																		</tr>
-																		</thead>
-																		<tbody id="tbody">
-
-																		</tbody>
-																	</table>
-																</div><!-- #table-shop-cart end -->
-																<div id = "page_nav_area">
-
-																</div><!-- .pagination end -->
-
-															</div><!-- .col-md-12 end -->
-
-															<div class="col-md-6">
-
-																<div class="box-checkout">
-
-																</div><!-- .box-checkout end -->
-
-															</div><!-- .col-md-6 end -->
-														</div><!-- .row end -->
-													</div><!-- .block-content end -->
-												</div><!-- .content end -->
-
-											</div><!-- .col-md-12 end -->
-										</div><!-- .row end -->
-
-									</div><!-- .page-single-content end -->
-
-								</div><!-- .col-md-12 end -->
-							</div><!-- .row end -->
-						</div><!-- .container end -->
-
-					</div><!-- .section-content end -->
-					
-				</div><!-- .section-flat end -->
-				
-			</div><!-- #content-wrap -->
-			
-		</section><!-- #content end -->
-
-
-	</div><!-- #full-container end -->
+</div><!-- #full-container end -->
 
 	<a class="scroll-top-icon scroll-top" href="javascript:;"><i class="fa fa-angle-up"></i></a>
 

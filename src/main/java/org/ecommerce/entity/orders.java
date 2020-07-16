@@ -19,6 +19,10 @@ public class orders {
     private short orderState;
     private Timestamp orderTime;
 
+    public orders(){
+        super();
+    }
+
     public orders(String oid, Integer userId, Double orderPrice, Double userDiscount, Integer productId, Double productPrice, String productName, String productImage, String productDesc, String productCate, short orderState, Timestamp orderTime) {
         this.oid = oid;
         this.userId = userId;
