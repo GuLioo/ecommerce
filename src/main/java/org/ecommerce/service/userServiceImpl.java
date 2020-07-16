@@ -74,6 +74,12 @@ public class userServiceImpl implements userService {
         return result;
     }
 
+    @Override
+    public int reduceProduct(Integer pid) {
+        int result=productDao.reduceProduct(pid);
+        return result;
+    }
+
 
     @Override
     public List<orders> findOrderByUid(Integer userId) {

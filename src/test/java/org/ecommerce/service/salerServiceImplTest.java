@@ -78,4 +78,9 @@ public class salerServiceImplTest {
         int result=salerService.updateByPrimaryKey(19,null,4,null,null,null);
         logger.info("result={}",result);
     }
+
+    @Test
+    public void testUpdateByPrimaryKey1() {
+        
+    }
 }

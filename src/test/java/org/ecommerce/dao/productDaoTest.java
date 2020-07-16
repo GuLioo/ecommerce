@@ -101,4 +101,9 @@ public class productDaoTest {
     {
         System.out.println(productDao.updateNameByPrimaryKey(15,"111"));
     }
+
+    @Test
+    public void reduceProduct() {
+        System.out.println(productDao.reduceProduct(33));
+    }
 }

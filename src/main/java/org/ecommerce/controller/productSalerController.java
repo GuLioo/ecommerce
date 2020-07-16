@@ -31,8 +31,8 @@ public class productSalerController {
     private salerService salerService;
 
 
-    @RequestMapping(value = "/salerRefresh",method = RequestMethod.GET)
-    public String products(){
+    @RequestMapping(value = "/productSaler",method = RequestMethod.GET)
+    public String productSaler(){
         return "productSaler";
     }
 
@@ -71,27 +71,15 @@ public class productSalerController {
 
     @RequestMapping(value = "/salerChange",method = RequestMethod.POST)
     @ResponseBody
-    public String salerChange(Integer pid, String pname, String marketPrice, String image ,String pdesc,String  pnum) {
-        System.out.println("进入productChange");
-        Double price=null;
-        Integer num=null;
-        if(marketPrice!=""){
-            price=Double.valueOf(marketPrice);
-        }
-        System.out.println("marketPrice="+marketPrice+" price="+price);
-        if(pnum!=""){
-            num=Integer.valueOf(pnum);
-        }
-        System.out.println("pnum="+pnum+" num="+num);
-        System.out.println("pid="+pid+"  pname="+pname+" price="+price+" image="+image+" pdesc="+pdesc+" num="+num);
-        int result=salerService.updateByPrimaryKey(pid,pname,price,image,pdesc,num);
+    public String salerChange(Integer pid, String pname, Double marketPrice, String image ,String pdesc,Integer  pnum) {
+        System.out.println("进入productChange=========================================");
+        System.out.println("pid="+pid+"  pname="+pname+" price="+marketPrice+" image="+image+" pdesc="+pdesc+" num="+pnum);
+        int result=salerService.updateByPrimaryKey(pid,pname,marketPrice,image,pdesc,pnum);
         if(result==1){
-            System.out.println("result=用户更改成功");
-            return "用户更改成功";
+            return "更改成功";
         }
         else {
-            System.out.println("result=用户更改失败");
-            return "用户更改失败";
+            return "更改失败";
         }
     }
 
@@ -161,10 +149,8 @@ public class productSalerController {
         file.transferTo(targetFile);
 
 
-
         //增加产品信息
         int result=salerService.insertPro("厨具锅具",pPrice,newFileName,description,pNum);
-
         return "productSaler"; //重定向到查询
     }
 

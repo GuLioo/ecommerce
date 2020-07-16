@@ -24,6 +24,8 @@ public interface userService {
     orders createOrder(product product, adminUser user);
     //增加订单
     int insert(orders orders);
+    //减库存
+    int reduceProduct(Integer pid);
     //根据用户查询相应订单
     List<orders> findOrderByUid(Integer userId);
     //基于订单号、订单状态等条件搜索订单

@@ -29,7 +29,9 @@ public class userController {
     @RequestMapping(value = "/userOrders",method = RequestMethod.GET)
     public String orderDetail(){
         int result=userService.insert(createOrder);
+        int result1=userService.reduceProduct(createOrder.getProductId());
         System.out.println("插入订单result="+result);
+        System.out.println("减库存="+result1);
         return "userOrders";
     }
 
@@ -41,7 +43,7 @@ public class userController {
         Integer uid=(Integer) session.getAttribute("auid");
         //使用PageHelper分页插件
         //在查询之前只需要调用，传入页码，以及每页的大小
-        PageHelper.startPage(pn, 1);
+        PageHelper.startPage(pn, 5);
         System.out.println("走到这里");
         //startPage后面紧跟的这个查询就是一个分页查询
         List<orders> orders=userService.findOrderByUid(uid);
@@ -52,7 +54,7 @@ public class userController {
         System.out.println("===================================");
         //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
-        PageInfo page = new PageInfo(orders,3);
+        PageInfo page = new PageInfo(orders,10);
         System.out.println("pageNum="+page.getPageNum()+" pageSize="+page.getPageSize());
         return Msg.success().add("pageInfo", page);
     }

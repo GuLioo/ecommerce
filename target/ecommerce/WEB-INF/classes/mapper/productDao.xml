@@ -64,4 +64,9 @@
     <select id="selectBypname" resultType="product">
         select * from product where pname=#{pname}
     </select>
+    <update id="reduceProduct">
+        update product
+        set pnum=pnum-1
+        where pid=#{pid} and pnum>0;;
+    </update>
 </mapper>

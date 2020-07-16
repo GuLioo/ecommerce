@@ -144,7 +144,6 @@
 				btnDel(datas[i]);
 				var title=document.getElementById("proTitle");
 				title.textContent=datas[i].pname;
-				btnAdd();
 			}
 		}
 
@@ -222,20 +221,17 @@
 		}
 
 		//增加按钮
-		function btnAdd(){
-			$("#butAdd").click(function() {
-				console.log("进入点击按钮");
-				var killPhoneModal=$('#addProduct');
+		function show(){
+			var killPhoneModal=$('#addProduct');
+			//显示弹出层
+			killPhoneModal.modal({
 				//显示弹出层
-				killPhoneModal.modal({
-					//显示弹出层
-					show:true,
-					/*//禁止位置关闭
-					backdrop:'static',
-					//关闭键盘事件
-					keyboard:false*/
-				});
-		});
+				show:true,
+/*				//禁止位置关闭
+				backdrop:'static',
+				//关闭键盘事件
+				keyboard:false*/
+			});
 		}
 
 		//删除按钮
@@ -249,9 +245,9 @@
 								data: {"pid": rowData.pid},
 								dataType: "text",
 								success: function (result) {
-									console.log(result);
-									alert("更改成功");
+									console.log("更改成功");
 									refresh();
+									location.href="/ecommerce_war/saler/productSaler";
 								},
 								error: function (msg) {
 									console.log("返回失败");
@@ -271,15 +267,15 @@
 				killPhoneModal.modal({
 					//显示弹出层
 					show:true,
-					/*					//禁止位置关闭
-                                        backdrop:'static',*/
-					/*					//关闭键盘事件
+		/*								//禁止位置关闭
+                                        backdrop:'static',
+										//关闭键盘事件
                                         keyboard:false*/
 				});
 				var cateName =document.getElementById("cateName");
 				cateName.textContent=rowData.pname;
 				//绑定点击事件
-				$('#submit').click(function () {
+				$('#updateData').click(function () {
 					var marketPrice =document.getElementById("price").value;
 					var pdesc =document.getElementById("description").value;
 					var pnum =document.getElementById("num").value;
@@ -287,13 +283,13 @@
 					var pname=rowData.pname;
 					var image=rowData.image;
 					if(marketPrice==""){
-						marketPrice=null;
+						marketPrice=rowData.marketPrice;
 					}
 					if(pdesc==""){
-						pdesc=null;
+						pdesc=rowData.pdesc;
 					}
 					if(pnum==""){
-						pnum=null;
+						pnum=rowData.pnum;
 					}
 					if(pnum>100){
 						alert("添加数目不可超过100");
@@ -306,9 +302,9 @@
 						data: {"pid": pid,"pname": pname,"marketPrice": marketPrice,"image": image,"pdesc": pdesc,"pnum": pnum},
 						dataType: "text",
 						success: function (result) {
-							console.log(result);
-							alert("添加成功");
+							alert("更改成功");
 							refresh();
+							window.location.href="/ecommerce_war/saler/productSaler";
 						},
 						error: function (msg) {
 							console.log("返回失败");
@@ -462,7 +458,7 @@
 																	</table>
 																</div>
 																<div class="table-btns">
-																	<a class="btn medium colorful hover-grey" id="butAdd">ADD</a>
+																	<a class="btn medium colorful hover-grey" id="butAdd" onclick=show()>ADD</a>
 																</div><!-- .table-btns end -->
 																<div id = "page_nav_area">
 
@@ -540,7 +536,7 @@
 				<div class="modal-footer">
 					<!-- 验证信息-->
 					<span id="killPhoneMessage" class="glyphicon"></span>
-					<button type="button" id="submit" class="btn btn-success">
+					<button type="button" id="updateData" class="btn btn-success">
 						<span class="glyphicon glyphicon-phone"></span>
 						Submit
 					</button>
@@ -558,7 +554,7 @@
 						商品信息填写^0^
 					</h4>
 				</div>
-				<form action="addProduct.do"   method="post" enctype="multipart/form-data" target="ifm">
+				<form action="addProduct.do"  method="post" enctype="multipart/form-data" target="ifm">
 				<div class="input-group">
 					<span class="input-group-addon">price</span>
 					<input type="text" name="price" id="priceAddPro"

@@ -173,13 +173,37 @@
 			var price = document.createElement('td');
 			price.innerHTML = rowData.orderPrice;
 			row.appendChild(price);
-			//Date
-			var Date = document.createElement('td');
-			Date.innerHTML = rowData.orderTime;
-			row.appendChild(Date);
+			//date
+			var date = document.createElement('td');
+			var dataValue=new Date(rowData.orderTime);
+			date.innerHTML = dataValue;
+			console.log("dataValue="+dataValue);
+			row.appendChild(date);
 			bo.append(row)
 			return bo;
 		}
+
+		function format(){
+			var o = {
+				"M+" : this.getMonth() + 1,// month
+				"d+" : this.getDate(),// day
+				"h+" : this.getHours(),// hour
+				"m+" : this.getMinutes(),// minute
+				"s+" : this.getSeconds(),// second
+				"q+" : Math.floor((this.getMonth() + 3) / 3),// quarter
+				"S" : this.getMilliseconds()
+				// millisecond
+			};
+			if (/(y+)/.test(format) || /(Y+)/.test(format)) {
+				format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+			}
+			for ( var k in o) {
+				if (new RegExp("(" + k + ")").test(format)) {
+					format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+				}
+			}
+			return format;
+		};
 
 		function refresh(){
 			to_page(5);

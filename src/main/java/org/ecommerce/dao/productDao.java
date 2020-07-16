@@ -28,4 +28,6 @@ public interface productDao {
     int countProducyByname( @Param("pname") String pname);
     //根据pname查询相应商品列表
     List< product > selectBypname(String pname);
+    //减库存
+    int reduceProduct(Integer pid);
 }

@@ -66,7 +66,7 @@
 								}
 								else if(state==2){
 									console.log("产品销售商");
-									location.href="/ecommerce_war/saler/salerRefresh";
+									location.href="/ecommerce_war/saler/productSaler";
 								}
 								else if(state==3){
 									location.href="/ecommerce_war/user/products";

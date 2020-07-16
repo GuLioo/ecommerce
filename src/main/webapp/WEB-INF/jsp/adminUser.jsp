@@ -151,7 +151,6 @@
 					title.textContent="用户管理员";
 				}
 			}
-			btnAdd();
 		}
 
 		//具体创建内容
@@ -217,63 +216,61 @@
 			return row;
 		}
 
-		function btnAdd(){
-			$("#butAdd").click(function() {
+		function show(){
 				var killPhoneModal=$('#killPhoneModal');
 				//显示弹出层
 				killPhoneModal.modal({
 					//显示弹出层
 					show:true,
-					/*					//禁止位置关闭
-                                        backdrop:'static',*/
-					/*					//关闭键盘事件
-                                        keyboard:false*/
+					//禁止位置关闭
+                    backdrop:'static',
+					//关闭键盘事件
+                    keyboard:false
 				});
-				//绑定点击事件
-				$('#buttonSub').one('click',function () {
-				/*$('#buttonSub').click(function () {*/
-					var userName =document.getElementById("name").value;
-					var password =document.getElementById("password").value;
-					var uidName =document.getElementById("uid").value;
-					var uid;
-					if(userName==""){
-						alert("用户名不能为空！");
-						return false;
+		}
+
+		function buttonClick() {
+				console.log("点了buttonClick");
+				var userName =document.getElementById("name").value;
+				var password =document.getElementById("password").value;
+				var uidName =document.getElementById("uid").value;
+				var uid;
+				if(userName==""){
+					alert("用户名不能为空！");
+					return false;
+				}
+				if(password==""){
+					alert("密码不能为空！");
+					return false;
+				}
+				if((uidName!="普通用户")&&(uidName!="产品销售商")&&(uidName!="用户管理员")){
+					alert("只可填写提供选项");
+					return false;
+				}
+				else if(uidName=="普通用户"){
+					uid=0;
+				}
+				else  if(uidName=="产品销售商"){
+					uid=1;
+				}
+				else {
+					uid=2;
+				}
+				$.ajax({
+					type: "post",
+					url: "/ecommerce_war/admin/adminAdd",
+					data: {"userName": userName,"password": password,"uid": uid},
+					dataType: "text",
+					success: function (result) {
+						console.log(result);
+						alert("添加成功");
+						location.href="/ecommerce_war/admin/adminUser";
+					},
+					error: function (msg) {
+						console.log("返回失败");
+						alert("发生错误" + msg);
 					}
-					if(password==""){
-						alert("密码不能为空！");
-						return false;
-					}
-					if((uidName!="普通用户")&&(uidName!="产品销售商")&&(uidName!="用户管理员")){
-						alert("只可填写提供选项");
-						return false;
-					}
-					else if(uidName=="普通用户"){
-						uid=0;
-					}
-					else  if(uidName=="产品销售商"){
-						uid=1;
-					}
-					else {
-						uid=2;
-					}
-					$.ajax({
-						type: "post",
-						url: "/ecommerce_war/admin/adminAdd",
-						data: {"userName": userName,"password": password,"uid": uid},
-						dataType: "text",
-						success: function (result) {
-							console.log(result);
-							alert("添加成功");
-							location.href="/ecommerce_war/admin/adminUser";
-						},
-						error: function (msg) {
-							console.log("返回失败");
-							alert("发生错误" + msg);
-						}
-					});
 				});
-			});
 		}
 
 		function btnDel(rowData){
@@ -348,6 +345,7 @@
 		$(function (){
 			to_page(0,1);
 		});
+
 
 	</script>
 </head>
@@ -458,7 +456,7 @@ table的定义的宽度-td(定义了宽度)*/
 																	</table>																	
 																</div>
 																<div class="table-btns">
-																	<button class="btn medium colorful hover-grey" id="butAdd">ADD</button>
+																	<button class="btn medium colorful hover-grey" id="butAdd" onclick=show()>ADD</button>
 																</div><!-- .table-btns end -->
 																<div id = "page_nav_area">
 
@@ -529,7 +527,7 @@ table的定义的宽度-td(定义了宽度)*/
 					<div class="modal-footer">
 						<!-- 验证信息-->
 						<span id="killPhoneMessage" class="glyphicon"></span>
-						<button type="button" id="buttonSub" class="btn btn-success">
+						<button type="button" id="buttonSub" class="btn btn-success" onclick=buttonClick()>
 							<span class="glyphicon glyphicon-phone"></span>
 							Submit
 						</button>
