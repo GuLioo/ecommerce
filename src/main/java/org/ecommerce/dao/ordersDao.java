@@ -15,8 +15,8 @@ public interface ordersDao {
     List<orders> selectAll();
     //根据用户查询相应订单
     List<orders> findOrderByUid(@Param("userId") Integer userId);
-    //根据订单编号、状态、时间查询订单
-    List< orders > findOrderByOid_State_Time(@Param("oid") String oid, @Param("state") Short state, @Param("fromTime")Date fromTime, @Param("toTime")Date toTime);
+    //根据订单编号、状态、时间模糊查询订单
+    List< orders > findOrderByOid_State_Time(@Param("userId") Integer userId,@Param("oid") String oid, @Param("orderState") Short orderState, @Param("fromTime")Date fromTime, @Param("toTime")Date toTime);
     //查询订单数量
     int countProductAll();
 

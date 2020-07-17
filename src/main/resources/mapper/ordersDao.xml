@@ -20,18 +20,22 @@
       select *
       from orders
       <where>
-          <if test="oid != null">
-              oid = #{oid,jdbcType=VARCHAR}
+          <if test="userId != null">
+              userId = #{userId}
           </if>
-          <if test="state != null">
-              and state = #{state,jdbcType=VARCHAR}
+          <if test="orderState != null">
+              and orderState = #{orderState}
           </if>
           <if test="fromTime != null" >
-              and #{fromTime}<![CDATA[<=]]> order_time
+              and CONCAT(#{fromTime},' 0:0:0') <![CDATA[<=]]> orderTime
           </if>
           <if test="toTime != null" >
-              and #{toTime}>=order_time
+              and CONCAT(#{toTime},' 0:0:0') >=orderTime
           </if>
+          <if test="oid != null">
+              and oid like CONCAT(#{oid},'%')
+          </if>
+
       </where>
     </select>
     <select id="countProductAll" resultType="Integer">

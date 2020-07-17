@@ -33,7 +33,7 @@ public class productDaoTest {
 
     @Test
     public void deleteByPrimaryKey() {
-        Integer pid=29;
+        Integer pid=70;
         int count=productDao.deleteByPrimaryKey(pid);
         System.out.println(count);
     }

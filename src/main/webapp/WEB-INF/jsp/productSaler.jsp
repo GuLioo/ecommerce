@@ -22,14 +22,14 @@
 
 	<!-- Favicon
 	============================================= -->
-	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/favicon.png">
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resource/images/pic/cat.png">
 	<link rel="apple-touch-icon" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon-114x114.png">
 
 	<!-- Title
 	============================================= -->
-	<title>SoqLina | Products</title>
+	<title>ecommerce | productSaler</title>
 	<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
 	<script>
 		//查询分页的数据（抽取ajax查询方法）
@@ -48,7 +48,7 @@
 					build_table(result);
 					//2.解析显示（构建）分页条
 					build_page_nav(name,result);
-
+					console.log("test==============");
 				},
 				error: function (msg) {
 					console.log("返回失败");
@@ -149,16 +149,6 @@
 
 		//具体创建内容
 		function getDataRow(rowData, number) {
-/*			var butArea=document.getElementById("addButton");
-			var createAddButton=document.createElement('input');
-			createAddButton.style.width="150px";
-			createAddButton.setAttribute('type','button');
-			createAddButton.setAttribute("id","buttonAdd"+rowData.pid);
-			createAddButton.setAttribute("value", "增加用户");
-			createAddButton.setAttribute("name", "add");
-			createAddButton.setAttribute("class", "btn btn-primary btn-lg");
-			butArea.append(createAddButton);*/
-
 			var row = document.createElement('tr'); //创建行
 			//pid
 			var id = document.createElement('td');
@@ -179,11 +169,13 @@
 			var image = document.createElement('td');
 			image.style.width="20%";
 			var pImage = document.createElement('img');
+			console.log("=================保存图片的名称="+rowData.image);
 			var url="${pageContext.request.contextPath}/resource/images/pic/"+rowData.image;
-			console.log("图片的url="+url);
+			console.log("=============================图片的url="+url);
 			pImage.src=url;
 			row.appendChild(image);
 			image.append(pImage);
+			image.onerror="${pageContext.request.contextPath}/resource/images/pic/"+rowData.image;
 			//pdesc
 			var pdesc = document.createElement('td');
 			pdesc.style.width="20%";
@@ -335,6 +327,42 @@
 			}
 		}
 
+		function addImage() {
+            // 获取表单数据
+            var dom = document.getElementById("formContent");
+            var formData = new FormData(dom);
+            // 应该用这个获取后转化成dom对象
+            var cate = $("#cateAdd").val();
+            var price = $("#priceAdd").val();
+            var desc = $("#describeAdd").val();
+            var num = $("#numAdd").val();
+            var file = $("#file")[0].files[0];
+            console.log("cate="+cate+"  price="+price+" desc="+desc+" num="+num);
+            formData.append("cate",  cate);
+            formData.append("price", price);
+            formData.append("desc", desc);
+            formData.append("num", num);
+            formData.append("file", file);
+
+            console.log("进入image==================");
+			$.ajax({
+				url : "/ecommerce_war/saler/addProduct",
+				type : "POST",
+				enctype:"multipart/form-data",
+                data : formData,
+                cache : false,
+                processData : false,
+                contentType : false,
+				success : function (result){
+					console.log("addImageCan");
+					window.location.href="/ecommerce_war/saler/productSaler";
+				},
+				error: function (msg) {
+					console.log("返回失败");
+					alert("发生错误" + msg);
+				}
+			});
+		}
 
 		function refresh(){
 			$.ajax({
@@ -378,24 +406,9 @@
 								<ul class="list-info list-meta" >
 									<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
 								</ul><!-- .list-meta end -->
-								<ul class="list-info list-contact-info">
-									<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
-								</ul><!-- .list-contact-info end -->
-							</div><!-- .position-right end -->
-							<div class="position-left">
-								<ul class="list-info list-meta">
-									<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
-								</ul><!-- .list-meta end -->
-								<ul class="list-info list-language">
-									<li class="dropdown-languages">
-										<i class="fa fa-globe-americas"></i>English
-										<ul class="select-language">
 
-											<li><a href="index.html">English</a></li>
-										</ul><!-- .select-language end -->
-									</li>
-								</ul><!-- .list-language end -->
-							</div><!-- .position-left end -->
+							</div><!-- .position-right end -->
+
 						</div><!-- .hb-content end -->
 
 					</div><!-- .col-md-12 end -->
@@ -554,37 +567,34 @@
 						商品信息填写^0^
 					</h4>
 				</div>
-				<form action="addProduct.do"  method="post" enctype="multipart/form-data" target="ifm">
+				<form id="formContent"<%--action="addProduct.do"  method="post"--%> <%--enctype="multipart/form-data"--%> <%--target="ifm"--%>>
+					<div class="input-group">
+						<span class="input-group-addon">cate</span>
+						<input type="text" name="cateAdd" id="cateAdd"
+							   placeholder="填种类" class="form-control"/>
+					</div>
 				<div class="input-group">
 					<span class="input-group-addon">price</span>
-					<input type="text" name="price" id="priceAddPro"
+					<input type="text" name="priceAdd" id="priceAdd"
 						   placeholder="填价格" class="form-control"/>
 				</div>
-				<div class="input-group">
-					<span class="input-group-addon">description</span>
-					<input type="text" name="description" id="descriptionAddPro"
-						   placeholder="填描述" class="form-control"/>
-				</div>
+                    <div class="input-group">
+                        <span class="input-group-addon">describe</span>
+                        <input type="text" name="describeAdd" id="describeAdd"
+                               placeholder="填描述" class="form-control"/>
+                    </div>
 				<div class="input-group">
 					<span class="input-group-addon">num</span>
-					<input type="text" name="num" id="numAddPro"
+					<input type="text" name="numAdd" id="numAdd"
 						   placeholder="填数量" class="form-control"/>
 				</div>
 				<div class="input-group">
 
-				图片：<input type="file" name="file">
-				<input type="submit" value="提交" id="imageSub">
+				图片：<input type="file" name="file" id="file">
+				<input type="submit" value="提交"  onclick=addImage()>
 
 				</div>
 				</form>
-<%--				<div class="modal-footer">
-					<!-- 验证信息-->
-					<span id="AddPro" class="glyphicon"></span>
-					<button type="button" id="submitAddPro" class="btn btn-success">
-						<span class="glyphicon glyphicon-phone"></span>
-						Submit
-					</button>
-				</div>--%>
 			</div>
 		</div>
 	</div>

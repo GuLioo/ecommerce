@@ -22,14 +22,14 @@
 
 	<!-- Favicon
 	============================================= -->
-	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/favicon.png">
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resource/images/pic/cat.png">
 	<link rel="apple-touch-icon" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon-114x114.png">
 
 	<!-- Title
 	============================================= -->
-	<title>SoqLina | Products</title>
+	<title>ecommerce | Products</title>
 	<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
 	<script>
 		//查询分页的数据（抽取ajax查询方法）
@@ -231,24 +231,8 @@
 										<ul class="list-info list-meta">
 											<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
 										</ul><!-- .list-meta end -->
-										<ul class="list-info list-contact-info">
-											<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
-										</ul><!-- .list-contact-info end -->
 									</div><!-- .position-right end -->
-									<div class="position-left">
-										<ul class="list-info list-meta">
-											<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
-										</ul><!-- .list-meta end -->
-										<ul class="list-info list-language">
-											<li class="dropdown-languages">
-												<i class="fa fa-globe-americas"></i>English
-												<ul class="select-language">
-													
-													<li><a href="index.html">English</a></li>
-												</ul><!-- .select-language end -->
-											</li>
-										</ul><!-- .list-language end -->
-									</div><!-- .position-left end -->
+
 								</div><!-- .hb-content end -->
 		
 							</div><!-- .col-md-12 end -->
@@ -313,14 +297,14 @@
 											<div class="col-md-9 col-md-push-3">
 
 												<div class="content">
-													<div class="products-top-bar">
+												<%--	<div class="products-top-bar">
 														<div class="form-group">
 															<input type="text" name="productName" class="form-control" placeholder="Search for Products" data-alt-placeholder="Search for ...">
 														</div><!-- .form-group end -->
 														<div class="form-group">
 															<button type="submit" class="form-control"><i class="fa fa-search"></i></button>
 														</div><!-- .form-group end -->
-													</div><!-- .products-top-bar end -->
+													</div><!-- .products-top-bar end -->--%>
 													<div class="block-content">
 														<h5 class="block-title">Products you searched for</h5>
 														<div class="row">

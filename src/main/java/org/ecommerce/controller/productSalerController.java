@@ -39,8 +39,6 @@ public class productSalerController {
     @RequestMapping(value = "/salerDelete",method = RequestMethod.POST)
     @ResponseBody
     public String salerDelete(Integer pid) {
-        System.out.println("进入salerDelete");
-        System.out.println("pid="+pid);
         int result=salerService.deleteProByPrimaryKey(pid);
         if(result==1){
             System.out.println("result=删除成功");
@@ -52,21 +50,6 @@ public class productSalerController {
         }
     }
 
-/*    @RequestMapping(value = "/salerAdd",method = RequestMethod.POST)
-    @ResponseBody
-    public String salerAdd(String pname, Double marketPrice, String image ,String pdesc,Integer  pnum) {
-        System.out.println("salerAdd");
-        System.out.println("pname="+pname+"  marketPrice"+marketPrice+"  image="+image+"  pdesc="+pdesc+"  pnum="+pnum);
-        int result=salerService.insertPro(pname,marketPrice,image,pdesc,pnum);
-        if(result==1){
-            System.out.println("result=添加成功");
-            return "添加成功";
-        }
-        else {
-            System.out.println("result=添加失败");
-            return "添加失败";
-        }
-    }*/
 
 
     @RequestMapping(value = "/salerChange",method = RequestMethod.POST)
@@ -108,7 +91,7 @@ public class productSalerController {
         System.out.println("pn="+pn+"  name="+pname);
         //在查询之前只需要调用，传入页码，以及每页的大小
         System.out.println("走到这里");
-        PageHelper.startPage(pn, 1);
+        PageHelper.startPage(pn, 2);
         List<product> product=salerService.selectProBypname(pname);
         //输出用户
         for (product a : product) {
@@ -122,16 +105,18 @@ public class productSalerController {
         return Msg.success().add("pageInfo", page);
     }
 
-    @RequestMapping("/addProduct.do")
+    @RequestMapping(value="/addProduct",method = RequestMethod.POST)
+    @ResponseBody
     public String save(MultipartFile file,HttpServletRequest request) throws IOException {
         System.out.println("进入图片存储======================================");
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        String name = multipartRequest.getParameter("cate");
         String price = multipartRequest.getParameter("price");
         double pPrice=Double.parseDouble(price);
-        String description = multipartRequest.getParameter("description");
+        String description = multipartRequest.getParameter("desc");
         String num = multipartRequest.getParameter("num");
         Integer pNum=Integer.parseInt(num);
-        System.out.println("price======"+price+"  description====="+description+"   num==="+num);
+        System.out.println("name=="+name+"price======"+price+"  description====="+description+"   num==="+num);
         /**
          * 上传图片
          */
@@ -150,8 +135,8 @@ public class productSalerController {
 
 
         //增加产品信息
-        int result=salerService.insertPro("厨具锅具",pPrice,newFileName,description,pNum);
-        return "productSaler"; //重定向到查询
+        int result=salerService.insertPro(name,pPrice,newFileName,description,pNum);
+        return "success"; //重定向到查询
     }
 
 }

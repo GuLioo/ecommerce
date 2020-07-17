@@ -22,17 +22,17 @@
 
 	<!-- Favicon
 	============================================= -->
-	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/favicon.png">
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resource/images/images/pic/cat.png">
 	<link rel="apple-touch-icon" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="${pageContext.request.contextPath}/resource/images/general-elements/favicon/apple-touch-icon-114x114.png">
 
 	<!-- Title
 	============================================= -->
-	<title>SoqLina | Products</title>
+	<title>ecommerce | userOrders</title>
 	<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
 	<script>
-		//查询分页的数据（抽取ajax查询方法）
+		//查询全部订单分页的数据（抽取ajax查询方法）
 		function to_page(pn){
 			$.ajax({
 				url:"/ecommerce_war/user/userOrdersInfo",
@@ -53,6 +53,44 @@
 			});
 		}
 
+		//查询全部订单分页的数据（抽取ajax查询方法）
+		function to_page_search(pn){
+			var orderId= $("#orderID").val();
+			var startTime;
+			console.log("datetime-start="+$("#datetime-start").val());
+			if($("#datetime-start").val()==""){
+				startTime=null;
+			}
+			else {
+				startTime=$("#datetime-start").val();
+			}
+			var endTime;
+			if($("#datetime-end").val()==""){
+				endTime=null;
+			}
+			else {
+				endTime=$("#datetime-end").val();
+			}
+			console.log(" orderId="+orderId+"  startTime="+startTime+" endTime="+endTime);
+			$.ajax({
+				url:"/ecommerce_war/user/searchOrdersInfo",
+				data:{"pn":pn,"orderId": orderId,"startTime": startTime,"endTime": endTime,},
+				type:"POST",
+				success:function(result){
+					console.log("获取商品信息成功");
+					//1.解析并显示商品数据
+					build_table(result);
+					//2.解析显示（构建）分页条
+					build_page_nav_search(result);
+				},
+				error: function (msg) {
+					console.log("返回失败");
+					alert("发生错误" + msg);
+				}
+			});
+		}
+
+
 		//根据得到的orders信息解析显示(构建)商品图片
 		function build_table(result){
 			/***************
@@ -64,7 +102,7 @@
 			getDataJson(data);
 		}
 
-		//解析显示（构建）分页条，点击分页条要能去下一页。。。
+		//解析显示（构建）全部订单分页条，点击分页条要能去下一页。。。
 		function build_page_nav(result){
 			/***************
 			 查询数据之前，必须清空分页条信息
@@ -131,6 +169,73 @@
 			navEle.appendTo("#page_nav_area");
 		}
 
+		//解析显示（构建）查询订单分页条，点击分页条要能去下一页。。。
+		function build_page_nav_search(result){
+			/***************
+			 查询数据之前，必须清空分页条信息
+			 */
+			$("#page_nav_area").empty();
+
+			//page_info_area
+			var ul= $("<ul></ul>").addClass("pagination");
+
+			//构建元素
+			var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+			var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+			if(result.extend.pageInfo.hasPreviousPage==false){
+				firstPageLi.addClass("disabled");
+				prePageLi.addClass("disabled");
+			}else{
+				//为元素添加点击翻页事件
+				firstPageLi.click(function(){
+					to_page_search(1);
+				});
+				prePageLi.click(function(){
+					to_page_search(result.extend.pageInfo.pageNum-1);
+				});
+			}
+
+			var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+			var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+			if(result.extend.pageInfo.hasNextPage==false){
+				nextPageLi.addClass("disabled");
+				lastPageLi.addClass("disabled");
+			}else{
+				//为元素添加点击翻页事件
+				nextPageLi.click(function(){
+					to_page_search(result.extend.pageInfo.pageNum + 1);
+				});
+				lastPageLi.click(function(){
+					to_page_search(result.extend.pageInfo.pages);
+				});
+			}
+
+
+			//添加首页和前一页的提示
+			ul.append(firstPageLi).append(prePageLi);
+
+			//遍历页码号 1.2.3.
+			//将页码号添加到ul中
+			$.each(result.extend.pageInfo.navigatepageNums,function(index,item){
+				var numLi= $("<li></li>").append($("<a></a>").append(item));
+				if(result.extend.pageInfo.pageNum == item){
+					numLi.addClass("active");
+				}
+				//添加点击事件，通过ajax查询选择的页面
+				numLi.click(function(){
+					to_page_search(item);
+				});
+				ul.append(numLi);
+
+			});
+
+			//添加下一页和末页的提示
+			ul.append(nextPageLi).append(lastPageLi);
+			//将ul添加到nav
+			var navEle = $("<nav></nav>").append(ul);
+			navEle.appendTo("#page_nav_area");
+		}
+
 		//根据orders数据创建内容
 		function getDataJson(datas) {
 			var table=document.getElementById("table");
@@ -177,33 +282,47 @@
 			var date = document.createElement('td');
 			var dataValue=new Date(rowData.orderTime);
 			date.innerHTML = dataValue;
-			console.log("dataValue="+dataValue);
 			row.appendChild(date);
 			bo.append(row)
 			return bo;
 		}
 
-		function format(){
-			var o = {
-				"M+" : this.getMonth() + 1,// month
-				"d+" : this.getDate(),// day
-				"h+" : this.getHours(),// hour
-				"m+" : this.getMinutes(),// minute
-				"s+" : this.getSeconds(),// second
-				"q+" : Math.floor((this.getMonth() + 3) / 3),// quarter
-				"S" : this.getMilliseconds()
-				// millisecond
-			};
-			if (/(y+)/.test(format) || /(Y+)/.test(format)) {
-				format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		
+		function search() {
+			var orderId= $("#orderID").val();
+			var startTime;
+			console.log("datetime-start="+$("#datetime-start").val());
+			if($("#datetime-start").val()==""){
+				startTime=null;
 			}
-			for ( var k in o) {
-				if (new RegExp("(" + k + ")").test(format)) {
-					format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+			else {
+				startTime=$("#datetime-start").val();
+			}
+			var endTime;
+			if($("#datetime-end").val()==""){
+				endTime=null;
+			}
+			else {
+				endTime=$("#datetime-end").val();
+			}
+			console.log(" orderId="+orderId+"  startTime="+startTime+" endTime="+endTime);
+			$.ajax({
+				url:"/ecommerce_war/user/searchOrdersInfo",
+				data:{"pn":1,"orderId": orderId,"startTime": startTime,"endTime": endTime,},
+				type:"POST",
+				success:function(result){
+					console.log("获取商品信息成功");
+					//1.解析并显示商品数据
+					build_table(result);
+					//2.解析显示（构建）分页条
+					build_page_nav_search(result);
+				},
+				error: function (msg) {
+					console.log("返回失败");
+					alert("发生错误" + msg);
 				}
-			}
-			return format;
-		};
+			});
+		}
 
 		function refresh(){
 			to_page(5);
@@ -236,24 +355,8 @@
 								<ul class="list-info list-meta" >
 									<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
 								</ul><!-- .list-meta end -->
-								<ul class="list-info list-contact-info">
-									<li><i class="fa fa-phone"></i><strong>Contact Us : </strong> (965) 55046994</li>
-								</ul><!-- .list-contact-info end -->
 							</div><!-- .position-right end -->
-							<div class="position-left">
-								<ul class="list-info list-meta">
-									<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Help</a></li>
-								</ul><!-- .list-meta end -->
-								<ul class="list-info list-language">
-									<li class="dropdown-languages">
-										<i class="fa fa-globe-americas"></i>English
-										<ul class="select-language">
 
-											<li><a href="index.html">English</a></li>
-										</ul><!-- .select-language end -->
-									</li>
-								</ul><!-- .list-language end -->
-							</div><!-- .position-left end -->
 						</div><!-- .hb-content end -->
 
 					</div><!-- .col-md-12 end -->
@@ -293,6 +396,31 @@
 										<div class="col-md-12">
 
 											<div class="content" id="addTable">
+
+
+												<div class="products-top-bar">
+														<div class="form-group" width="20%">
+															<label >订单编号</label>
+															<input type="text" id="orderID" name="productName" class="form-control" placeholder="输入订单编号" data-alt-placeholder="Search for ...">
+														</div><!-- .form-group end -->
+														<div id="startTime" class="form-group" width="20%">
+															<label for="datetime-start">起始时间</label>
+															<input type="date" name="date" id="datetime-start" value="" />
+															<%--<input type="datetime-local" name="date" id="datetime-start" value="" />--%>
+														</div>
+														<div id="endTime" class="form-group" width="20%">
+															<label for="datetime-end">结束时间</label>
+															<input type="date" name="date" id="datetime-end" value="" />
+															<%--<input type="datetime-local" name="date" id="datetime-end" value="" />--%>
+														</div>
+														<div class="form-group" width="5%">
+															<label >搜索</label>
+															<button type="button" onclick=search() class="form-control"><i class="fa fa-search"></i></button>
+														</div><!-- .form-group end -->
+
+												</div><!-- .products-top-bar end -->
+
+
 												<div class="block-content">
 													<div id="addButton">
 														<h5 class="block-title" id="proTitle"> 订单详情  </h5>

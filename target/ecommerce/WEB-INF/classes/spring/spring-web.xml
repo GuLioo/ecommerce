@@ -40,12 +40,13 @@
     <mvc:resources location="/static" mapping="/static/**"/>
     <!-- 注册驱动 -->
 
-    <mvc:annotation-driven>
+    <mvc:annotation-driven >
         <mvc:message-converters register-defaults="true">
             <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
                 <property name="supportedMediaTypes"  value="application/json;charset=UTF-8"/>
             </bean>
         </mvc:message-converters>
+        <!-- 引用自定义类型转换器 -->
     </mvc:annotation-driven>
 
     <!-- 文件上传的解析器 -->
@@ -55,6 +56,9 @@
         <!-- 默认编码 -->
         <property name="defaultEncoding" value="utf-8"></property>
     </bean>
+
+
+
 
 </beans>
 

@@ -87,8 +87,8 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public List<orders> findOrderByOid_State_Time(String oid, short state, Date start_time, Date end_time) {
-        return ordersDao.findOrderByOid_State_Time(oid,state,start_time,end_time);
+    public List<orders> findOrderByOid_State_Time(Integer userId,String oid, short state, Date start_time, Date end_time) {
+        return ordersDao.findOrderByOid_State_Time(userId,oid,state,start_time,end_time);
     }
 
     //createId

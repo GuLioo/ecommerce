@@ -29,6 +29,6 @@ public interface userService {
     //根据用户查询相应订单
     List<orders> findOrderByUid(Integer userId);
     //基于订单号、订单状态等条件搜索订单
-    List< orders > findOrderByOid_State_Time(String oid, short state, Date start_time, Date end_time);
+    List< orders > findOrderByOid_State_Time(Integer uid,String oid, short state, Date start_time, Date end_time);
 
 }

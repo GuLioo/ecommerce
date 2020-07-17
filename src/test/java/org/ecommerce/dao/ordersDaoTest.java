@@ -58,12 +58,12 @@ public class ordersDaoTest {
 
     @Test
     public void findOrderByOid_State_Time() throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String dateStringFrom = "2017-12-20 14:02:08";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String dateStringFrom = "2020-07-15";
         Date fromTime = sdf.parse(dateStringFrom);
-        String dateStringTo = "2020-07-09 16:51:58";
+        String dateStringTo = "2020-07-16";
         Date toTime = sdf.parse(dateStringTo);
-        List<orders> pros = orderDao.findOrderByOid_State_Time(null,null,fromTime,toTime);
+        List<orders> pros = orderDao.findOrderByOid_State_Time(2,"20200715",(short)0,fromTime,toTime);
         for (orders p : pros) {
             System.out.println(p);
         }

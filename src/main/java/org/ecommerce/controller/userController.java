@@ -9,8 +9,11 @@ import org.ecommerce.entity.orders;
 import org.ecommerce.entity.product;
 import org.ecommerce.service.salerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -125,7 +130,7 @@ public class userController {
         System.out.println("pn="+pn+"  name="+pname);
         //在查询之前只需要调用，传入页码，以及每页的大小
         System.out.println("走到这里");
-        PageHelper.startPage(pn, 1);
+        PageHelper.startPage(pn, 2);
         List<product> product=userService.selectProBypname(pname);
         //输出用户
         for (product a : product) {
@@ -139,5 +144,38 @@ public class userController {
         return Msg.success().add("pageInfo", page);
     }
 
+    @RequestMapping(value = "/searchOrdersInfo",method = RequestMethod.POST)
+    @ResponseBody
+    public Msg searchOrdersInfo(@RequestParam(value="pn",defaultValue="1")Integer pn,@DateTimeFormat(pattern="yyyy-MM-dd")Date startTime,@DateTimeFormat(pattern="yyyy-MM-dd")Date endTime,String orderId, HttpSession session) throws UnsupportedEncodingException {
+        System.out.println("searchOrdersInfo==========================");
+        Integer uid=(Integer) session.getAttribute("auid");
+        //使用PageHelper分页插件
+        //在查询之前只需要调用，传入页码，以及每页的大小
+        PageHelper.startPage(pn, 5);
+        System.out.println("走到这里");
+        //startPage后面紧跟的这个查询就是一个分页查询
+        System.out.println("uid="+uid+"  orderId="+orderId+" startTime="+startTime+" endTime="+endTime);
+        List<orders> orders=userService.findOrderByOid_State_Time(uid,orderId,(short) 0,startTime,endTime);
+        //输出用户
+        for (orders a : orders) {
+            System.out.println(a);
+        }
+        System.out.println("===================================");
+        //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
+        //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
+        PageInfo page = new PageInfo(orders,3);
+        System.out.println("pageNum="+page.getPageNum()+" pageSize="+page.getPageSize());
+        return Msg.success().add("pageInfo", page);
+    }
+
+
+
+    @InitBinder
+    public void initBinder(ServletRequestDataBinder binder)
+    {
+        //只要网页中传来的数据格式为yyyy-MM-dd 就会转化为Date类型
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"),
+                                true));
+        }
 
 }
