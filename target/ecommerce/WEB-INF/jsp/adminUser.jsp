@@ -158,7 +158,7 @@
 			var row = document.createElement('tr'); //创建行
 			//auid
 			var id = document.createElement('td');
-			id.style.width="20%";
+			id.style.width="5%";
 			id.innerHTML = rowData.auid;
 			row.appendChild(id);
 			//username
@@ -197,7 +197,7 @@
 			button.style.width="50px";
 			button.setAttribute('type','button');
 			button.setAttribute("id", "buttonApply"+rowData.auid);
-			button.setAttribute("value", "use");
+			button.setAttribute("value", "改");
 			button.setAttribute("name", "apply");
 			button.setAttribute("class", "apply");
 			but.appendChild(button);
@@ -209,7 +209,7 @@
 			buttonDel.style.width="20%";
 			buttonDel.setAttribute('type','button');
 			buttonDel.setAttribute("id","buttonDel"+rowData.auid);
-			buttonDel.setAttribute("value", "del");
+			buttonDel.setAttribute("value", "删");
 			buttonDel.setAttribute("name", "del");
 			buttonDel.setAttribute("class", "del");
 			butDele.appendChild(buttonDel);
@@ -222,10 +222,10 @@
 				killPhoneModal.modal({
 					//显示弹出层
 					show:true,
-					//禁止位置关闭
+/*					//禁止位置关闭
                     backdrop:'static',
 					//关闭键盘事件
-                    keyboard:false
+                    keyboard:false*/
 				});
 		}
 
@@ -456,7 +456,7 @@ table的定义的宽度-td(定义了宽度)*/
 											<div class="col-md-3 col-md-pull-9" >
 											<div class="sidebar">
 												<div class="box-widget">
-													<h5 class="box-title">user</h5>
+													<h5 class="box-title">目录</h5>
 													<div class="box-content" >
 														<ul class="sidebar-list-links list-brands" id="category">
 															<li><a id="cate0" onclick="to_page(0,1)">普通用户</a></li>

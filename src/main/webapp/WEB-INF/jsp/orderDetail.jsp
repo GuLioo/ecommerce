@@ -207,7 +207,7 @@
 															<table>
 																<thead>
 																<tr>
-																	<th style="width:5%">Cate</th>
+																	<th style="width:10%">Category</th>
 																	<th style="width:20%">Image</th>
 																	<th style="width:20%">Name</th>
 																	<th style="width:20%">Price</th>
@@ -216,17 +216,17 @@
 																</thead>
 																<tbody>
 																<tr>
-																	<td>
+																	<td style="width:10%">
 																		<h6>${orderDetail.productCate}</h6>
-																	</td>
-																	<td><a href="javascript:;"><img id="image" alt=""></a></td>
-																	<td>
+																	</td >
+																	<td style="width:20%"><a href="javascript:;"><img id="image" alt=""></a></td>
+																	<td style="width:20%">
 																		<h6>${orderDetail.productName}</h6>
 																	</td>
-																	<td>
+																	<td style="width:20%">
 																		<h6>${orderDetail.productPrice}</h6>
 																	</td>
-																	<td>
+																	<td style="width:20%">
 																		<h6>${orderDetail.userDiscount}</h6>
 																	</td>
 																</tr>
