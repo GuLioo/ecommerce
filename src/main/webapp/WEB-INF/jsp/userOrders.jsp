@@ -366,6 +366,35 @@
 		</div><!-- .header-bar-wrap -->
 
 	</div><!-- #header-bar-1 end -->
+	<div id="header-bar-2" class="header-bar">
+
+		<div class="header-bar-wrap">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="hb-content">
+							<a class="logo logo-header" >
+								<a href="/ecommerce_war/user/products"><i class="fa fa-home"></i>Home</a>
+								<%--<img src="${pageContext.request.contextPath}/resource/images/pic/小招喵欢迎你.jpg" data-logo-alt="images/files/logo-header-en-alt.png" alt="">
+                                <h3><span class="colored">E-Commerce Store</span></h3>
+                                <span>HTML Template</span>--%>
+							</a><!-- .logo end -->
+							<ul id="menu-main" class="menu-main">
+								<li><a href="/ecommerce_war/user/products"><span data-content="Products">Products</span></a></li>
+								<li><a href="/ecommerce_war/user/userOrders"><span data-content="Orders">Orders</span></a></li>
+							</ul><!-- #menu-main end -->
+
+						</div><!-- .hb-content end -->
+
+					</div><!-- .col-md-12 end -->
+				</div><!-- .row end -->
+			</div><!-- .container end -->
+
+		</div><!-- .header-bar-wrap -->
+
+	</div><!-- #header-bar-2 end -->
 
 
 </header><!-- #header end -->

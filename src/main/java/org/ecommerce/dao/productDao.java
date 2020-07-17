@@ -30,4 +30,6 @@ public interface productDao {
     List< product > selectBypname(String pname);
     //减库存
     int reduceProduct(Integer pid);
+    //加悲观锁
+    product lockProduct(Integer pid);
 }

@@ -104,6 +104,6 @@ public class productDaoTest {
 
     @Test
     public void reduceProduct() {
-        System.out.println(productDao.reduceProduct(33));
+        System.out.println(productDao.reduceProduct(40));
     }
 }

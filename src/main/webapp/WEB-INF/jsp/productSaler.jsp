@@ -488,7 +488,7 @@
 
 												<div class="sidebar">
 													<div class="box-widget">
-														<h5 class="box-title">category</h5>
+														<h5 class="box-title">目录</h5>
 														<div class="box-content" >
 															<ul class="sidebar-list-links list-brands" id="category">
 																<%--<li><a href="javascript:;">Optics</a></li>

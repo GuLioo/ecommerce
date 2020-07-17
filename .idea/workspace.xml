@@ -7,45 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/acg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/cat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/山水电磁炉.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/seckillExecution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/seckillStateEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/seckillException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小红帽单肩包.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/productSalerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/productSalerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/ordersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/ordersDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/productDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dao/productDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ordersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/productDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orderDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orderDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSaler.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSaler.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userOrders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/古俐-学生证.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/小招喵欢迎你.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/招商银行fintech证书.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/生活照1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/生活照3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/ordersDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/ordersDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/images/pic/JIJIWA可爱仙女小红帽单肩包.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/productDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/dao/productDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ordersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/ordersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/ordersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/userServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/userServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/productDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/productDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dao/productDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ecommerce.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/ordersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dao/ordersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dao/ordersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/productDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dao/productDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dao/productDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/spring/spring-web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/ordersDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/ordersDaoTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/productDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/dao/productDaoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,6 +120,9 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ecommerce.service" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.ecommerce.service" />
       <recent name="org.ecommerce.dao" />
@@ -144,13 +136,6 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\copy" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\copy" />
       <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
@@ -162,8 +147,12 @@
       <recent name="org.ecommerce.exception" />
       <recent name="org.ecommerce.dto" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.ecommerce.service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\copy" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.99">
@@ -396,9 +385,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.productDaoTest.reduceProduct" />
         <item itemvalue="JUnit.ordersDaoTest.findOrderByOid_State_Time" />
         <item itemvalue="JUnit.productDaoTest.deleteByPrimaryKey" />
-        <item itemvalue="JUnit.productDaoTest.reduceProduct" />
         <item itemvalue="JUnit.ordersDaoTest.findOrderByUid" />
         <item itemvalue="JUnit.adminServiceImplTest.executeLogin" />
       </list>
@@ -418,7 +407,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -506,7 +495,7 @@
       <workItem from="1594822131800" duration="6315000" />
       <workItem from="1594860785428" duration="29097000" />
       <workItem from="1594903077108" duration="11238000" />
-      <workItem from="1594947622537" duration="8083000" />
+      <workItem from="1594947622537" duration="21254000" />
     </task>
     <task id="LOCAL-00001" summary="7.12">
       <created>1594565794125</created>
@@ -557,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594881021045</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="7.12">
+      <created>1594956168459</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594956168459</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,10 +585,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="500" y="199" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594090247960" />
-    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser" timestamp="1594886430937">
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser" timestamp="1594964198300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594886430937" />
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594964198300" />
     <state x="260" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1594696438575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -605,62 +601,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594689076060" />
-    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1594881015634">
+    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1594956165720">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594881015634" />
+    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594956165720" />
     <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1594953033159">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594953033159" />
-    <state width="1450" height="10" key="GridCell.Tab.0.bottom" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.0.bottom" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.0.center" timestamp="1594956139374">
+    <state width="1450" height="-11" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.0.center" timestamp="1594975147638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594956139374" />
-    <state width="1450" height="10" key="GridCell.Tab.0.left" timestamp="1594956139374">
+    <state width="1450" height="-11" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594975147638" />
+    <state width="1450" height="-11" key="GridCell.Tab.0.left" timestamp="1594975147638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594956139374" />
-    <state width="1450" height="10" key="GridCell.Tab.0.right" timestamp="1594956139374">
+    <state width="1450" height="-11" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594975147638" />
+    <state width="1450" height="-11" key="GridCell.Tab.0.right" timestamp="1594975147638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594956139374" />
-    <state width="1450" height="10" key="GridCell.Tab.1.bottom" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594975147638" />
+    <state width="1450" height="-11" key="GridCell.Tab.1.bottom" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.1.center" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.1.center" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.1.left" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.1.left" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.1.right" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.1.right" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.2.bottom" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.2.bottom" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.2.center" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.2.center" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.2.left" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.2.left" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
-    <state width="1450" height="10" key="GridCell.Tab.2.right" timestamp="1594956139375">
+    <state width="1450" height="-11" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
+    <state width="1450" height="-11" key="GridCell.Tab.2.right" timestamp="1594975147639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="10" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594956139375" />
+    <state width="1450" height="-11" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594975147639" />
     <state width="1450" height="234" key="GridCell.Tab.3.bottom" timestamp="1594801653302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -681,10 +677,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594455945019" />
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1594881023683">
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1594956172008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594881023683" />
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594956172008" />
     <state x="551" y="178" key="chooseDestDirectoryDialog" timestamp="1594368193457">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -697,10 +693,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="229" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1594534183396" />
-    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594875017044">
+    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1594967404872">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1594875017044" />
+    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1594967404872" />
     <state x="294" y="62" width="903" height="751" key="dock-window-1" timestamp="1594444803007">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

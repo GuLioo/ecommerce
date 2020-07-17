@@ -258,9 +258,8 @@
 										<span>HTML Template</span>--%>
 									</a><!-- .logo end -->
 									<ul id="menu-main" class="menu-main">
-										<li><a href="javascript:;" href="/ecommerce_war/user/products"><span data-content="Products" >Products</span></a></li>
-										<li><a href="javascript:;"><span data-content="Orders">Orders</span></a></li>
-										<li><a href="javascript:;"><span data-content="UserInfo">UserInfo</span></a></li>
+										<li><a href="/ecommerce_war/user/products"><span data-content="Products">Products</span></a></li>
+										<li><a href="/ecommerce_war/user/userOrders"><span data-content="Orders">Orders</span></a></li>
 									</ul><!-- #menu-main end -->
 
 								</div><!-- .hb-content end -->
@@ -272,6 +271,7 @@
 				</div><!-- .header-bar-wrap -->
 
 			</div><!-- #header-bar-2 end -->
+
 
 		</header><!-- #header end -->
 	

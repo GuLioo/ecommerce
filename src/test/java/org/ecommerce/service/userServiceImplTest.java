@@ -22,5 +22,8 @@ public class userServiceImplTest {
     private userService userService;
 
 
+    @Test
+    public void executeSeckill() {
 
+    }
 }

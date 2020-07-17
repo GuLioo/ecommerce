@@ -1,5 +1,6 @@
 package org.ecommerce.service;
 
+import org.ecommerce.dto.seckillExecution;
 import org.ecommerce.entity.adminUser;
 import org.ecommerce.entity.category;
 import org.ecommerce.entity.orders;
@@ -22,10 +23,12 @@ public interface userService {
     product selectByPrimaryKey(Integer pid);
     //生成订单信息来显示但不进行数据库插入
     orders createOrder(product product, adminUser user);
-    //增加订单
+/*    //增加订单
     int insert(orders orders);
     //减库存
-    int reduceProduct(Integer pid);
+    int reduceProduct(Integer pid);*/
+    //执行减库存、增加订单的事务
+    seckillExecution executeSeckill(orders orders, Integer pid);
     //根据用户查询相应订单
     List<orders> findOrderByUid(Integer userId);
     //基于订单号、订单状态等条件搜索订单

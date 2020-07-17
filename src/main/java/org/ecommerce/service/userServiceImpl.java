@@ -1,13 +1,17 @@
 package org.ecommerce.service;
 
 import org.ecommerce.dao.*;
+import org.ecommerce.dto.seckillStateEnum;
+import org.ecommerce.dto.seckillExecution;
 import org.ecommerce.entity.adminUser;
 import org.ecommerce.entity.category;
 import org.ecommerce.entity.orders;
 import org.ecommerce.entity.product;
+import org.ecommerce.exception.seckillException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
@@ -67,7 +71,7 @@ public class userServiceImpl implements userService {
         return createOrder;
     }
 
-    @Override
+/*    @Override
     public int insert(orders orders) {
 
         int result=ordersDao.insert(orders.getOid(),orders.getUserId(),orders.getOrderPrice(),orders.getUserDiscount(),orders.getProductId(),orders.getProductPrice(),orders.getProductName(),orders.getProductImage(),orders.getProductDesc(),orders.getProductCate(),(short)0,orders.getOrderTime());
@@ -78,6 +82,36 @@ public class userServiceImpl implements userService {
     public int reduceProduct(Integer pid) {
         int result=productDao.reduceProduct(pid);
         return result;
+    }*/
+
+    @Transactional
+    @Override
+    public seckillExecution executeSeckill(orders orders, Integer pid) {
+        try {
+            product product=productDao.lockProduct(pid);
+            System.out.println("======================================");
+            System.out.println("productId="+product.getPid());
+            int result1 = productDao.reduceProduct(pid);
+            System.out.println("result1="+result1);
+            if (result1 <= 0) {
+                throw new seckillException("库存不足");
+            } else {
+                int result2 = ordersDao.insert(orders.getOid(), orders.getUserId(), orders.getOrderPrice(), orders.getUserDiscount(), orders.getProductId(), orders.getProductPrice(), orders.getProductName(), orders.getProductImage(), orders.getProductDesc(), orders.getProductCate(), (short) 0, orders.getOrderTime());
+                System.out.println("result2="+result2);
+                if (result2 <= 0) {
+                    throw new seckillException("插入订单出错");
+                } else {
+                    return new seckillExecution(orders.getOid(), seckillStateEnum.SUCCESS);
+                }
+            }
+        }
+        catch (seckillException e1){
+            throw e1;
+        }
+        catch (Exception e){
+            logger.error(e.getMessage(),e);
+            throw new seckillException("内部错误"+e.getMessage());
+        }
     }
 
 

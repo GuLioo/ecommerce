@@ -56,9 +56,36 @@
 
 
 		function requestJson() {
-			var url="/ecommerce_war/user/userOrders";
+			$.ajax({
+				type: "get",
+				url: "/ecommerce_war/user/executeSeckill",
+				dataType: "json",
+				success: function (result) {
+					console.log("返回成功========================");
+					var killResult=result['data'];
+					var state=killResult['state'];
+					var stateInfo=killResult['stateInfo'];
+					if(state==1){
+						console.log("购买成功");
+						location.href="/ecommerce_war/user/userOrders";
+					}
+					else if(state==0){
+						alert("库存不足，无法购买");
+						console.log(state);
+					}
+					else {
+						alert("系统内部错误");
+						console.log(state);
+					}
+				},
+				error: function (msg) {
+					console.log("返回失败");
+					alert("发生错误" + msg);
+				}
+			});
+/*			var url="/ecommerce_war/user/userOrders";
 			console.log("url="+url);
-			location.href=url;
+			location.href=url;*/
 		}
 
 
@@ -121,8 +148,7 @@
 									</a><!-- .logo end -->
 									<ul id="menu-main" class="menu-main">
 										<li><a href="/ecommerce_war/user/products"><span data-content="Products">Products</span></a></li>
-										<li><a href="javascript:;"><span data-content="Orders">Orders</span></a></li>
-										<li><a href="javascript:;"><span data-content="UserInfo">UserInfo</span></a></li>
+										<li><a href="/ecommerce_war/user/userOrders"><span data-content="Orders">Orders</span></a></li>
 									</ul><!-- #menu-main end -->
 
 								</div><!-- .hb-content end -->
@@ -181,11 +207,11 @@
 															<table>
 																<thead>
 																<tr>
-																	<th>Product Cate</th>
-																	<th>Product Image</th>
-																	<th>Product Name</th>
-																	<th>Product Price</th>
-																	<th>User Discount</th>
+																	<th style="width:5%">Cate</th>
+																	<th style="width:20%">Image</th>
+																	<th style="width:20%">Name</th>
+																	<th style="width:20%">Price</th>
+																	<th style="width:20%">Discount</th>
 																</tr>
 																</thead>
 																<tbody>

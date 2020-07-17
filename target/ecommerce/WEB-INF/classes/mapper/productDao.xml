@@ -67,6 +67,9 @@
     <update id="reduceProduct">
         update product
         set pnum=pnum-1
-        where pid=#{pid} and pnum>0;;
+        where pid=#{pid} and pnum>0;
     </update>
+    <select id="lockProduct" resultType="product">
+        select * from product where pid=#{pid} for update ;
+    </select>
 </mapper>

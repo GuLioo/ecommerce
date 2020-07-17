@@ -3,11 +3,14 @@ package org.ecommerce.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.ecommerce.dto.Msg;
+import org.ecommerce.dto.ecommerceResult;
+import org.ecommerce.dto.seckillExecution;
+import org.ecommerce.dto.seckillStateEnum;
 import org.ecommerce.entity.adminUser;
 import org.ecommerce.entity.category;
 import org.ecommerce.entity.orders;
 import org.ecommerce.entity.product;
-import org.ecommerce.service.salerService;
+import org.ecommerce.exception.seckillException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,12 +34,30 @@ public class userController {
     @Autowired
     private org.ecommerce.service.userService userService;
 
-    @RequestMapping(value = "/userOrders",method = RequestMethod.GET)
-    public String orderDetail(){
-        int result=userService.insert(createOrder);
+    @RequestMapping(value = "/executeSeckill",method = RequestMethod.GET)
+    @ResponseBody
+    public ecommerceResult<seckillExecution> executeSeckill(){
+        try{
+            seckillExecution execution=userService.executeSeckill(createOrder,createOrder.getProductId());
+            return new ecommerceResult<seckillExecution>(true,execution);
+        }
+        catch (seckillException e1){
+            seckillExecution execution=new seckillExecution(createOrder.getOid(), seckillStateEnum.UNDER_STOCK);
+            return new ecommerceResult<seckillExecution>(true,execution);
+        }
+        catch (Exception e){
+            seckillExecution execution=new seckillExecution(createOrder.getOid(), seckillStateEnum.INNER_ERROR);
+            return new ecommerceResult<seckillExecution>(true,execution);
+        }
+/*        int result=userService.insert(createOrder);
         int result1=userService.reduceProduct(createOrder.getProductId());
         System.out.println("插入订单result="+result);
         System.out.println("减库存="+result1);
+        return "userOrders";*/
+    }
+
+    @RequestMapping(value="/userOrders",method = RequestMethod.GET)
+    public String userOrders(){
         return "userOrders";
     }
 
