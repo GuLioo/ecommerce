@@ -25,20 +25,17 @@ public class salerServiceImplTest {
 
     @Test
     public void insert() {
-        int result=salerService.insertCate("test");
-        logger.info("result={}",result);
+
     }
 
     @Test
     public void deleteBycname() {
-        int result=salerService.deleteCateBycname("change");
-        logger.info("result={}",result);
+
     }
 
     @Test
     public void updateByPrimaryKey() {
-        int result=salerService.updateCateByPrimaryKey(9,"change");
-        logger.info("result={}",result);
+
     }
 
     @Test
@@ -61,8 +58,7 @@ public class salerServiceImplTest {
 
     @Test
     public void updateProNumByPrimaryKey() {
-        int result=salerService.updateProNumByPrimaryKey(18,-1);
-        logger.info("result={}",result);
+
     }
 
     @Test

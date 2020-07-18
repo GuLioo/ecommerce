@@ -1,8 +1,6 @@
 package org.ecommerce.service;
 
-import org.ecommerce.dto.userLoginExecution;
 import org.ecommerce.entity.adminUser;
-import org.ecommerce.entity.category;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -13,8 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.annotation.Resource;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -54,11 +50,6 @@ public class adminServiceImplTest {
         logger.info("result={}",result);
     }
 
-    @Test
-    public void countUserAll() {
-        int result=adminService.countUserAll();
-        logger.info("result={}",result);
-    }
 
     @Test
     public void selectByName() {
@@ -68,8 +59,7 @@ public class adminServiceImplTest {
 
     @Test
     public void executeLogin() {
-        userLoginExecution result=adminService.executeLogin("c","11");
-        logger.info("result={}",result);
+
     }
 
     @Test

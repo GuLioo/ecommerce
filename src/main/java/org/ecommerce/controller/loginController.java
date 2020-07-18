@@ -1,12 +1,11 @@
 package org.ecommerce.controller;
 
 import org.ecommerce.dto.ecommerceResult;
-import org.ecommerce.dto.userLoginExecution;
+import org.ecommerce.dto.userExecution;
 import org.ecommerce.dto.userStateEnum;
 import org.ecommerce.entity.adminUser;
 import org.ecommerce.exception.userLogin_NoUser_Exception;
 import org.ecommerce.exception.userLogin_passwordError_Exception;
-import org.ecommerce.service.adminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,52 +18,41 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/entrance")
 public class loginController {
     @Autowired
-    private adminService adminService;
+    private org.ecommerce.business.adminBusiness adminBusiness;
 
-
+    /**
+     * 登陆页面
+     * @return
+     */
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String login(){
         return "login";
     }
 
 
-    //退出登录
+    /**
+     * 注销用户，返回登陆页
+     * @param session
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/logOut")
     public String logOut(HttpSession session) throws Exception {
-        session.invalidate();
-        System.out.println("清除缓存成功");
+        adminBusiness.logOut(session);
         return "login";
     }
 
-
+    /**
+     * 登陆验证
+     * 成功跳转页面并保存用户id至session
+     * @param userName
+     * @param password
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/loginRequest",method = RequestMethod.POST)
     @ResponseBody
     public ecommerceResult loginRequest(String userName,String password, HttpSession session) {
-        System.out.println("进入controller");
-        System.out.println("userName="+userName+"  password="+password);
-        try {
-            userLoginExecution execution = adminService.executeLogin(userName, password);
-            System.out.println("验证成功");
-            adminUser user=adminService.selectByName(userName);
-            Integer auid=user.getAuid();
-            // 将用户id保存到session内
-            session.setAttribute("auid", auid);
-
-            return new ecommerceResult<userLoginExecution>(true, execution);
-        } catch (userLogin_passwordError_Exception e1) {
-            System.out.println("密码错误");
-            userLoginExecution execution = new userLoginExecution(userName, userStateEnum.PASSWORD_ERROR);
-            return new ecommerceResult<userLoginExecution>(true, execution);
-        } catch (userLogin_NoUser_Exception e1) {
-            System.out.println("用户名不存在");
-            userLoginExecution execution = new userLoginExecution(userName, userStateEnum.NO_USER);
-            return new ecommerceResult<userLoginExecution>(true, execution);
-        } catch (Exception e) {
-            System.out.println("内部错误");
-            userLoginExecution execution = new userLoginExecution(userName, userStateEnum.INNER_ERROR);
-            return new ecommerceResult<userLoginExecution>(true, execution);
-        }
+        return adminBusiness.executeLogin(userName,password,session);
     }
-
-
     }

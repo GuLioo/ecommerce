@@ -258,13 +258,23 @@
 				}
 				$.ajax({
 					type: "post",
-					url: "/ecommerce_war/admin/adminAdd",
+					url: "/ecommerce_war/admin/adminUserAdd",
 					data: {"userName": userName,"password": password,"uid": uid},
-					dataType: "text",
+					dataType: "json",
 					success: function (result) {
 						console.log(result);
-						alert("添加成功");
-						location.href="/ecommerce_war/admin/adminUser";
+						var killResult=result['data'];
+						var state=killResult['state'];
+						if(state==2){
+							alert("更改成功");
+							location.href="/ecommerce_war/admin/adminUser";
+						}
+						else if(state==-1){
+							alert("销售商数目超限");
+						}
+						else {
+							alert("系统内部错误");
+						}
 					},
 					error: function (msg) {
 						console.log("返回失败");
@@ -279,7 +289,7 @@
 				if (rowData != null) {
 					$.ajax({
 						type: "post",
-						url: "/ecommerce_war/admin/adminDelete",
+						url: "/ecommerce_war/admin/adminUserDelete",
 						data: {"auid": rowData.auid},
 						dataType: "text",
 						success: function (result) {
@@ -325,11 +335,21 @@
 								type: "post",
 								url: "/ecommerce_war/admin/adminUserChange",
 								data: {"auid": rowData.auid, "uid": selectId},
-								dataType: "text",
+								dataType: "json",
 								success: function (result) {
 									console.log(result);
-									alert("更改成功");
-									location.href="/ecommerce_war/admin/adminUser";
+									var killResult=result['data'];
+									var state=killResult['state'];
+									if(state==2){
+										alert("更改成功");
+										location.href="/ecommerce_war/admin/adminUser";
+									}
+									else if(state==-1){
+										alert("销售商数目超限");
+									}
+									else {
+										alert("系统内部错误");
+									}
 								},
 								error: function (msg) {
 									console.log("返回失败");

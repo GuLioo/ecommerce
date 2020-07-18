@@ -1,10 +1,10 @@
 package org.ecommerce.service;
 
-import org.ecommerce.dto.userLoginExecution;
 import org.ecommerce.entity.adminUser;
 
 import java.util.List;
 
+//用户管理员接口
 public interface adminService {
     //获取全部用户列表
     List<adminUser> getAdminUserList();
@@ -16,12 +16,10 @@ public interface adminService {
     int deleteByPrimaryKey(Integer auid);
     //更改用户权限
     int setRole(Integer auid,short uid);
-    //获得用户总数
-    int countUserAll();
-    //登陆验证
-    adminUser selectByName(String username);//查询用户名返回对象
-    //登陆判断
-    userLoginExecution executeLogin(String getUserName,String getPassword);
-    //设置用户折扣
-    int updateDiscount(Integer auid,double discount); //系统管理员操作
+    //查询用户名返回用户对象
+    adminUser selectByName(String username);
+    //判断是否已存在uid=1产品销售商,若小于等于1则s.t.
+    int judgeSale();
+    //根据auid查询用户
+    adminUser selectByAuid(Integer auid);
 }

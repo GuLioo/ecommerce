@@ -1,18 +1,15 @@
 package org.ecommerce.service;
 
 import org.ecommerce.dao.adminuserDao;
-import org.ecommerce.dto.userLoginExecution;
-import org.ecommerce.dto.userStateEnum;
 import org.ecommerce.entity.adminUser;
-import org.ecommerce.exception.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.util.DigestUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+//用户管理员实现类
 @Service
 public class adminServiceImpl implements adminService{
     private Logger logger= LoggerFactory.getLogger(this.getClass());
@@ -21,132 +18,90 @@ public class adminServiceImpl implements adminService{
     private adminuserDao adminuserDao;
 
 
-    private final String slat="asdfasvrg54mbesognoamg;s'afmaslgma";
-
+    /**
+     *获取全部用户列表
+     * @return
+     */
     @Override
     public List<adminUser> getAdminUserList() {
         return adminuserDao.queryAll();
     }
 
+    /**
+     *获取指定uid的用户列表
+     * @param uid
+     * @return
+     */
     @Override
     public List<adminUser> getAdminUserListByUid(short uid) {
         return adminuserDao.getAdminUserListByUid(uid);
     }
 
+    /**
+     *插入用户名、密码、用户类型，用户权限uid——0、1、2分别表示普通用户、产品销售商（只有一个）、网站管理员
+     * @param username
+     * @param password
+     * @param uid
+     * @return
+     */
     @Override
     public int insertAdminUser(String username, String password, short uid) {
-        try{
-            String md5Pass=getMD5(password);
-            if((short)(uid)==1){
-                if(adminuserDao.judgeSale()>=1){
-                    throw new userInsertException("销售商数目超限");
-                }
-                else {
-                    int adminInsert=adminuserDao.insertAdminUser(username,md5Pass,uid);
-                    return adminInsert;
-                }
-            }
-            else {
-                int adminInsert=adminuserDao.insertAdminUser(username,md5Pass,uid);
-                return  adminInsert;
-            }
-        }
-        catch (userInsertException e1){
-            throw e1;
-        }
-        catch (Exception e){
-            logger.error(e.getMessage(),e);
-            throw new ecommerceException("内部错误   "+e.getMessage());
-        }
+        int adminInsert=adminuserDao.insertAdminUser(username,password,uid);
+        return adminInsert;
     }
 
-    private String getMD5(String seckillId){
-        String base=seckillId+"/"+slat;
-        String md5= DigestUtils.md5DigestAsHex(base.getBytes());
-        return md5;
-    }
 
+
+    /**
+     * 根据用户id删除用户
+     * @param auid
+     * @return
+     */
     @Override
     public int deleteByPrimaryKey(Integer auid) {
         int adminDelete=adminuserDao.deleteByPrimaryKey(auid);
         return  (adminDelete);
     }
 
+    /**
+     * 根据所给用户id设置用户权限
+     * @param auid
+     * @param uid
+     * @return
+     */
     @Override
     public int setRole(Integer auid, short uid) {
-        try{
-            adminUser changeAdmin=adminuserDao.selectByAuid(auid);
-            Integer orginAuid=changeAdmin.getAuid();
-            int result=1;
-            //若从其它变为1
-            if(uid==1){
-                if(adminuserDao.judgeSale()>=1){
-                    throw new userInsertException("销售商数目超限");
-                }
-                result=adminuserDao.setRole(orginAuid,uid);
-            }
-            else {
-                result=adminuserDao.setRole(orginAuid, uid);
-            }
-            return result;
-        }
-        catch (userInsertException e1){
-            throw e1;
-        }
-        catch (Exception e){
-            logger.error(e.getMessage(),e);
-            throw new ecommerceException("内部错误   "+e.getMessage());
-        }
-
+        int result=adminuserDao.setRole(auid,uid);
+        return result;
     }
 
-    @Override
-    public int countUserAll() {
-        return adminuserDao.countUserAll();
-    }
-
+    /**
+     * 查询用户名返回用户对象
+     * @param username
+     * @return
+     */
     @Override
     public adminUser selectByName(String username) {
         return adminuserDao.selectByName(username);
     }
 
+    /**
+     * 判断是否已存在uid=1产品销售商,若小于等于1则s.t.
+     * @return
+     */
     @Override
-    public userLoginExecution executeLogin(String getUserName,String getPassword) throws ecommerceException,userLoginException{
-        try{
-            System.out.println("进入service层执行");
-            adminUser adminUser1=adminuserDao.selectByName(getUserName);
-            if(adminUser1==null){
-                throw new userLogin_NoUser_Exception("不存在用户");
-            }
-            else if(!adminUser1.getPassword().equals(getMD5(getPassword))){
-                throw new userLogin_passwordError_Exception("密码错误");
-            }
-            else {
-                if(adminUser1.getUid()==0){
-                    return new userLoginExecution(getUserName, userStateEnum.USER_LOGIN_SUCCESS,adminUser1);
-                }
-                else if(adminUser1.getUid()==1){
-                    return new userLoginExecution(getUserName, userStateEnum.SALER_LOGIN_SUCCESS,adminUser1);
-                }
-                else {
-                    return new userLoginExecution(getUserName, userStateEnum.ADMIN_LOGIN_SUCCESS,adminUser1);
-                }
-            }
-        }
-        catch (userLogin_NoUser_Exception e1){
-            throw e1;
-        }
-        catch (userLogin_passwordError_Exception e1){
-            throw e1;
-        }
-        catch (userLoginException e){
-            logger.error(e.getMessage(),e);
-            throw new ecommerceException("内部错误"+e.getMessage());
-        }
+    public int judgeSale() {
+        return adminuserDao.judgeSale();
     }
 
+    /**
+     * 根据auid查询用户
+     * @param auid
+     * @return
+     */
     @Override
-    public int updateDiscount(Integer auid, double discount) {
-        return adminuserDao.updateDiscount(auid,discount);
+    public adminUser selectByAuid(Integer auid) {
+        return adminuserDao.selectByAuid(auid);
     }
+
 }

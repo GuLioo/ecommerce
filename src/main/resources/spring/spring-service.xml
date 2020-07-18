@@ -7,6 +7,7 @@
 
     <!--扫描service包下所有使用注解的类型-->
     <context:component-scan base-package="org.ecommerce.service"></context:component-scan>
+    <context:component-scan base-package="org.ecommerce.business"></context:component-scan>
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

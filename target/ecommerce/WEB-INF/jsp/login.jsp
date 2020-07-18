@@ -115,8 +115,7 @@
 								<div class="hb-content">
 									<div class="position-right">
 										<ul class="list-info list-meta">
-											<li><a href="register.html"><i class="fa fa-sign-in-alt"></i> Register</a></li>
-											<li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
+											<li><a href="http://localhost:8080/ecommerce_war/entrance/logOut" <%--onclick="logOut()"--%>><i class="fa fa-sign-in-alt"></i> Logout</a></li>
 										</ul><!-- .list-meta end -->
 									</div><!-- .position-right end -->
 								</div><!-- .hb-content end -->
