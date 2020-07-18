@@ -7,48 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/adminBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/adminBusinessImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/salerBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/salerBusinessImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/business/adminBusinessImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusinessImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/adminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/adminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/productSalerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userLoginExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userExecution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/salerException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/adminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productSaler.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/saler.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/adminServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/adminServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/salerServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/salerServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/controller/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dto/userLoginExecution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/salerException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/adminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/salerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/salerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/salerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/salerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userOrders.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ecommerce.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/controller/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dto/userLoginExecution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/exception/salerException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/adminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/adminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/salerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/salerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/salerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/salerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/spring/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/spring/spring-service.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/adminServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/adminServiceImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/salerServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/salerServiceImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +90,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../seckill" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -422,7 +388,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -511,7 +477,7 @@
       <workItem from="1594860785428" duration="29097000" />
       <workItem from="1594903077108" duration="11238000" />
       <workItem from="1594947622537" duration="23240000" />
-      <workItem from="1595036217919" duration="16454000" />
+      <workItem from="1595036217919" duration="22839000" />
     </task>
     <task id="LOCAL-00001" summary="7.12">
       <created>1594565794125</created>
@@ -583,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594976181840</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="7.12">
+      <created>1595059597486</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1595059597486</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,10 +588,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="500" y="199" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594090247960" />
-    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser" timestamp="1595058375385">
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser" timestamp="1595073693092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1595058375385" />
+    <state x="530" y="21" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1595073693092" />
     <state x="260" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1594696438575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -631,62 +604,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595057353190" />
-    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1594976179849">
+    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1595059592545">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594976179849" />
-    <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1594953033159">
+    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595059592545" />
+    <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1595072197395">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594953033159" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.bottom" timestamp="1595059562624">
+    <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595072197395" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.bottom" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595059562624" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.center" timestamp="1595059562624">
+    <state width="1450" height="-28" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.center" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595059562624" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.left" timestamp="1595059562624">
+    <state width="1450" height="-28" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.left" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595059562624" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.right" timestamp="1595059562624">
+    <state width="1450" height="-28" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.right" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595059562624" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.bottom" timestamp="1595059562626">
+    <state width="1450" height="-28" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.bottom" timestamp="1595075283562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595059562626" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.center" timestamp="1595059562626">
+    <state width="1450" height="-28" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595075283562" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.center" timestamp="1595075283562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595059562626" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.left" timestamp="1595059562625">
+    <state width="1450" height="-28" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595075283562" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.left" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595059562625" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.right" timestamp="1595059562626">
+    <state width="1450" height="-28" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.right" timestamp="1595075283562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595059562626" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.bottom" timestamp="1595059562625">
+    <state width="1450" height="-28" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595075283562" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.bottom" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595059562625" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.center" timestamp="1595059562625">
+    <state width="1450" height="-28" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.center" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1595059562625" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.left" timestamp="1595059562624">
+    <state width="1450" height="-28" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.left" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1595059562624" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.right" timestamp="1595059562625">
+    <state width="1450" height="-28" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.right" timestamp="1595075283561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1595059562625" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
     <state width="1450" height="234" key="GridCell.Tab.3.bottom" timestamp="1594801653302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -707,10 +680,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594455945019" />
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1594976186304">
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1595059600209">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594976186304" />
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595059600209" />
     <state x="551" y="178" key="chooseDestDirectoryDialog" timestamp="1594368193457">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

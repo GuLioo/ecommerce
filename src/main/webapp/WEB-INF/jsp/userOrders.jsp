@@ -325,7 +325,7 @@
 		}
 
 		function refresh(){
-			to_page(5);
+			to_page(1);
 		}
 
 		//页面请求

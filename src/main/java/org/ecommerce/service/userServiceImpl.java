@@ -32,115 +32,112 @@ public class userServiceImpl implements userService {
     @Resource
     private productDao productDao;
 
-    @Override
-    public int updateByPrimaryKey(Integer auid, String name, String email, String phone) {
-        return adminuserDao.updateByPrimaryKey(auid,name,email,phone);
-    }
 
+    /**
+     * 根据id查看用户信息
+     * @param auid
+     * @return
+     */
     @Override
     public adminUser userInfo(Integer auid) {
         return adminuserDao.selectByAuid(auid);
     }
 
-
+    /**
+     * 显示所有目录
+     * @return
+     */
     @Override
     public List<category> selectAllCate() {
         return categoryDao.selectAll();
     }
 
+    /**
+     * 找某一种类的商品：根据目录名查找商品
+     * @param pname
+     * @return
+     */
     @Override
     public List<product> selectProBypname(String pname) {
         return productDao.selectBypname(pname);
     }
 
+    /**
+     * 根据商品id获取商品信息
+     * @param pid
+     * @return
+     */
     @Override
     public product selectByPrimaryKey(Integer pid) {
         return productDao.selectByPrimaryKey(pid);
     }
 
-    @Override
-    public orders createOrder(product product, adminUser user) {
-        String orderId=createId();
-        System.out.println("orderId="+orderId);
-        double finalPrice=product.getMarketPrice();
-        if(user.getDiscount()!=1.0){
-            finalPrice=product.getMarketPrice()*user.getDiscount();
-        }
-        Timestamp time = new Timestamp(System.currentTimeMillis());
-        orders createOrder=new orders(orderId,user.getAuid(),finalPrice,user.getDiscount(),product.getPid(),product.getMarketPrice(),product.getPdesc(),product.getImage(),product.getPdesc(),product.getPname(),(short)0,time);
-        return createOrder;
-    }
-
-/*    @Override
-    public int insert(orders orders) {
-
-        int result=ordersDao.insert(orders.getOid(),orders.getUserId(),orders.getOrderPrice(),orders.getUserDiscount(),orders.getProductId(),orders.getProductPrice(),orders.getProductName(),orders.getProductImage(),orders.getProductDesc(),orders.getProductCate(),(short)0,orders.getOrderTime());
-        return result;
-    }
-
-    @Override
-    public int reduceProduct(Integer pid) {
-        int result=productDao.reduceProduct(pid);
-        return result;
-    }*/
-
-    @Transactional
-    @Override
-    public seckillExecution executeSeckill(orders orders, Integer pid) {
-        try {
-            product product=productDao.lockProduct(pid);
-            System.out.println("======================================");
-            System.out.println("productId="+product.getPid());
-            int result1 = productDao.reduceProduct(pid);
-            System.out.println("result1="+result1);
-            if (result1 <= 0) {
-                throw new seckillException("库存不足");
-            } else {
-                int result2 = ordersDao.insert(orders.getOid(), orders.getUserId(), orders.getOrderPrice(), orders.getUserDiscount(), orders.getProductId(), orders.getProductPrice(), orders.getProductName(), orders.getProductImage(), orders.getProductDesc(), orders.getProductCate(), (short) 0, orders.getOrderTime());
-                System.out.println("result2="+result2);
-                if (result2 <= 0) {
-                    throw new seckillException("插入订单出错");
-                } else {
-                    return new seckillExecution(orders.getOid(), seckillStateEnum.SUCCESS);
-                }
-            }
-        }
-        catch (seckillException e1){
-            throw e1;
-        }
-        catch (Exception e){
-            logger.error(e.getMessage(),e);
-            throw new seckillException("内部错误"+e.getMessage());
-        }
-    }
 
 
+
+    /**
+     * 根据用户id查询相应订单
+     * @param userId
+     * @return
+     */
     @Override
     public List<orders> findOrderByUid(Integer userId) {
         return ordersDao.findOrderByUid(userId);
     }
 
+    /**
+     * 基于订单号、订单时间等条件搜索订单
+     * @param userId
+     * @param oid
+     * @param state
+     * @param start_time
+     * @param end_time
+     * @return
+     */
     @Override
     public List<orders> findOrderByOid_State_Time(Integer userId,String oid, short state, Date start_time, Date end_time) {
         return ordersDao.findOrderByOid_State_Time(userId,oid,state,start_time,end_time);
     }
 
-    //createId
-    Integer number=0;//唯一数字,集群第一台=0，第二台=200000,第三台=400000
-    int maxNum=200000;//最大值,集群第一台=200000，第二台=400000,第三台=600000
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");//年月日格式
     /**
-     * 生成订单编号 17+ 位数
-     *  思路:一个业务在1毫秒内并发的数量有多少，有一万那真是顶天了,意味着 一秒 有1000万的并发。kafaka,redis的性能不过10万，那我把 number的上限设置成20 万,那就是一秒200000*1000=2亿的并发,不够再集群
-     *  宕机了，进程死了，这个跟程序没有关系。你别忘了前面精确到毫秒的17位数，我们只关心一毫秒内的并发问题
+     * 根据商品id减库存
+     * @param pid
      * @return
      */
-    public  String createId(){
-        number++;//唯一数字自增
-        if(number>=maxNum){ // 值的上限，超过就归零
-            number=maxNum-200000;
-        }
-        return sdf.format(new Date())+number;//返回时间+一毫秒内唯一数字的编号，区分机器可以加字母ABC...
+    @Override
+    public int reduceProduct(Integer pid) {
+        return productDao.reduceProduct(pid);
+    }
+
+    /**
+     * 根据商品id将那行上锁
+     * @param pid
+     * @return
+     */
+    @Override
+    public product lockProduct(Integer pid) {
+        return productDao.lockProduct(pid);
+    }
+
+    /**
+     * 插入订单信息
+     * @param oid
+     * @param userId
+     * @param orderPrice
+     * @param userDiscount
+     * @param productId
+     * @param productPrice
+     * @param productName
+     * @param productImage
+     * @param productDesc
+     * @param productCate
+     * @param orderState
+     * @param orderTime
+     * @return
+     */
+    @Override
+    public int insert(String oid, Integer userId, Double orderPrice, Double userDiscount, Integer productId, Double productPrice, String productName, String productImage, String productDesc, String productCate, short orderState, Timestamp orderTime) {
+        return ordersDao.insert(oid, userId, orderPrice, userDiscount, productId, productPrice, productName, productImage, productDesc, productCate, (short) 0, orderTime);
     }
 
 
