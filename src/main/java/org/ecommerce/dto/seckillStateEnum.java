@@ -1,5 +1,6 @@
 package org.ecommerce.dto;
 
+//商品购买状态码
 public enum seckillStateEnum {
     SUCCESS(1,"购买成功"),
     UNDER_STOCK(0,"库存不足"),

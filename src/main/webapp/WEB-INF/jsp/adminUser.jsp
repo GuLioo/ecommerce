@@ -541,10 +541,15 @@ table的定义的宽度-td(定义了宽度)*/
 		</div>
 
 		<script src="${pageContext.request.contextPath}/resource/js/jquery-3.3.1.js"></script>
-		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+		<%--		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+		<%--		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>--%>
+<%--		<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">--%>
 		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="${pageContext.request.contextPath}/resource/css/bootstrap.min.css" rel="stylesheet">
+		<script src="${pageContext.request.contextPath}/resource/js/jquery.min.js"></script>
+		<script src="${pageContext.request.contextPath}/resource/js/bootstrap.min.js"></script>
+
 
 	<%--<script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>--%>
 	<script src="${pageContext.request.contextPath}/resource/js/jRespond.min.js"></script>

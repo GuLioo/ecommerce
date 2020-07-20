@@ -5,7 +5,7 @@
 <mapper namespace="org.ecommerce.dao.productDao">
     <!--为DAO接口方法提供SQL语句配置-->
     <insert id="insert">
-        insert ignore into product(pname,market_Price,image,pdesc,pnum)
+        insert  into product(pname,market_Price,image,pdesc,pnum)
         values (#{pname},#{market_Price},#{image},#{pdesc},#{pnum})
     </insert>
     <delete id="deleteByPrimaryKey"  >

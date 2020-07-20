@@ -5,7 +5,7 @@
 <mapper namespace="org.ecommerce.dao.ordersDao">
     <!--为DAO接口方法提供SQL语句配置-->
     <insert id="insert">
-        insert ignore into orders(oid,userId,orderPrice,userDiscount,productId,productPrice,productName,productImage,productDesc,productCate,orderState,orderTime)
+        insert  into orders(oid,userId,orderPrice,userDiscount,productId,productPrice,productName,productImage,productDesc,productCate,orderState,orderTime)
         values (#{oid},#{userId},#{orderPrice},#{userDiscount},#{productId},#{productPrice},#{productName},#{productImage},#{productDesc},#{productCate},#{orderState},#{orderTime})
     </insert>
     <select id="selectAll" resultType="orders">

@@ -1,16 +1,14 @@
 package org.ecommerce.business;
 
-import org.ecommerce.dto.Msg;
+import org.ecommerce.dto.pageResult;
 import org.ecommerce.dto.ecommerceResult;
-import org.ecommerce.dto.userExecution;
-import org.ecommerce.entity.adminUser;
 
 import javax.servlet.http.HttpSession;
 
 //用户管理员接口
 public interface adminBusiness {
     //返回对应权限的用户列表
-    Msg adminUserGet(short uid, Integer pn);
+    pageResult adminUserGet(short uid, Integer pn);
     //添加用户
     ecommerceResult insertAdminUser(String username, String password, short uid);
     //删除用户

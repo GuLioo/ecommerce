@@ -7,14 +7,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e36c110-5524-4ebb-abdd-da5b9d3527c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusinessImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/bootstrap-3.3.7-dist.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/jquery-2.1.1.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/business/salerBusinessImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/business/userBusinessImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/adminBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/adminBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/adminBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/adminBusinessImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/salerBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/salerBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/salerBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/salerBusinessImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusinessImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/business/userBusinessImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/adminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/adminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/loginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/userServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userOrders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/pageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/salerStateEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/seckillStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/seckillStateEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/dto/userStateEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/ecommerceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userInsertException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userInsertException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/exception/userLoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ecommerce/service/salerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/adminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/adminuserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/categoryDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/categoryDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ordersDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/productDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/adminUser1.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/checkout-page-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/dashboard-page-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/dashboard-page-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/product-single.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/productSaler.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/productSaler1.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/products-search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/copy/products1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orderDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orderDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/saler.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/saler.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/business/adminBusinessImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/business/adminBusinessImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/controller/loginControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/controller/pageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/adminServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/adminServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/salerServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/salerServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/userServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/ecommerce/service/userServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/adminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/adminuserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/categoryDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/categoryDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ordersDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/productDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/controller/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dto/Msg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dto/salerStateEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/dto/userStateEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/dto/userStateEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/ecommerceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/userInsertException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/userInsertException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/userLoginException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/exception/userLoginException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/salerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/salerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/ecommerce/service/userServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ecommerce.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/adminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/adminuserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/categoryDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/categoryDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/ordersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/ordersDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/productDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/mapper/productDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/controller/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/controller/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dto/Msg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dto/salerStateEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dto/userStateEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/dto/userStateEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/exception/ecommerceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/exception/userInsertException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/exception/userInsertException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/exception/userLoginException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/exception/userLoginException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/salerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/salerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/classes/org/ecommerce/service/userServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ecommerce/WEB-INF/jsp/adminUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/controller/loginControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/controller/pageTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/adminServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/adminServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/salerServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/ecommerce/service/salerServiceImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +121,9 @@
         <option value="FxmlFile" />
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
-        <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -96,12 +170,16 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
+    <key name="CreateClassDialog.RecentsKey">
       <recent name="org.ecommerce.business" />
       <recent name="org.ecommerce.service" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.ecommerce.service" />
+      <recent name="org.ecommerce.business" />
       <recent name="org.ecommerce.dao" />
       <recent name="org.ecommerce.controller" />
       <recent name="org.seckill.service" />
@@ -111,13 +189,6 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\copy" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\copy" />
@@ -131,13 +202,32 @@
       <recent name="org.ecommerce.exception" />
       <recent name="org.ecommerce.dto" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.ecommerce.business" />
-      <recent name="org.ecommerce.service" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp\copy" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF\jsp" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\resource" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\谷粒\Desktop\coding\ecommerce\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.99">
-    <configuration name="adminBusinessImplTest.getAdminUserList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="adminServiceImplTest.deleteByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ecommerce" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ecommerce.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ecommerce.service" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.service.adminServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteByPrimaryKey" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="salerBusinessImplTest.deleteProByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
@@ -146,72 +236,56 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.ecommerce.business" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.business.adminBusinessImplTest" />
-      <option name="METHOD_NAME" value="getAdminUserList" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.business.salerBusinessImplTest" />
+      <option name="METHOD_NAME" value="deleteProByPrimaryKey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ordersDaoTest.findOrderByOid_State_Time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="salerBusinessImplTest.updateByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="PATTERN" value="org.ecommerce.business.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.ordersDaoTest" />
-      <option name="METHOD_NAME" value="findOrderByOid_State_Time" />
+      <option name="PACKAGE_NAME" value="org.ecommerce.business" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.business.salerBusinessImplTest" />
+      <option name="METHOD_NAME" value="updateByPrimaryKey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ordersDaoTest.findOrderByUid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="userBusinessImplTest.selectAllCate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="PATTERN" value="org.ecommerce.business.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.ordersDaoTest" />
-      <option name="METHOD_NAME" value="findOrderByUid" />
+      <option name="PACKAGE_NAME" value="org.ecommerce.business" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.business.userBusinessImplTest" />
+      <option name="METHOD_NAME" value="selectAllCate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="productDaoTest.deleteByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="userBusinessImplTest.selectByPrimaryKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.ecommerce.dao.*" />
+          <option name="PATTERN" value="org.ecommerce.business.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.productDaoTest" />
-      <option name="METHOD_NAME" value="deleteByPrimaryKey" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="productDaoTest.reduceProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ecommerce" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.ecommerce.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.ecommerce.dao" />
-      <option name="MAIN_CLASS_NAME" value="org.ecommerce.dao.productDaoTest" />
-      <option name="METHOD_NAME" value="reduceProduct" />
+      <option name="PACKAGE_NAME" value="org.ecommerce.business" />
+      <option name="MAIN_CLASS_NAME" value="org.ecommerce.business.userBusinessImplTest" />
+      <option name="METHOD_NAME" value="selectByPrimaryKey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -357,20 +431,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ordersDaoTest.findOrderByUid" />
-      <item itemvalue="JUnit.productDaoTest.reduceProduct" />
-      <item itemvalue="JUnit.productDaoTest.deleteByPrimaryKey" />
-      <item itemvalue="JUnit.ordersDaoTest.findOrderByOid_State_Time" />
+      <item itemvalue="JUnit.adminServiceImplTest.deleteByPrimaryKey" />
+      <item itemvalue="JUnit.userBusinessImplTest.selectAllCate" />
+      <item itemvalue="JUnit.userBusinessImplTest.selectByPrimaryKey" />
+      <item itemvalue="JUnit.salerBusinessImplTest.updateByPrimaryKey" />
+      <item itemvalue="JUnit.salerBusinessImplTest.deleteProByPrimaryKey" />
       <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
-      <item itemvalue="JUnit.adminBusinessImplTest.getAdminUserList" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.adminBusinessImplTest.getAdminUserList" />
-        <item itemvalue="JUnit.productDaoTest.reduceProduct" />
-        <item itemvalue="JUnit.ordersDaoTest.findOrderByOid_State_Time" />
-        <item itemvalue="JUnit.productDaoTest.deleteByPrimaryKey" />
-        <item itemvalue="JUnit.ordersDaoTest.findOrderByUid" />
+        <item itemvalue="JUnit.salerBusinessImplTest.deleteProByPrimaryKey" />
+        <item itemvalue="JUnit.salerBusinessImplTest.updateByPrimaryKey" />
+        <item itemvalue="JUnit.userBusinessImplTest.selectByPrimaryKey" />
+        <item itemvalue="JUnit.userBusinessImplTest.selectAllCate" />
+        <item itemvalue="JUnit.adminServiceImplTest.deleteByPrimaryKey" />
       </list>
     </recent_temporary>
   </component>
@@ -388,7 +462,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -477,7 +551,11 @@
       <workItem from="1594860785428" duration="29097000" />
       <workItem from="1594903077108" duration="11238000" />
       <workItem from="1594947622537" duration="23240000" />
-      <workItem from="1595036217919" duration="22839000" />
+      <workItem from="1595036217919" duration="23600000" />
+      <workItem from="1595081680924" duration="1990000" />
+      <workItem from="1595137796659" duration="22704000" />
+      <workItem from="1595207047284" duration="19010000" />
+      <workItem from="1595243164240" duration="3686000" />
     </task>
     <task id="LOCAL-00001" summary="7.12">
       <created>1594565794125</created>
@@ -556,7 +634,21 @@
       <option name="project" value="LOCAL" />
       <updated>1595059597486</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="7.12">
+      <created>1595075301716</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1595075301716</updated>
+    </task>
+    <task id="LOCAL-00013" summary="7.12">
+      <created>1595075334561</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1595075334561</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,70 +688,70 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="260" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824@0.0.1536.824" timestamp="1594696438575" />
-    <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1594101957482">
+    <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1595081872220">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1594101957482" />
-    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595057353190">
+    <state x="351" y="325" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1595081872220" />
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595082298903">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595057353190" />
-    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1595075313287">
+    <state x="436" y="102" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595082298903" />
+    <state x="114" y="0" key="CommitChangelistDialog2" timestamp="1595075333188">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595075313287" />
-    <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1595072197395">
+    <state x="114" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1595075333188" />
+    <state x="16" y="150" key="FileChooserDialogImpl" timestamp="1595229742995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595072197395" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.bottom" timestamp="1595075283561">
+    <state x="16" y="150" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595229742995" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.bottom" timestamp="1595253233833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.center" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595253233833" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.center" timestamp="1595253233832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.left" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595253233832" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.left" timestamp="1595253233832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.0.right" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595253233832" />
+    <state width="1450" height="-28" key="GridCell.Tab.0.right" timestamp="1595253233833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.bottom" timestamp="1595075283562">
+    <state width="1450" height="-28" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595253233833" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.bottom" timestamp="1595253233834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595075283562" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.center" timestamp="1595075283562">
+    <state width="1450" height="-28" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595253233834" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.center" timestamp="1595253233833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595075283562" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.left" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595253233833" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.left" timestamp="1595253233833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.1.right" timestamp="1595075283562">
+    <state width="1450" height="-28" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595253233833" />
+    <state width="1450" height="-28" key="GridCell.Tab.1.right" timestamp="1595253233834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595075283562" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.bottom" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595253233834" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.bottom" timestamp="1595253233834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.center" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595253233834" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.center" timestamp="1595253233834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.left" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1595253233834" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.left" timestamp="1595253233834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
-    <state width="1450" height="-28" key="GridCell.Tab.2.right" timestamp="1595075283561">
+    <state width="1450" height="-28" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1595253233834" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.right" timestamp="1595253233834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1450" height="-28" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1595075283561" />
+    <state width="1450" height="-28" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1595253233834" />
     <state width="1450" height="234" key="GridCell.Tab.3.bottom" timestamp="1594801653302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -676,30 +768,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1450" height="234" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1594801653301" />
-    <state x="121" y="0" key="SettingsEditor" timestamp="1594455945019">
+    <state x="121" y="0" key="SettingsEditor" timestamp="1595160910995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="121" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594455945019" />
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1595059600209">
+    <state x="121" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595160910995" />
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2" timestamp="1595075336488">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595059600209" />
+    <state x="261" y="81" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595075336488" />
     <state x="551" y="178" key="chooseDestDirectoryDialog" timestamp="1594368193457">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="551" y="178" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1594368193457" />
-    <state x="394" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1594947630788">
+    <state x="394" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1595243163035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="394" y="196" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1594947630788" />
+    <state x="394" y="196" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1595243163035" />
     <state x="229" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1594534183396">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="229" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1594534183396" />
-    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1595040919632">
+    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1595231236654">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1595040919632" />
+    <state x="948" y="0" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1595231236654" />
     <state x="294" y="62" width="903" height="751" key="dock-window-1" timestamp="1594444803007">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -708,10 +800,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" width="796" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594393976476" />
-    <state x="341" y="183" key="run.anything.popup" timestamp="1594557745688">
+    <state x="341" y="183" key="run.anything.popup" timestamp="1595160515665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594557745688" />
+    <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1595160515665" />
     <state x="341" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1595058608163">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

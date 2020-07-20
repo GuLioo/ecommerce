@@ -1,5 +1,6 @@
 package org.ecommerce.service;
 
+import org.ecommerce.dto.ecommerceResult;
 import org.ecommerce.entity.adminUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,7 +41,7 @@ public class adminServiceImplTest {
 
     @Test
     public void deleteByPrimaryKey() {
-        int result=adminService.deleteByPrimaryKey(4);
+        int result=adminService.deleteByPrimaryKey(82);
         logger.info("result={}",result);
     }
 
@@ -57,14 +58,6 @@ public class adminServiceImplTest {
         logger.info("result={}",result);
     }
 
-    @Test
-    public void executeLogin() {
-
-    }
-
-    @Test
-    public void updateDiscount() {
-    }
 
 
 

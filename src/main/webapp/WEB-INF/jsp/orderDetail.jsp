@@ -57,7 +57,7 @@
 
 		function requestJson() {
 			$.ajax({
-				type: "get",
+				type: "post",
 				url: "/ecommerce_war/user/executeSeckill",
 				dataType: "json",
 				success: function (result) {

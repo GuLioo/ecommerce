@@ -8,7 +8,7 @@
         select * from category
     </select>
     <insert id="insert">
-        insert ignore into category(cname)
+        insert  into category(cname)
         values (#{cname})
     </insert>
     <delete id="deleteBycname"  >

@@ -2,7 +2,7 @@ package org.ecommerce.business;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.ecommerce.dto.Msg;
+import org.ecommerce.dto.pageResult;
 import org.ecommerce.dto.ecommerceResult;
 import org.ecommerce.dto.seckillExecution;
 import org.ecommerce.dto.seckillStateEnum;
@@ -25,6 +25,7 @@ import java.net.URLDecoder;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 //普通用户
@@ -59,13 +60,13 @@ public class userBusinessImpl implements userBusiness {
 
     /**
      * 根据商品和用户创建订单
-     * 暂不进行购买及数据库处理
+     * 暂不进行购买及数据库插入订单处理
      * @param product
      * @param user
      * @return
      */
     @Override
-    public orders createOrder(product product, adminUser user) {
+    public void createOrder(product product, adminUser user) {
         String orderId=createId();
         double finalPrice=product.getMarketPrice();
         if(user.getDiscount()!=1.0){
@@ -73,19 +74,19 @@ public class userBusinessImpl implements userBusiness {
         }
         Timestamp time = new Timestamp(System.currentTimeMillis());
         orders createOrder=new orders(orderId,user.getAuid(),finalPrice,user.getDiscount(),product.getPid(),product.getMarketPrice(),product.getPdesc(),product.getImage(),product.getPdesc(),product.getPname(),(short)0,time);
-        return createOrder;
+        uidOrder.put(user.getAuid(),createOrder);
     }
 
     //createOrderId
-    Integer number=0;//唯一数字
-    int maxNum=200000;//最大值
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");//年月日格式
+    static Integer number=0;//唯一数字
+    static int maxNum=200000;//最大值
+    static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");//年月日格式
     /**
      * 生成订单编号 17+ 位数
      * yyyyMMddHHmmssSSS+1ms的number
      * @return
      */
-    public  String createId(){
+    public static  String createId(){
         number++;//唯一数字自增
         if(number>=maxNum){ // 值的上限，超过就归零
             number=maxNum-200000;
@@ -93,7 +94,7 @@ public class userBusinessImpl implements userBusiness {
         return sdf.format(new Date())+number;//返回时间+一毫秒内唯一数字的编号
     }
     //保存创建的订单，供插入数据库使用
-    orders createOrder;
+    HashMap<Integer,orders> uidOrder=new HashMap<Integer,orders>();
 
     /**
      * 执行减库存、增加订单的事务
@@ -101,9 +102,10 @@ public class userBusinessImpl implements userBusiness {
      */
     @Transactional
     @Override
-    public ecommerceResult executeSeckill() {
-        orders orders=createOrder;
-        Integer pid=createOrder.getProductId();
+    public ecommerceResult executeSeckill(HttpSession session) {
+        Integer uid=(Integer) session.getAttribute("auid");
+        orders orders=uidOrder.get(uid);
+        Integer pid=orders.getProductId();
         try {
             product product=userService.lockProduct(pid);
             int result1 = userService.reduceProduct(pid);
@@ -115,17 +117,20 @@ public class userBusinessImpl implements userBusiness {
                     throw new Exception("插入订单出错");
                 } else {
                     seckillExecution execution=new seckillExecution(orders.getOid(), seckillStateEnum.SUCCESS);
+                    uidOrder.remove(uid);
                     return new ecommerceResult<seckillExecution>(true,execution);
                 }
             }
         }
         catch (seckillException e1){
-            seckillExecution execution=new seckillExecution(createOrder.getOid(), seckillStateEnum.UNDER_STOCK);
+            seckillExecution execution=new seckillExecution(orders.getOid(), seckillStateEnum.UNDER_STOCK);
+            uidOrder.remove(uid);
             return new ecommerceResult<seckillExecution>(true,execution);
         }
         catch (Exception e){
             logger.error(e.getMessage(),e);
-            seckillExecution execution=new seckillExecution(createOrder.getOid(), seckillStateEnum.INNER_ERROR);
+            seckillExecution execution=new seckillExecution(orders.getOid(), seckillStateEnum.INNER_ERROR);
+            uidOrder.remove(uid);
             return new ecommerceResult<seckillExecution>(true,execution);
         }
     }
@@ -139,7 +144,7 @@ public class userBusinessImpl implements userBusiness {
      * @throws UnsupportedEncodingException
      */
     @Override
-    public Msg userOrdersInfo(Integer pn, HttpSession session) throws UnsupportedEncodingException {
+    public pageResult userOrdersInfo(Integer pn, HttpSession session) throws UnsupportedEncodingException {
         Integer uid=(Integer) session.getAttribute("auid");
         //使用PageHelper分页插件
         //在查询之前只需要调用，传入页码，以及每页的大小
@@ -149,7 +154,7 @@ public class userBusinessImpl implements userBusiness {
         //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
         PageInfo page = new PageInfo(orders,10);
-        return Msg.success().add("pageInfo", page);
+        return pageResult.success().add("pageInfo", page);
     }
 
     /**
@@ -163,8 +168,8 @@ public class userBusinessImpl implements userBusiness {
         product product=userService.selectByPrimaryKey(pid);
         Integer uid=(Integer) session.getAttribute("auid");
         adminUser user=userService.userInfo(uid);
-        orders orderDetail=createOrder(product,user);
-        createOrder=orderDetail;
+        createOrder(product,user);
+        orders orderDetail=uidOrder.get(uid);
         return orderDetail;
     }
 
@@ -176,7 +181,7 @@ public class userBusinessImpl implements userBusiness {
      * @throws UnsupportedEncodingException
      */
     @Override
-    public Msg productInfo(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
+    public pageResult productInfo(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
         // 设置后台响应文本格式
         resp.setContentType("text/html;charset=utf-8");
         // 接收前台请求
@@ -189,7 +194,7 @@ public class userBusinessImpl implements userBusiness {
         //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
         PageInfo page = new PageInfo(product,5);
-        return Msg.success().add("pageInfo", page);
+        return pageResult.success().add("pageInfo", page);
     }
 
     /**
@@ -204,7 +209,7 @@ public class userBusinessImpl implements userBusiness {
      * @throws UnsupportedEncodingException
      */
     @Override
-    public Msg searchOrdersInfo(Integer pn, Date startTime, Date endTime, String orderId, HttpSession session) throws UnsupportedEncodingException {
+    public pageResult searchOrdersInfo(Integer pn, Date startTime, Date endTime, String orderId, HttpSession session) throws UnsupportedEncodingException {
         Integer uid=(Integer) session.getAttribute("auid");
         //使用PageHelper分页插件
         //在查询之前只需要调用，传入页码，以及每页的大小
@@ -214,6 +219,6 @@ public class userBusinessImpl implements userBusiness {
         //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
         PageInfo page = new PageInfo(orders,3);
-        return Msg.success().add("pageInfo", page);
+        return pageResult.success().add("pageInfo", page);
     }
 }

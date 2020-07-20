@@ -1,31 +1,21 @@
 package org.ecommerce.controller;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import org.ecommerce.business.userBusiness;
-import org.ecommerce.dto.Msg;
+import org.ecommerce.dto.pageResult;
 import org.ecommerce.dto.ecommerceResult;
 import org.ecommerce.dto.seckillExecution;
-import org.ecommerce.dto.seckillStateEnum;
-import org.ecommerce.entity.adminUser;
 import org.ecommerce.entity.category;
 import org.ecommerce.entity.orders;
 import org.ecommerce.entity.product;
-import org.ecommerce.exception.seckillException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -66,7 +56,7 @@ public class userController {
      */
     @RequestMapping(value = "/productInfo",method = RequestMethod.POST)
     @ResponseBody
-    public Msg productInfo(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
+    public pageResult productInfo(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
         return userBusiness.productInfo(req, resp);
     }
 
@@ -133,10 +123,10 @@ public class userController {
      * 执行插入生成订单，减库存的事务
      * @return
      */
-    @RequestMapping(value = "/executeSeckill",method = RequestMethod.GET)
+    @RequestMapping(value = "/executeSeckill",method = RequestMethod.POST)
     @ResponseBody
-    public ecommerceResult<seckillExecution> executeSeckill(){
-        return userBusiness.executeSeckill();
+    public ecommerceResult<seckillExecution> executeSeckill(HttpSession session){
+        return userBusiness.executeSeckill(session);
     }
 
 
@@ -161,7 +151,7 @@ public class userController {
      */
     @RequestMapping(value = "/userOrdersInfo",method = RequestMethod.POST)
     @ResponseBody
-    public Msg userOrdersInfo(@RequestParam(value="pn",defaultValue="1") Integer pn,HttpSession session) throws UnsupportedEncodingException {
+    public pageResult userOrdersInfo(@RequestParam(value="pn",defaultValue="1") Integer pn, HttpSession session) throws UnsupportedEncodingException {
         return userBusiness.userOrdersInfo(pn, session);
     }
 
@@ -179,7 +169,7 @@ public class userController {
      */
     @RequestMapping(value = "/searchOrdersInfo",method = RequestMethod.POST)
     @ResponseBody
-    public Msg searchOrdersInfo(@RequestParam(value="pn",defaultValue="1")Integer pn,@DateTimeFormat(pattern="yyyy-MM-dd")Date startTime,@DateTimeFormat(pattern="yyyy-MM-dd")Date endTime,String orderId, HttpSession session) throws UnsupportedEncodingException {
+    public pageResult searchOrdersInfo(@RequestParam(value="pn",defaultValue="1")Integer pn, @DateTimeFormat(pattern="yyyy-MM-dd")Date startTime, @DateTimeFormat(pattern="yyyy-MM-dd")Date endTime, String orderId, HttpSession session) throws UnsupportedEncodingException {
         return userBusiness.searchOrdersInfo(pn, startTime, endTime, orderId, session);
     }
 

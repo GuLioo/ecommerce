@@ -4,7 +4,6 @@ import org.ecommerce.dao.categoryDao;
 import org.ecommerce.dao.productDao;
 import org.ecommerce.entity.category;
 import org.ecommerce.entity.product;
-import org.ecommerce.exception.ecommerceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

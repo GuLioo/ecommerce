@@ -45,6 +45,7 @@ public class loginController {
     /**
      * 登陆验证
      * 成功跳转页面并保存用户id至session
+     * 失败返回错误信息
      * @param userName
      * @param password
      * @param session

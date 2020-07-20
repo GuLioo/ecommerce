@@ -1,5 +1,6 @@
 package org.ecommerce.dto;
 
+//用户管理员状态码
 public enum userStateEnum {
     USER_LOGIN_SUCCESS(3,"普通用户登陆成功"),
     SALER_LOGIN_SUCCESS(2,"产品销售商登陆成功"),

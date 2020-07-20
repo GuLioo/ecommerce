@@ -23,20 +23,6 @@ public class salerServiceImplTest {
     @Resource
     private salerService salerService;
 
-    @Test
-    public void insert() {
-
-    }
-
-    @Test
-    public void deleteBycname() {
-
-    }
-
-    @Test
-    public void updateByPrimaryKey() {
-
-    }
 
     @Test
     public void selectAll() {
@@ -56,14 +42,11 @@ public class salerServiceImplTest {
         logger.info("result={}",result);
     }
 
-    @Test
-    public void updateProNumByPrimaryKey() {
 
-    }
 
     @Test
     public void selectProBypname() {
-        List<product> pros = salerService.selectProBypname("ann");
+        List<product> pros = salerService.selectProBypname("厨具锅具");
         for (product p : pros) {
             logger.info("result={}",p);
         }
@@ -75,8 +58,4 @@ public class salerServiceImplTest {
         logger.info("result={}",result);
     }
 
-    @Test
-    public void testUpdateByPrimaryKey1() {
-        
-    }
 }

@@ -190,7 +190,7 @@
 				success : function (result){
 					console.log("目录查询成功");
 					createCate(result);
-					to_page(result[0].cname,2);
+					to_page(result[0].cname,1);
 
 				},
 				error: function (msg) {

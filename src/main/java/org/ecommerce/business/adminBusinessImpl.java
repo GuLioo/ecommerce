@@ -2,7 +2,7 @@ package org.ecommerce.business;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.ecommerce.dto.Msg;
+import org.ecommerce.dto.pageResult;
 import org.ecommerce.dto.ecommerceResult;
 import org.ecommerce.dto.userExecution;
 import org.ecommerce.dto.userStateEnum;
@@ -34,7 +34,7 @@ public class adminBusinessImpl implements adminBusiness{
      * @return
      */
     @Override
-    public Msg adminUserGet(short uid, Integer pn) {
+    public pageResult adminUserGet(short uid, Integer pn) {
         //使用PageHelper分页插件
         //在查询之前只需要调用，传入页码，以及每页的大小
         PageHelper.startPage(pn, 3);
@@ -43,7 +43,7 @@ public class adminBusinessImpl implements adminBusiness{
         //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
         PageInfo page = new PageInfo(adminUser,5);
-        return Msg.success().add("pageInfo", page);
+        return pageResult.success().add("pageInfo", page);
     }
 
     /**
@@ -85,14 +85,7 @@ public class adminBusinessImpl implements adminBusiness{
         }
     }
 
-    //将密码md5加密
-    private String getMD5(String password){
-        String base=password+"/"+slat;
-        String md5= DigestUtils.md5DigestAsHex(base.getBytes());
-        return md5;
-    }
-    //密码盐值
-    private final String slat="asdfasvrg54mbesognoamg;s'afmaslgma";
+
 
     /**
      * 根据用户id删除用户
@@ -152,11 +145,10 @@ public class adminBusinessImpl implements adminBusiness{
      * @param getUserName
      * @param getPassword
      * @return
-     * @throws ecommerceException
      * @throws userLoginException
      */
     @Override
-    public ecommerceResult executeLogin(String getUserName, String getPassword, HttpSession session) throws ecommerceException,userLoginException{
+    public ecommerceResult executeLogin(String getUserName, String getPassword, HttpSession session) throws userLoginException{
         try{
             adminUser adminUser1=adminService.selectByName(getUserName);
             if(adminUser1==null){
@@ -197,6 +189,15 @@ public class adminBusinessImpl implements adminBusiness{
             return new ecommerceResult<userExecution>(true, execution);
         }
     }
+
+    //将密码md5加密
+    private String getMD5(String password){
+        String base=password+"/"+slat;
+        String md5= DigestUtils.md5DigestAsHex(base.getBytes());
+        return md5;
+    }
+    //密码盐值
+    private final String slat="asdfasvrg54mbesognoamg;s'afmaslgma";
 
     /**
      * 注销用户

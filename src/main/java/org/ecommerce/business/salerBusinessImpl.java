@@ -2,11 +2,9 @@ package org.ecommerce.business;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.ecommerce.dto.Msg;
+import org.ecommerce.dto.pageResult;
 import org.ecommerce.entity.category;
 import org.ecommerce.entity.product;
-import org.ecommerce.service.adminService;
-import org.ecommerce.service.salerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -72,7 +70,7 @@ public class salerBusinessImpl implements salerBusiness {
      * @throws UnsupportedEncodingException
      */
     @Override
-    public Msg productInfo(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
+    public pageResult productInfo(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
         // 设置后台响应文本格式
         resp.setContentType("text/html;charset=utf-8");
         // 接收前台请求
@@ -85,7 +83,7 @@ public class salerBusinessImpl implements salerBusiness {
         //使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
         //pageInfo里面封装了分页的详细信息，包括有我们查询出来的数据,页码导航传入连续显示的页数5
         PageInfo page = new PageInfo(product,5);
-        return Msg.success().add("pageInfo", page);
+        return pageResult.success().add("pageInfo", page);
     }
 
     /**

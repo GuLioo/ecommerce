@@ -9,7 +9,7 @@
     where auid = #{auid,jdbcType=INTEGER}
   </delete>
     <insert id="insertAdminUser">
-        insert ignore into adminuser(username,password,uid)
+        insert  into adminuser(username,password,uid)
         values (#{username},#{password},#{uid})
     </insert>
     <select id="selectByName" parameterType="String" resultType="adminUser">
